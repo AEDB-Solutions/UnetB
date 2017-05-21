@@ -21,6 +21,7 @@ CREATE TABLE IF NOT EXISTS `unetb`.`user` (
   `name` VARCHAR(255)  COLLATE utf8_bin NOT NULL,
   `email` VARCHAR(255) COLLATE utf8_bin NOT NULL,
   `password` TEXT      COLLATE utf8_bin NOT NULL,
+  `date` datetime default current_timestamp,
    PRIMARY KEY (`user_id`),
    UNIQUE (email)
 ) ENGINE=MYISAM AUTO_INCREMENT=0 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
