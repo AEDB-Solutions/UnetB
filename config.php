@@ -1,29 +1,27 @@
 <?php
-/**
- * Configuração geral
- */
+
+// Inicia a sessão
+session_start();
 
 // Caminho para a raiz
-define( 'ABSPATH', dirname( __FILE__ ) );
+$_SESSION['ABSPATH'] = dirname( __FILE__ );
 
 // URL da home
-define( 'HOME_URI', 'http://127.0.0.1/UnetB/views/' );
+$_SESSION['HOME_URI'] = 'http://127.0.0.1/UnetB/views/';
 
 // Nome do host da base de dados
-define( 'HOSTNAME', 'localhost' );
+$_SESSION['HOSTNAME'] = 'localhost';
 
 // Nome do DB
-define( 'DB_NAME', 'unetb' );
+$_SESSION['DB_NAME'] = 'unetb';
 
 // Usuário do DB
-define( 'DB_USER', 'root' );
+$_SESSION['DB_USER'] = 'root';
 
 // Senha do DB
-define( 'DB_PASSWORD', '' );
-
-// Charset da conexão PDO
-define( 'DB_CHARSET', 'utf8' );
+$_SESSION['DB_PASSWORD'] = '';
 
 
+//echo $_SESSION['HOME_URI'];
 // Carrega o loader, que vai carregar a aplicação inteira
-require_once ABSPATH . '/loader.php';
+header('location:views/home-logout-view.php');

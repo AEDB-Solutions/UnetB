@@ -11,9 +11,6 @@
 
 	<head>
 
-		<script src="_js/bootstrap.js"></script> <!-- Carrega JS do bootstrap-->
-		<script src="_js/jquery.min.js"></script> <!-- Carrega JS jquery-->
-
 		<!-- INCLUE O HEAD NA PÁGINA -->
 		<?php include "_includes/head.php";?>
 
@@ -27,9 +24,8 @@
 		<div class="container">
 			<h3 style="margin-top: 50px;">Bem Vindo(a) <?php echo $_SESSION['nome'];?></h3>
 		</div>
-
+		
+		<script src="_js/jquery.min.js"></script> <!-- Carrega JS jquery-->
+		<script src="_js/bootstrap.js"></script> <!-- Carrega JS do bootstrap-->
 	</body>
-	
-	<script src="_js/jquery.min.js"></script> <!-- Carrega JS jquery-->
-	<script src="_js/bootstrap.js"></script> <!-- Carrega JS do bootstrap-->
 </html>

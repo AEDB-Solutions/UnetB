@@ -3,9 +3,6 @@
 
 	<head>
 
-		<script src="_js/jquery.min.js"></script> <!-- Carrega JS jquery-->
-		<script src="_js/bootstrap.js"></script> <!-- Carrega JS do bootstrap-->
-
 		<!-- INCLUE O HEAD NA PÁGINA -->
 		<?php include "_includes/head.php";?>
 
@@ -63,6 +60,9 @@
 			</div> <!-- filho -->
 		</div> <!-- pai -->
 
-	<script src="_js/valida_cadastro.js"></script> <!-- Carrega JS para validar cadastro-->
+		<script src="_js/valida_cadastro.js"></script> <!-- Carrega JS para validar cadastro-->
+		
+		<script src="_js/jquery.min.js"></script> <!-- Carrega JS jquery-->
+		<script src="_js/bootstrap.js"></script> <!-- Carrega JS do bootstrap-->	
 	</body>
 </html>

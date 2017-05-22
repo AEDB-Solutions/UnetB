@@ -3,9 +3,6 @@
 
 	<head>
 
-		<script src="_js/jquery.min.js"></script> <!-- Carrega JS jquery-->
-		<script src="_js/bootstrap.js"></script> <!-- Carrega JS do bootstrap-->
-
 		<!-- INCLUE O HEAD NA PÁGINA -->
 		<?php include "_includes/head.php";?>
 
@@ -38,7 +35,6 @@
 									<span class='msg-erro msg-password'></span>
 								</div>
 
-
 								<input type="hidden" name="acao" value="incluir">
 								<button type="button" class="btn btn-primary btn-lg btn-block" id='botao_login'>Entrar</button><br/>
 								
@@ -52,6 +48,8 @@
 			</div> <!-- filho -->
 		</div> <!-- pai -->
 	
-	<script src="_js/valida_login.js"></script> <!-- Carrega JS para validar login-->
+		<script src="_js/valida_login.js"></script> <!-- Carrega JS para validar login-->
+		<script src="_js/jquery.min.js"></script> <!-- Carrega JS jquery-->
+		<script src="_js/bootstrap.js"></script> <!-- Carrega JS do bootstrap-->
 	</body>	
 </html>
