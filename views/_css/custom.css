@@ -1,14 +1,18 @@
 html, body {
 	height: 100%;
 	width: 100%;
+}
+body{
 	background-color: #f5f5f5;
-	
+	background: url("../_images/background2.png");
+	background-attachment: fixed;
 }
 /******************CUSTOMIZAÇÃO DO HEADER******************/
 .navbar{
 	border: none;
 	margin-bottom: 0px;
 	background-color: rgba(34, 43, 80, 0.9);
+
 }
 #btnLogin{
 	border-radius: 0px;
