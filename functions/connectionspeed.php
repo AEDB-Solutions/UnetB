@@ -14,7 +14,7 @@ function send_archives_multiples_times(){
 	$socket = create_socket();
 	
 	for($i = 0; $i < count($files) ; $i++){
-		
+		 
 		$get_speed = array();
 		$get_size  = array();
 
@@ -52,6 +52,8 @@ function create_socket(){
 	return $sh;
 }
 
+//upload
+
 function send_file($file , $size , $sh){
 
 	if(socket_sendto($sh, $file, $size, 0x8, '127.0.0.1', 4242)){
@@ -87,8 +89,14 @@ function staticts($speed_vector,$size_vector){
 	
 	$media = array_sum($speed_vector)/count($speed_vector);
 
-	echo 'Sua velocidade de conexão é de: '.number_format($media, 2, ',', '.').' Kbps <br/>';
+	echo 'Sua velocidade de upload é de: '.number_format($media, 2, ',', '.').' Kbps <br/>';
 	echo 'Foram enviados: '.array_sum($size_vector). ' Kb <br/>';
 }
 
+//download
+
+function recieve_archive(){
+	
+	
+}
 ?>
