@@ -9,13 +9,13 @@ if (form.addEventListener){
 /* Função para validar os dados antes da submissão dos dados */
 function validaLogin(evt){
 	
-	var email = document.getElementById('email');
-	var password = document.getElementById('password');
+	var email = document.getElementById('email-login');
+	var password = document.getElementById('password-login');
 	var filtro_email = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
 	var contErro = 0;
 
 	/* Validação do campo email */
-	caixa_email = document.querySelector('.msg-email');
+	caixa_email = document.querySelector('.msg-email-login');
 	if(email.value == ""){
 		formataErro(caixa_email," Favor preencher o E-mail.");
 		contErro += 1;
@@ -27,7 +27,7 @@ function validaLogin(evt){
 	}
 
 	/* Validação do campo password*/
-	caixa_password = document.querySelector('.msg-password');
+	caixa_password = document.querySelector('.msg-password-login');
 	if(password.value == ""){
 		formataErro(caixa_password," Favor preencher a senha.");
 		contErro += 1;
