@@ -8,9 +8,8 @@
 				<span class="icon-bar"></span>
 			</button>
 
-			<a class="navbar-brand" href="home-logout-view.php">UnetB
-				<!-- <img alt="Brand" src="_images/logounetb.png" style="margin-top: -25px"> -->
-			</a>
+			<a class="navbar-left" href="home-logout-view.php"><img alt="UnetB" src="_images/logo.png"></a>
+
 		</div>
 		
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">		
