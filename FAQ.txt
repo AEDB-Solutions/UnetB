@@ -1,0 +1,24 @@
+﻿FAQ
+
+O que é a UnetB?
+	A UnetB é um software que realiza a medição da qualidade da rede a qual você está conectado. A aplicação também permite o compartilhamento das medições dos usuários em um mapa.
+
+Quanto custa usar a UnetB?
+	A  UnetB é uma aplicação gratuita.
+
+Ela é irrestrita?
+	Não, ela é restrita ao perímetro do campus Darcy Ribeiro da Universidade de Brasília (UnB).
+
+Posso usar a UnetB comercialmente?
+	Pode! No entanto, lembramos que seu uso é restrito à UnB- Darcy Ribeiro.
+
+Qual dispositivos a UnetB usa para capturar os pacotes?
+	Somente redes wireless LAN.
+
+Em quais plataformas a UnetB funciona?
+	A UnetB funciona bem para todos os navegadores: Google Chrome, Mozilla Firefox, Opera e outros. Também funciona em qualquer sistema operacional que tenha um dos navegadores adequados.
+
+
+
+
+

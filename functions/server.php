@@ -3,7 +3,7 @@
 $server_listening;
 
 $sh = socket_create(AF_INET,SOCK_STREAM,SOL_TCP);
-if(socket_bind($sh, '145.14.144.143', 4242)){
+if(socket_bind($sh, '192.168.100.205', 4242)){
 		echo "Socket liga corretamente. <br/>";
 		exit();}
 
@@ -12,7 +12,7 @@ if( ($ret = socket_listen($sh , 1) ) < 0){
 	exit();
 }
 
-if($recv = socket_recv($sh, string &$buf, $len, 0) < 0)
+if($recv = socket_recv($sh, $buf, $len, 0) < 0)
 {
 	echo "failed to recieve";
 	exit();

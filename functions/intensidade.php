@@ -14,7 +14,7 @@ function checkPacketLoss() {
       echo "Sinal $i: $slevel<br>";
       usleep(50000);
     }
-    
+    echo var_dump($dados);
 
 }
 
