@@ -54,20 +54,20 @@ function validaCadastro(evt){
 	}
 
 	/* Validação do campo name */
-	caixa_name = document.querySelector('.msg-name');
-	caixa_name.style.display = 'none';
-	if(name.value.length != 0){
-		if(name.value.length < 3){
-			formataErro(caixa_name," O nome deve conter no mínimo 3 letras.");
-			contErro += 1;
-		}else if(!filtro_name.test(name.value)){
-			formataErro(caixa_name," O nome deve conter apenas letras.");
-			caixa_name.style.display = 'block';
-			contErro += 1;
-		}else{
-			caixa_name.style.display = 'none';	
-		}
+	caixa_name = document.querySelector('.msg-name');	
+	if(name.value == ""){
+		formataErro(caixa_name," Favor preencher o nome.");
+	}else if(name.value.length < 3){
+		formataErro(caixa_name," O nome deve conter no mínimo 3 letras.");
+		contErro += 1;
+	}else if(!filtro_name.test(name.value)){
+		formataErro(caixa_name," O nome deve conter apenas letras.");
+		caixa_name.style.display = 'block';
+		contErro += 1;
+	}else{
+		caixa_name.style.display = 'none';
 	}
+
 
 	caixa_cadastro = document.getElementById('msg-cadastro');
 	caixa_cadastro.style.display = 'none';
@@ -102,7 +102,7 @@ function validaCadastro(evt){
 			});
 		});
 	}
-}	
+}
 /* Função para formatar as mansagens de erro*/
 function formataErro(elemento,texto){
 	elemento.innerHTML = "<span class='glyphicon glyphicon-exclamation-sign' aria-hidden='true'></span>" + texto;
