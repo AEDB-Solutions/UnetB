@@ -10,7 +10,14 @@ html, body {
 	margin-bottom: 0px;
 	background-color: #333;
 }
-
+#btnLogin{
+	border-radius: 0px;
+	border: none;
+	padding: 13px 16px;
+}
+#sem-cadastro{
+	text-align: left;
+}
 /******************CUSTOMIZAÇÃO DO MAPA******************/
 .map{
 	height: 100%;

@@ -58,9 +58,9 @@ function initMap() {
 
 	heatmap = new google.maps.visualization.HeatmapLayer({
 		data: getPoints(),
-		radius: 100,
+		radius: 200,
 		gradient: gradient,
-		opacity: 0.4,
+		opacity: 0.2,
 		maxIntensity: 10,
 		map: map
 	});
@@ -77,12 +77,12 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 
 function getPoints() {
 	return [
-		{location: new google.maps.LatLng(-15.76070, -47.87050), weight: 10},
-		{location: new google.maps.LatLng(-15.76150, -47.87030), weight: 19},
-		{location: new google.maps.LatLng(-15.76230, -47.87010), weight: 19},
-		{location: new google.maps.LatLng(-15.76310, -47.86980), weight: 19},
-		{location: new google.maps.LatLng(-15.76390, -47.86930), weight: 19},
-		{location: new google.maps.LatLng(-15.76470, -47.86830), weight: 19},
-		{location: new google.maps.LatLng(-15.76550, -47.86690), weight: 10},
+			{location: new google.maps.LatLng(-15.76070, -47.87050), weight: 30},
+			{location: new google.maps.LatLng(-15.76150, -47.87030), weight: 10},
+			{location: new google.maps.LatLng(-15.76230, -47.87010), weight: 10},
+			{location: new google.maps.LatLng(-15.76310, -47.86980), weight: 10},
+			{location: new google.maps.LatLng(-15.76390, -47.86930), weight: 10},
+			{location: new google.maps.LatLng(-15.76470, -47.86830), weight: 10},
+			{location: new google.maps.LatLng(-15.76550, -47.86690), weight: 10},
 		];
 }

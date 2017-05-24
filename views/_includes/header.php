@@ -8,29 +8,73 @@
 				<span class="icon-bar"></span>
 			</button>
 
-			<a class="navbar-brand" href="<?php echo $_SESSION['HOME_URI'].'home-logout-view.php';?>">UnetB
+			<a class="navbar-brand" href="home-logout-view.php">UnetB
 				<!-- <img alt="Brand" src="_images/logounetb.png" style="margin-top: -25px"> -->
 			</a>
 		</div>
 		
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">		
+			
 			<ul class="nav navbar-nav navbar-right">
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Usuário</a>
-					<ul class="dropdown-menu">
-						<li><a href="<?php echo $_SESSION['HOME_URI'].'user-register-view.php';?>">Cadastrar</a></li>
-						<li><a href="<?php echo $_SESSION['HOME_URI'].'login-view.php';?>">Entrar</a></li>
-					</ul>
+
+				
+				
+				<li><a href="#">Teste de Velocidade</a></li>
+				<li><a href="information-view.php">Sobre</a></li>
+				<li><a href="user-register-view.php">Cadastrar</a></li>
+				
+				<li>
+					<button id="btnLogin" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#logar">
+						Entrar
+					</button>
 				</li>
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu</a>
-					<ul class="dropdown-menu">
-						<li><a href="<?php echo $_SESSION['HOME_URI'].'how-to-use-view.php';?>">Como Usar</a></li>
-						<li><a href="#">Teste de Velocidade</a></li>
-						<li><a href="<?php echo $_SESSION['HOME_URI'].'about-view.php';?>">Sobre</a></li>	
-					</ul>
-				</li>
+
 			</ul>
 		</div>
 	</div>
 </nav>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="logar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog modal-sm" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">Fazer Login</h4>
+			</div>
+
+			<div class="modal-body">
+
+				<form action='' method="post" id='form-login' enctype='multipart/form-data'>
+
+					<div class="form-group">
+						<label for="email">E-mail</label>
+						<input type="email" class="form-control" id="email" name="email" placeholder="Informe o E-mail">
+						<span class='msg-erro msg-email'></span>
+					</div>
+
+					<div class="form-group">
+						<label for="password">Senha</label>
+						<input type="password" class="form-control" id="password" name="password" placeholder="Informe a Senha">
+						<span class='msg-erro msg-password'></span>
+					</div>
+
+					
+					<span class='' id='msg-login'></span>
+
+				</form>
+
+			</div> <!-- Conteudo do modal -->
+
+			<div class="modal-footer">
+
+				<button type="button" class="btn btn-default" data-dismiss="modal">Sair</button>
+				<button id="botao_login" type="button" class="btn btn-primary">Entrar</button>
+				
+			</div>
+		</div>
+ 	</div>
+</div>
+<script src="_js/valida_login.js"></script> <!-- Carrega JS para validar login-->

@@ -14,9 +14,9 @@
 		<?php include "_includes/header.php";?>
 		
 		<div class="container">
-			<h1 style="margin-top: 50px;">Sobre em construção</h1>
+			<h1 style="margin-top: 50px;">Informações em construção</h1>
 		</div>
-		
+
 		<script src="_js/jquery.min.js"></script> <!-- Carrega JS jquery-->
 		<script src="_js/bootstrap.js"></script> <!-- Carrega JS do bootstrap-->
 	</body>
