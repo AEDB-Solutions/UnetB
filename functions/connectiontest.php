@@ -3,7 +3,7 @@
 	require_once "intensidade.php";
 	require_once "packetloss.php";
 
-	$packetloss = checkPacketLoss('127.0.0.1', 40);
+	$packetloss = checkPacketLoss('www.unb.br', 40);
 	$connetion_intensity = checkIntensity();
 	
 	echo "<b> Perda de Pacote : </b>", $packetloss, "%<br>";
