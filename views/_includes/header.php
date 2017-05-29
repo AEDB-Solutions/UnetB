@@ -18,7 +18,7 @@
 
 				
 				
-				<li><a href="#">Teste de Velocidade</a></li>
+				<li><a href="connection-test-view.php">Teste de Velocidade</a></li>
 				<li><a href="information-view.php">Sobre</a></li>
 				<li><a href="user-register-view.php">Cadastrar</a></li>
 				

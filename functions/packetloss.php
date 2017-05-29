@@ -26,6 +26,6 @@ function checkPacketLoss($address, $count) {
 }
 
 // Usaremos o servidor local para testes com contagem 40;
-echo checkPacketLoss('127.0.0.1', 40);
+// echo checkPacketLoss('127.0.0.1', 40);
 
 ?>
