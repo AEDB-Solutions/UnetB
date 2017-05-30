@@ -13,38 +13,37 @@
 			$status = ($stoptime - $starttime) * 1000;
 			$status = floor($status); // função para arredondar o valor numérico
 		}
-		return $status . ' ms';
+		return $status;
 	}
 	
-	$max_reps = 100;
+	$loops = 20;
 	$pings = array (); //criando um array para armazenar os resultados de pingDomain
 
-	for ( $i = 0; $i < $max_reps; $i++) //laço for para preencher o array com 100 pings	
+	for ( $i = 0; $i < $loops; $i++) //laço for para preencher o array com 100 pings	
 	   $pings[$i] = pingDomain("www.unb.br"); // pingando um domínio qualquer
 	
 
 	$media  = array_sum ($pings) / sizeof($pings); //aqui somamos todos os pings e dividimos pela quantidade de pings (tamanho do array)
 	
-	echo 'Latência: '.$media . ' ms <br>';
+	
 
 	//CALCULANDO JITTER(desvio padrao da latencia)
 
 	$jitter = array();
 
-	for($i = 0; $i < $max_reps; $i++)
+	for($i = 0; $i < $loops; $i++)
 	{
-		$valor_ping = number_format(floatval($pings[$i])); //Tentando transformar os numeros de string para floats
 
-		$num = pow(($valor_ping - $media) , 2); //calculando um dos termos da variancia
-
-		$jitter[$i] = floor($num); //atribuindo ao array na posicao i o valor da variancia
+		$jitter[$i] =  pow((($pings[$i]) - $media) , 2); //atribuindo ao array na posicao i o valor da variancia
 	}
 
-	$jitter_total = sqrt(array_sum($jitter) / $max_reps);//tirando raiz da soma de variancias dividida pelo numero de termos somados -- vulgo calculando desvio padrao = jitter
+	$jitter_total = sqrt((array_sum($jitter) / sizeof($jitter)));//tirando raiz da soma de variancias dividida pelo numero de termos somados -- vulgo calculando desvio padrao = jitter
 
-	echo 'Jitter: ';
-	echo number_format($jitter_total, 3);
 
+	$result = array ("latency" => $media, "jitter" => $jitter_total);
+
+       return $result;
 ?>
+ 
 
 

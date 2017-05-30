@@ -8,7 +8,7 @@ function latency_param($x)
 	else 
 	$x = 10 - (5.3 * $x/ 110); 
 
-return round($x);
+return $x;
 } 
 
 
