@@ -33,7 +33,7 @@ $(document).ready( function(){
 				},
 
 				beforeSend: function(){
-					$('#botao_qualidade').button('loading')					
+					$('#botao_qualidade').button('loading')			
 				},
 
 				complete: function(){
@@ -44,7 +44,9 @@ $(document).ready( function(){
 	};
 
 	function error(err) {
-	  console.warn('ERROR(' + err.code + '): ' + err.message);
+		$('#botao_qualidade').button('loading')
+		console.warn('ERROR(' + err.code + '): ' + err.message);
+		formataErro(document.getElementById('msg-qualidade')," Não é possível fazer o teste. Por favor, habilite a localização para continuar.");
 	};
 
 	navigator.geolocation.getCurrentPosition(success, error, options);

@@ -138,7 +138,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 
 function getPoints() {
 	return [
-			{location: new google.maps.LatLng(-15.76070, -47.87050), weight: 1},
+			{location: new google.maps.LatLng(-15.76070, -47.87050), weight: 5},
 			{location: new google.maps.LatLng(-15.76150, -47.87030), weight: 1},
 			{location: new google.maps.LatLng(-15.76230, -47.87010), weight: 1},
 			{location: new google.maps.LatLng(-15.76310, -47.86980), weight: 1},
@@ -147,5 +147,3 @@ function getPoints() {
 			{location: new google.maps.LatLng(-15.76550, -47.86690), weight: 1},
 		];
 }
-
-

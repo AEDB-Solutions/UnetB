@@ -32,8 +32,8 @@ CREATE TABLE IF NOT EXISTS `unetb`.`qualidade` (
   `long`           FLOAT NOT NULL,
   `download_speed` FLOAT NOT NULL,
   `upload_speed`   FLOAT NOT NULL,
-  `intensidade`    FLOAT NOT NULL,
-  `latencia`       FLOAT NOT NULL,
+  `intensity`    FLOAT NOT NULL,
+  `latency`       FLOAT NOT NULL,
   `packetloss`     FLOAT NOT NULL,
   `jitter`         FLOAT NOT NULL,
    PRIMARY KEY (`id`)

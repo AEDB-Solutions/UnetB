@@ -1,6 +1,6 @@
 <?php
 
-	// require_once "../classes/class-UnetbDB.php";   //arquivo para a classe que conecta ao banco de dados
+	require_once "../classes/class-UnetbDB.php";   //arquivo para a classe que conecta ao banco de dados
 
 	// require_once "../functions/xxx.php"; //arquivo calcula download
 	// require_once "../functions/xxx.php"; //arquivo calcula upload
@@ -10,7 +10,7 @@
 	
 
 
-	// $mySQL = new MySQL;
+	$mySQL = new MySQL;
 	// $mySQL->executeQuery("INSERT INTO qualidade (lat, long, password, download_speed, upload_speed, intensidade, latencia, packetloss, jitter) 
 	// 					  VALUES ('10.1','10.1','10.1','10.1','10.1','10.1','10.1','10.1')");
 	

@@ -28,6 +28,7 @@
 
 							
 							<button  value="" type="button" class="btn btn-primary btn-lg btn-block" id="botao_qualidade">Testar</button>
+							<br/>
 							<div class='' id='msg-qualidade'></div>
 
 						</div>
