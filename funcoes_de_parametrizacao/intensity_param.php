@@ -4,8 +4,8 @@
 		{
 			return 0;
 			//exit;
-		};
-		else if ($intensidade>0){
+		}
+		elseif ($intensidade>0){
 			return 10;
 		}
 		else{
