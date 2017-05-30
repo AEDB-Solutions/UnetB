@@ -36,3 +36,4 @@ while($sql = mysqli_fetch_array($query))
 //	echo "A qualidade de sua rede(0~10) eh: $media_parametros";
 
 ?>
+  
