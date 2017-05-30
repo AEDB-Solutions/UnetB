@@ -138,13 +138,13 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 
 function getPoints() {
 	return [
-			{location: new google.maps.LatLng(-15.76070, -47.87050), weight: 0},
-			{location: new google.maps.LatLng(-15.76150, -47.87030), weight: 0},
-			{location: new google.maps.LatLng(-15.76230, -47.87010), weight: 0},
-			{location: new google.maps.LatLng(-15.76310, -47.86980), weight: 0},
-			{location: new google.maps.LatLng(-15.76390, -47.86930), weight: 0},
-			{location: new google.maps.LatLng(-15.76470, -47.86830), weight: 0},
-			{location: new google.maps.LatLng(-15.76550, -47.86690), weight: 0},
+			{location: new google.maps.LatLng(-15.76070, -47.87050), weight: 1},
+			{location: new google.maps.LatLng(-15.76150, -47.87030), weight: 1},
+			{location: new google.maps.LatLng(-15.76230, -47.87010), weight: 1},
+			{location: new google.maps.LatLng(-15.76310, -47.86980), weight: 1},
+			{location: new google.maps.LatLng(-15.76390, -47.86930), weight: 1},
+			{location: new google.maps.LatLng(-15.76470, -47.86830), weight: 1},
+			{location: new google.maps.LatLng(-15.76550, -47.86690), weight: 1},
 		];
 }
 
