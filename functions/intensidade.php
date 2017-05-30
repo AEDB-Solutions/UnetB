@@ -1,7 +1,6 @@
 <?php
-function checkPacketLoss() {
+function checkIntensity() {
 
-	// Comando ping -c que retorna informações sobre pacotes de dados, como pacotes transmitidos, recebidos e perdidos;
 
     $command = 'iwconfig | grep "Signal level"';
     $dados=array();
@@ -11,15 +10,20 @@ function checkPacketLoss() {
       $output = shell_exec($command);
       $slevel=getSignalLevel($output);
       $dados[$i]=$slevel;
-      echo "Sinal $i: $slevel<br>";
+      // echo "Sinal $i: $slevel<br>";
       usleep(50000);
     }
-    
+    $intensity = 0;
+    // echo var_dump($dados);
+    for($j=1; $j<=100; $j++)
+    {
+      $intensity = $intensity + $dados[$j];
+    }
+    return $intensity/100;
 
 }
 
-// Usaremos o servidor local para testes com contagem 40;
-echo checkPacketLoss();
+// echo checkIntensity();
 
 function getSignalLevel($unix_result) {
   return substr($unix_result, strpos($unix_result, '-'), strlen($unix_result) -60);

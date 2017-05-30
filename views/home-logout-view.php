@@ -16,7 +16,7 @@
 		<div id="map" class="map"></div>
 		
 		 <!-- Carrega JS do Google Maps-->
-		<script async defer	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXumgSxD3IY_5VhkxwyEQcbBVOS55H-xQ&libraries=visualization&callback=initMap"></script>
+		<script async defer	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXumgSxD3IY_5VhkxwyEQcbBVOS55H-xQ&libraries=visualization,geometry&callback=initMap"></script>
 		<script src="_js/mapa.js"></script> <!-- Carrega JS do Google Maps-->
 		
 		<script src="_js/jquery.min.js"></script> <!-- Carrega JS jquery-->

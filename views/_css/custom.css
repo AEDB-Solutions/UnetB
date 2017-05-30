@@ -1,16 +1,27 @@
 html, body {
 	height: 100%;
 	width: 100%;
+}
+body{
 	background-color: #f5f5f5;
-	
+	background: url("../_images/background2.png");
+	background-attachment: fixed;
 }
 /******************CUSTOMIZAÇÃO DO HEADER******************/
 .navbar{
 	border: none;
 	margin-bottom: 0px;
-	background-color: #333;
-}
+	background-color: rgba(34, 43, 80, 0.9);
 
+}
+#btnLogin{
+	border-radius: 0px;
+	border: none;
+	padding: 13px 16px;
+}
+#sem-cadastro{
+	text-align: left;
+}
 /******************CUSTOMIZAÇÃO DO MAPA******************/
 .map{
 	height: 100%;
@@ -41,6 +52,9 @@ html, body {
 	background-color: #f5f5f5;
 	box-shadow: none;
 }
+.modal-content{
+	background-color: #f5f5f5;
+}
 /*TÍTULO DO FURMULÁRIO*/
 .title-form{
 	margin-top: 0px;
@@ -57,4 +71,13 @@ html, body {
 .filho {
 	display: table-cell;
 	vertical-align: middle;
+}
+/******************FORMATAÇÃO DA PÁGINA DE TESTE DE QUALIDADE DE REDE******************/
+#msg-qualidade{
+		color: #a94442;
+	background-color: #f2dede;
+	padding: 2px;
+	border: 1px solid #ebccd1;
+	border-radius: 5px;
+	display: none;
 }
