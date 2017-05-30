@@ -15,7 +15,7 @@ $mySQL = mysqli_connect('127.0.0.1','root','','unetb');
 
 //selecionando dados da tabela
 $sql = "SELECT * FROM networking_data";
-$query = mysqli_query($mySQL , $sql);
+$query = mysqli_query($mySQL , $sql);  
  
 while($sql = mysqli_fetch_array($query))
 	{
