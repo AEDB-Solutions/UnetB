@@ -1,4 +1,5 @@
 <?php
+checkPacketLoss('google.com.br',10);
 function checkPacketLoss($address, $count) {
 	
 	// Comando ping -c que retorna informações sobre pacotes de dados, como pacotes transmitidos, recebidos e perdidos;
@@ -21,6 +22,7 @@ function checkPacketLoss($address, $count) {
     	// 
         throw new \Exception('Packet loss not found.');
     }
+    echo $packetLoss;
 
     return $packetLoss;
 }

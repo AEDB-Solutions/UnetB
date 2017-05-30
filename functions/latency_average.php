@@ -42,8 +42,12 @@
 
 	$result = array ("latency" => $media, "jitter" => $jitter_total);
 
+<<<<<<< HEAD
        return $result;
 ?>
  
 
 
+=======
+?>
+>>>>>>> 115c5f51de3b85986fb874eb98e2ad025343169b
