@@ -28,6 +28,7 @@
 
 							
 							<button  value="" type="button" class="btn btn-primary btn-lg btn-block" id="botao_qualidade">Testar</button>
+							<div class='' id='msg-qualidade'></div>
 
 						</div>
 					</div>
@@ -37,6 +38,6 @@
 		
 		<script src="_js/jquery.min.js"></script> <!-- Carrega JS jquery-->
 		<script src="_js/bootstrap.js"></script> <!-- Carrega JS do bootstrap-->
-		<script src="_js/qualidade.js"></script> 
+		<script src="_js/qualidade.js"></script>
 	</body>
 </html>

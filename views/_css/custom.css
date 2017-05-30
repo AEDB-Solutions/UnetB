@@ -72,3 +72,7 @@ body{
 	display: table-cell;
 	vertical-align: middle;
 }
+/******************FORMATAÇÃO DA PÁGINA DE TESTE DE QUALIDADE DE REDE******************/
+#msg-qualidade{
+	border-color: red;
+}

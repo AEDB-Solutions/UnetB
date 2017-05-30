@@ -103,21 +103,12 @@ function validaCadastro(evt){
 				},
 
 				beforeSend: function(){
-					$('#botao_cadastro').button('loading')
-					
+					$('#botao_cadastro').button('loading')					
 				},
-
+				
 				complete: function(){
 					$('#botao_cadastro').button('reset')
 				}
-
-				 
-				
-
-
-
-
-
 			});
 		});
 	}
