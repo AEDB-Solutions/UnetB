@@ -7,7 +7,7 @@
 	// require_once "../functions/xxx.php"; //arquivo calcula intencidade
 	// require_once "../functions/latency_average.php"; //arquivo calcula latencia e jitter
 	// require_once "../functions/xxx.php"; //arquivo calcula perda de pacotes
-	
+
 
 	$lat            = $_POST['lat'];
 	$long           = $_POST['long'];
@@ -18,13 +18,16 @@
 	$packetloss     = 50.6;
 	$jitter         = 60.6;
 
-	$mySQL = mysqli_connect('127.0.0.1','root','','unetb');
-	return $mySQL->executeQuery(return $mySQL->executeQuery("INSERT INTO user (name, email, password) VALUES ('{$this->name}','{$this->email}','{$this->password}')");
+	$query = "INSERT INTO `networking_data` (`lat`, `long`, `download_speed`, `upload_speed`, `intensity`, `latency`, `packetloss`, `jitter`) VALUES ($lat, $long, $download_speed, $upload_speed, $intensity, $latency, $packetloss, $jitter);";
 	
-	mysqli_query($mySQL,"INSERT INTO networking_data (lat, long, download_speed, upload_speed, intensity, latency, packetloss, jitter) 
-						                VALUES ('10','10.1','10.1','10.1','10.1','10.1','10.1','10.1')");
+	$mySQL = new MySQL;
+	$executaQuery = $mySQL->executeQuery($query);
+	$mySQL->disconnect();
+	
+
+	//mysqli_query($mySQL,"INSERT INTO `networking_data` (`lat`, `long`, `download_speed`, `upload_speed`, `intensity`, `latency`, `packetloss`, `jitter`) VALUES ($lat, $long, $download_speed, $upload_speed, $intensity, $latency, $packetloss, $jitter);");
 	
 	sleep(1);
 
-	echo "Chegou no final"
+	echo "Chegou no final";
 ?>
