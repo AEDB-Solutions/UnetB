@@ -1,13 +1,9 @@
 <?php
 
-//main
-
-param_download();
-
 
 //functions
 
-function param_download($download_speed)
+function download_param($download_speed)
 {
 	$escala;
 	$pot;
