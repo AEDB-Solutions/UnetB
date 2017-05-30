@@ -47,10 +47,12 @@
 									<span class='msg-erro msg-name'></span>
 								</div>
 
-								<input type="hidden" name="acao" value="incluir">
-								<button  value="" type="button" class="btn btn-primary btn-lg btn-block" id='botao_cadastro'>Gravar</button><br/>
 								
-								<span class='' id='msg-cadastro'></span>
+								<br/>
+								<div><button  value="" type="button" class="btn btn-primary btn-lg" id='botao_cadastro'>Gravar</button></div>
+								<br/>
+
+								<div class='' id='msg-cadastro'></div>
 
 							</form><!-- /formulário-->
 							

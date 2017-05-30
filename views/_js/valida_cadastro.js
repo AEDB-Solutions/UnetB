@@ -54,9 +54,10 @@ function validaCadastro(evt){
 	}
 
 	/* Validação do campo name */
-	caixa_name = document.querySelector('.msg-name');	
+	caixa_name = document.querySelector('.msg-name');
 	if(name.value == ""){
 		formataErro(caixa_name," Favor preencher o nome.");
+		contErro += 1;
 	}else if(name.value.length < 3){
 		formataErro(caixa_name," O nome deve conter no mínimo 3 letras.");
 		contErro += 1;
@@ -81,6 +82,7 @@ function validaCadastro(evt){
 				url: '../controllers/register-controller.php',
 				method: 'post',
 				data: $('#form-cadastro').serialize(),
+				
 				success: function(data){
 
 					caixa_cadastro = document.getElementById('msg-cadastro');
@@ -98,7 +100,24 @@ function validaCadastro(evt){
 						caixa_cadastro.style.fontSize = "20px";
 						formataErro(caixa_cadastro,data);
 					}
+				},
+
+				beforeSend: function(){
+					$('#botao_cadastro').button('loading')
+					
+				},
+
+				complete: function(){
+					$('#botao_cadastro').button('reset')
 				}
+
+				 
+				
+
+
+
+
+
 			});
 		});
 	}

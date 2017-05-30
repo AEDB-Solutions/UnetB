@@ -60,6 +60,14 @@ function validaLogin(evt){
 						caixa_login.style.fontSize = "20px";
 						formataErro(caixa_login,' Usuário ou senha inválido');
 					}
+				},
+				beforeSend: function(){
+					$('#botao_login').button('loading')
+					
+				},
+
+				complete: function(){
+					$('#botao_login').button('reset')
 				}
 			});
 		});

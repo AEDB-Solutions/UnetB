@@ -35,6 +35,7 @@
 	}
 
 //*****************************************************************************************************************************	
+	sleep(3);//retirar depois. Apenas para teste em sala
 
 	if(check_on_database($email, "email"))
 		echo " Email já existe.";
