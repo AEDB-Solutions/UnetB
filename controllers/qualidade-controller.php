@@ -12,5 +12,5 @@
 
 	$mySQL = new MySQL;
 	$mySQL->executeQuery("INSERT INTO qualidade (lat, long, password, download_speed, upload_speed, intensidade, latencia, packetloss, jitter) 
-						  VALUES ('{}','{}','{}','{}','{}','{}','{}','{}')");
+						  VALUES ('10.1','10.1','10.1','10.1','10.1','10.1','10.1','10.1')");
 ?>

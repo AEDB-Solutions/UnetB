@@ -46,5 +46,3 @@
 	echo number_format($jitter_total, 3);
 
 ?>
-
-
