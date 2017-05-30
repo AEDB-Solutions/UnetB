@@ -52,6 +52,9 @@ body{
 	background-color: #f5f5f5;
 	box-shadow: none;
 }
+.modal-content{
+	background-color: #f5f5f5;
+}
 /*TÍTULO DO FURMULÁRIO*/
 .title-form{
 	margin-top: 0px;
