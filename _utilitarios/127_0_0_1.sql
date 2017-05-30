@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `unetb`.`user` (
    UNIQUE (email)
 ) ENGINE=MYISAM AUTO_INCREMENT=0 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
-CREATE TABLE IF NOT EXISTS `unetb`.`qualidade` (
+CREATE TABLE IF NOT EXISTS `unetb`.`networking_data` (
   `id`             INT(11) NOT NULL AUTO_INCREMENT,
   `lat`            FLOAT NOT NULL,
   `long`           FLOAT NOT NULL,
