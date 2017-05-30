@@ -28,13 +28,13 @@ CREATE TABLE IF NOT EXISTS `unetb`.`user` (
 
 CREATE TABLE IF NOT EXISTS `unetb`.`networking_data` (
   `id`             INT(11) NOT NULL AUTO_INCREMENT,
-  `lat`            FLOAT NOT NULL,
-  `long`           FLOAT NOT NULL,
-  `download_speed` FLOAT NOT NULL,
-  `upload_speed`   FLOAT NOT NULL,
-  `intensity`    FLOAT NOT NULL,
-  `latency`       FLOAT NOT NULL,
-  `packetloss`     FLOAT NOT NULL,
-  `jitter`         FLOAT NOT NULL,
+  `lat`            FLOAT,
+  `long`           FLOAT,
+  `download_speed` FLOAT,
+  `upload_speed`   FLOAT,
+  `intensity`      FLOAT,
+  `latency`        FLOAT,
+  `packetloss`     FLOAT,
+  `jitter`         FLOAT,
    PRIMARY KEY (`id`)
 ) ENGINE=MYISAM AUTO_INCREMENT=0 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
