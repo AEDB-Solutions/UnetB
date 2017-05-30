@@ -19,7 +19,7 @@ $pings = array (); //criando um array para armazenar os resultados de pingDomain
 
 for ( $i = 0; $i < $max_reps; $i++) //laço for para preencher o array com 100 pings
 {
-   $pings[$i] = pingDomain("www.google.com"); // pingando um domínio qualquer
+   $pings[$i] = pingDomain("www.unb.br"); // pingando um domínio qualquer
 }
 
 $media  = array_sum ($pings) / sizeof($pings); //aqui somamos todos os pings e dividimos pela quantidade de pings (tamanho do array)
