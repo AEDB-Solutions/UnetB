@@ -5,8 +5,12 @@
 			return 0;
 			//exit;
 		};
-		if ($intensidade>0){
+		else if ($intensidade>0){
 			return 10;
 		}
+		else{
+			return $intensidade/-7;
+		}
+
 	}
 ?>
