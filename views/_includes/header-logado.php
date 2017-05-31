@@ -19,7 +19,7 @@
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Usuário</a>
 					<ul class="dropdown-menu">
-						<li><a href="?">Perfilr</a></li>
+						<li><a href="?">Perfil</a></li>
 						<li><a href="../functions/logout.php">Sair</a></li>
 					</ul>
 				</li>
