@@ -18,7 +18,7 @@ $info  = curl_getinfo($ch, CURLINFO_SPEED_DOWNLOAD);
  
 curl_close ($ch);
 
-$destination = '/archives_connectionspeed';
+$destination = "/opt/lampp/htdocs/UnetB/functions/archives_connectionspeed";
 $file = fopen($destination, "w+");
 fputs($file, $data);
 fclose($file);	
