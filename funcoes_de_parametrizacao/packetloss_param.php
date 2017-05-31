@@ -1,5 +1,5 @@
 <?php
 	function param_packet($porcentagem){
-		return $porcentagem/100;
+		return $porcentagem/10;
 	}
 ?>
