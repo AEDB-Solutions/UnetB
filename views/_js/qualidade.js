@@ -51,7 +51,7 @@ $(document).ready( function(){
 	function error(err) {
 		$('#botao_qualidade').button('loading')
 		console.warn('ERROR(' + err.code + '): ' + err.message);
-		formataErro(document.getElementById('msg-qualidade')," Não é possível fazer o teste. Por favor, habilite a localização para continuar.");
+		formataErro(document.getElementById('msg-qualidade')," Ta escondendo a localização por que? Está escondendo da polícia?.");
 	};
 
 	function formataErro(elemento,texto){

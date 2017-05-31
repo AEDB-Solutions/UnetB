@@ -1,4 +1,7 @@
-var map, pointarray, heatmap, infoWindow, dados = [];
+var map, pointarray, heatmap, infoWindow;
+var dados;
+var teste = [];
+var seila = [];
 var gradient = [
 	'rgba(255, 0  , 0  , 0.00)', //Resto do mapa
 
@@ -113,7 +116,7 @@ function initMap() {
 	// }
 
 
-	teste();
+	testando();
 }
 
 //Exibe msg de erro caso não consiga geolocalizar o usuário
@@ -132,10 +135,12 @@ function getPoints() {
 		{location: new google.maps.LatLng(-15.76230, -47.87010), weight: 1},
 		{location: new google.maps.LatLng(-15.76310, -47.86980), weight: 1},
 	];
+
+	console.log(dados);
 	return dados;
 }
 
-function teste(){
+function testando(){
 	$(document).ready( function(){
 		$.ajax({
 			url: '../funcoes_de_parametrizacao/calculadora.php',
@@ -143,22 +148,26 @@ function teste(){
 			dataType:"json",
 
 			success: function(data){
+				console.log(data);
+				
 				
 				for (var key in data) {
-
-					//console.log(data[key]['peso']);
+					
+					
 
 					teste = [
 						{location: new google.maps.LatLng(data[key]['lat'], data[key]['long']), weight: data[key]['peso']},
 					];
+					seila[key] = teste
 
-					dados.push(teste);
-					console.log(dados);
+					
+					//console.log(data);
 				}
-
+				console.log(seila);
+				
 				heatmap = new google.maps.visualization.HeatmapLayer({
 
-					data: dados,
+					data: teste,
 					//radius: 50,
 					gradient: gradient,
 					//opacity: 0.4,		
