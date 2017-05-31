@@ -20,8 +20,7 @@
 				
 				<li><a href="networking-data-view.php">Teste Sua Conexão</a></li>
 				<li><a href="information-view.php">Sobre</a></li>
-				<li><a href="register-view.php">Cadastrar</a></li>
-				
+				<li><a href="register-view.php">Cadastrar</a></li>				
 				<li>
 					<button id="btnLogin" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#logar">
 						Entrar
