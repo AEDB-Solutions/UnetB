@@ -1,17 +1,18 @@
 <?php
 
-	function intensity_param($intensidade){
-		if ($intensidade<-70)
+	function intensity_param($inten){
+		if ($inten<-70)
 		{
 			return 0;
 
 			exit;
-		}
-		elseif ($intensidade>0){
+		}		
+		elseif ($inten>0){
 			return 10;
 		}
 		else{
-			return $intensidade/-7;
+			$j=$inten/-7;
+			return 10-$j;
 		}
 	}
 ?>
