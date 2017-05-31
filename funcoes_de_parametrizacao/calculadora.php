@@ -26,13 +26,18 @@
 		$n_latencia    = latency_param($latencia);
 		$n_download    = download_param($download);
 		$n_upload      = upload_param($upload);
-		
 
 		$media_parametros = ((3.5 * $n_intensidade) + (2.5 * $n_download) + (2.5 * $n_upload)+ (1.5 * $n_latencia)) / 10;
 
+		$array_localizacao = array('lat' => $lat, 'long' => $long, 'peso' => $media_parametros);
 
-		var_dump($array_localizacao = array("lat $lat", "long $long", "media_parametros")); echo "<br>";
-		var_dump($matriz = array("id $id", $array_localizacao)); echo "<br>"; echo "<br>";
+		var_dump($array_localizacao);
+		echo "<br>";
+		echo "<br>";
+		echo "<br>";
+		//$array_localizacao = array("lat $lat", "long $long", "peso" );
+
+		//var_dump($matriz = array("id $id", $array_localizacao)); echo "<br>"; echo "<br>";
 
 	}
 
