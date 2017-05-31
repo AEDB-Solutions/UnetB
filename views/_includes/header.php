@@ -18,7 +18,7 @@
 
 				
 				
-				<li><a href="connection-test-view.php">Teste de Velocidade</a></li>
+				<li><a href="networking-data-view.php">Teste Sua Conexão</a></li>
 				<li><a href="information-view.php">Sobre</a></li>
 				<li><a href="register-view.php">Cadastrar</a></li>
 				
