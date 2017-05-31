@@ -9,7 +9,8 @@
 	$mySQL = new MySQL;
 	$executaQuery = $mySQL->executeQuery("SELECT * FROM networking_data");
 	$mySQL->disconnect();
-
+	
+	$total = array();
 
 	while($linha = mysqli_fetch_array($executaQuery)){
 		
@@ -31,15 +32,9 @@
 
 		$array_localizacao = array('lat' => $lat, 'long' => $long, 'peso' => $media_parametros);
 
-		var_dump($array_localizacao);
-		echo "<br>";
-		echo "<br>";
-		echo "<br>";
-		//$array_localizacao = array("lat $lat", "long $long", "peso" );
-
-		//var_dump($matriz = array("id $id", $array_localizacao)); echo "<br>"; echo "<br>";
-
+		array_push($total,$array_localizacao);
 	}
 
+	echo json_encode($total);
 ?>
   
