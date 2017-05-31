@@ -22,8 +22,6 @@ function checkPacketLoss($address, $count) {
     	// 
         throw new \Exception('Packet loss not found.');
     }
-    e $match[0];
-
     return $packetLoss;
 }
 
