@@ -1,6 +1,6 @@
 <?php
 
-$file = file_get_contents('archives_connectionspeed/'.'20Mb.txt');
+$file = file_get_contents('../functions/archives_connectionspeed/'.'20Mb.txt');
 $size = strlen($file);
 $source = 'http://example.com/settings/upload-img';
 //"http://www.website.com/index.php"
@@ -15,9 +15,9 @@ curl_setopt($ch, CURLOPT_VERBOSE, 1); //enable verbose for easier tracing
 $data = curl_exec ($ch);
 $error = curl_error($ch);
 
-$info = curl_getinfo($ch, CURLINFO_SPEED_UPLOAD); 
+$info_up = curl_getinfo($ch, CURLINFO_SPEED_UPLOAD); 
 curl_close($ch);
 
-echo $info/10000;
-return $info;
+$info_upload = $info_up/10000;
+$info_up3 = round($info_upload, 2);
 ?>

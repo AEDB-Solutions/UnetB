@@ -2,23 +2,22 @@
 
 	require_once "../classes/class-UnetbDB.php";   //arquivo para a classe que conecta ao banco de dados
 
-	// require_once "../functions/xxx.php"; //arquivo calcula download
-	// require_once "../functions/xxx.php"; //arquivo calcula upload
-	// require_once "../functions/xxx.php"; //arquivo calcula intencidade
-	// require_once "../functions/latency_average.php"; //arquivo calcula latencia e jitter
-	// require_once "../functions/xxx.php"; //arquivo calcula perda de pacotes
-
+	require_once "../functions/speed_download.php"; //arquivo calcula download
+	require_once "../functions/speed_upload.php";
+	require_once "../functions/intensidade.php"; //arquivo calcula intensidade
+	require_once "../functions/latency_average.php"; //arquivo calcula latencia e jitter
+	require_once "../functions/packetloss.php"; //arquivo calcula perda de pacotes
 
 	$lat            = $_POST['lat'];
 	$long           = $_POST['long'];
-	$download_speed = 10.6;
-	$upload_speed   = 20.6;
-	$intensity      = 30.6;
-	$latency        = 40.6;
-	$packetloss     = 50.6;
-	$jitter         = 60.6;
+	$download_speed = round($info, 2);
+	$upload_speed   = $info_up3;
+	$intensity      = checkIntensity();
+	$latency        = $result["latency"];
+	$packetloss     = checkPacketLoss('164.41.4.26', 4);
+	$jitter_tt   = $result["jitter"];
 
-	$query = "INSERT INTO `networking_data` (`lat`, `long`, `download_speed`, `upload_speed`, `intensity`, `latency`, `packetloss`, `jitter`) VALUES ($lat, $long, $download_speed, $upload_speed, $intensity, $latency, $packetloss, $jitter);";
+	$query = "INSERT INTO `networking_data` (`lat`, `long`, `download_speed`, `upload_speed`, `intensity`, `latency`, `packetloss`, `jitter`) VALUES ($lat, $long, $download_speed, $upload_speed, $intensity, $latency, $packetloss, $jitter_tt);";
 	
 	$mySQL = new MySQL;
 	$executaQuery = $mySQL->executeQuery($query);
@@ -35,7 +34,7 @@
 		"intensity"  => "$intensity",
 		"latency"    => "$latency",
 		"packetloss" => "$packetloss",
-		"jitter"     => "$jitter",
+		"jitter"     => "$jitter_tt",
 		
 	);
 	echo json_encode($parametros);
