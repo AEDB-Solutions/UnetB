@@ -1,4 +1,4 @@
-var map, pointarray, heatmap, infoWindow;
+var map, pointarray, heatmap, infoWindow, dados = [];
 var gradient = [
 	'rgba(255, 0  , 0  , 0.00)', //Resto do mapa
 
@@ -21,7 +21,7 @@ var gradient = [
 ]
 
 
-//Mercator --BEGIN--
+
 //********************************NÃO ALTERAR ESSAS FUNÇÕES ********************************//
 var TILE_SIZE = 256;
 
@@ -64,7 +64,7 @@ MercatorProjection.prototype.fromPointToLatLng = function (point){
 	return new google.maps.LatLng(lat, lng);
 };
 //********************************NÃO ALTERAR ESSAS FUNÇÕES ********************************//
-//Mercator --END--
+
 
 
 function getNewRadius(){
@@ -112,20 +112,8 @@ function initMap() {
 	// 	handleLocationError(false, infoWindow, map.getCenter());
 	// }
 
-	heatmap = new google.maps.visualization.HeatmapLayer({
-		
-		data: getPoints(),
-		//radius: 50,
-		gradient: gradient,
-		//opacity: 0.4,		
-		map: map,
-		radius: getNewRadius(),
 
-	});
-
-	google.maps.event.addListener(map, 'zoom_changed', function () {
-		heatmap.setOptions({radius:getNewRadius()});
-	});
+	teste();
 }
 
 //Exibe msg de erro caso não consiga geolocalizar o usuário
@@ -138,7 +126,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 
 function getPoints() {
 		
-	var dados = [
+	dados = [
 		{location: new google.maps.LatLng(-15.76070, -47.87050), weight: 5},
 		{location: new google.maps.LatLng(-15.76150, -47.87030), weight: 1},
 		{location: new google.maps.LatLng(-15.76230, -47.87010), weight: 1},
@@ -146,26 +134,45 @@ function getPoints() {
 	];
 	return dados;
 }
+
 function teste(){
-	$.ajax({
-		url: '../funcoes_de_parametrizacao/calculadora.php',
-		method: 'post',
-		dataType:"json",
+	$(document).ready( function(){
+		$.ajax({
+			url: '../funcoes_de_parametrizacao/calculadora.php',
+			method: 'post',
+			dataType:"json",
 
-		success: function(data){
-			
-			console.log(dados);
-			
-			
-		},
+			success: function(data){
+				
+				for (var key in data) {
 
-		beforeSend: function(){
-					
-		},
+					//console.log(data[key]['peso']);
 
-		complete: function(){
-			
-		},
-		
-	});
+					teste = [
+						{location: new google.maps.LatLng(data[key]['lat'], data[key]['long']), weight: data[key]['peso']},
+					];
+
+					dados.push(teste);
+					console.log(dados);
+				}
+
+				heatmap = new google.maps.visualization.HeatmapLayer({
+
+					data: dados,
+					//radius: 50,
+					gradient: gradient,
+					//opacity: 0.4,		
+					map: map,
+					radius: getNewRadius(),
+
+				});
+
+				google.maps.event.addListener(map, 'zoom_changed', function () {
+					heatmap.setOptions({radius:getNewRadius()});
+				});
+
+			},
+		});
+	});	
 }
+

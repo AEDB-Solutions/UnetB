@@ -5,7 +5,7 @@ $(document).ready( function(){
 	var options = {
 		enableHighAccuracy: true,
 		timeout: 5000,
-		maximumAge: 120000
+		maximumAge: 0
 	};
 
 	function success(pos) {
