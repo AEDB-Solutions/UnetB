@@ -45,7 +45,7 @@
 									</tr>
 
 									<tr>
-										<td>Intencidade</td>
+										<td>Intensidade</td>
 										<td class="dados-qualidade" id="dado-intensity">-</td>
 										<td class="dados-qualidade">dB</td>
 									</tr>

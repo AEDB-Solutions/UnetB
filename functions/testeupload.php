@@ -1,14 +1,13 @@
 <?php
 
 
-$kb1 = 100;
-$kb2 = 200;
-$kb3 = 400;
-$kb4 = 800;
-$kb5 = 1000;
-$kb6 = 2000;
-$kb7 = 10000;
-$kb8 = 20000;
+$kb1 = 100Kb.txt;
+$kb2 = 200Kb.txt;
+$kb3 = 400Kb.txt;
+$kb4 = 800Kb.txt;
+$kb5 = 1Mb.txt;
+$kb6 = 2Mb.txt;
+$kb7 = 20Mb.txt;
 
 $kbm = (($kb1 + $kb2 + $kb3 + $kb4 + $kb5 + $kb6 + $kb7 + $kb8) / 8);
 echo "streaming $kbm Kb...<!-";
