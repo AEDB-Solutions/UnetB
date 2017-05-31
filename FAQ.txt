@@ -12,7 +12,7 @@ Ela é irrestrita?
 Posso usar a UnetB comercialmente?
 	Pode! No entanto, lembramos que seu uso é restrito à UnB- Darcy Ribeiro.
 
-Qual dispositivos a UnetB usa para capturar os pacotes?
+Quais dispositivos a UnetB usa para capturar os pacotes?
 	Somente redes wireless LAN.
 
 Em quais plataformas a UnetB funciona?
