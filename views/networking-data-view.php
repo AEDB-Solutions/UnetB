@@ -65,7 +65,7 @@
 									<tr>
 										<td>Jitter</td>
 										<td class="dados-qualidade" id="dado-jitter">-</td>
-										<td class="dados-qualidade">-</td>
+										<td class="dados-qualidade">ms</td>
 									</tr>
 								
 								</table>

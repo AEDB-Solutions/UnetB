@@ -21,7 +21,7 @@ var gradient = [
 	'rgba(90 , 255, 0  , 0.94)',
 	'rgba(45 , 255, 0  , 0.97)',
 	'rgba(0  , 255, 0  , 1.00)'  //Verde
-]
+];
 
 
 
@@ -129,15 +129,15 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 
 function getPoints() {
 		
-	dados = [
-		{location: new google.maps.LatLng(-15.76070, -47.87050), weight: 5},
-		{location: new google.maps.LatLng(-15.76150, -47.87030), weight: 1},
-		{location: new google.maps.LatLng(-15.76230, -47.87010), weight: 1},
-		{location: new google.maps.LatLng(-15.76310, -47.86980), weight: 1},
-	];
-
-	console.log(dados);
-	return dados;
+	return [
+			{location: new google.maps.LatLng(-15.76070, -47.87050), weight: 1},
+			{location: new google.maps.LatLng(-15.76150, -47.87030), weight: 1},
+			{location: new google.maps.LatLng(-15.76230, -47.87010), weight: 1},
+			{location: new google.maps.LatLng(-15.76310, -47.86980), weight: 1},
+			{location: new google.maps.LatLng(-15.76390, -47.86930), weight: 1},
+			{location: new google.maps.LatLng(-15.76470, -47.86830), weight: 1},
+			{location: new google.maps.LatLng(-15.76550, -47.86690), weight: 1},
+		]
 }
 
 function testando(){
@@ -147,27 +147,19 @@ function testando(){
 			method: 'post',
 			dataType:"json",
 
-			success: function(data){
+			success: function(data){				
 				console.log(data);
-				
-				
-				for (var key in data) {
-					
-					
+				for (var key in data) {					
 
 					teste = [
 						{location: new google.maps.LatLng(data[key]['lat'], data[key]['long']), weight: data[key]['peso']},
 					];
-					seila[key] = teste
-
-					
-					//console.log(data);
 				}
-				console.log(seila);
+				
 				
 				heatmap = new google.maps.visualization.HeatmapLayer({
 
-					data: teste,
+					data: getPoints(),
 					//radius: 50,
 					gradient: gradient,
 					//opacity: 0.4,		
