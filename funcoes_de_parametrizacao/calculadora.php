@@ -31,6 +31,7 @@
 		var_dump($n_intensidade = intensity_param($intensidade)); echo "<br>";// parametro_intensidade eh a funcao que parametriza
 		var_dump($n_latencia = latency_param($latencia)); echo "<br>";
 		var_dump($n_download = download_param($download)); echo "<br>";
+		//var_dump($n_upload = upload_param($upload)); echo "<br>";
 
 	//	$media_parametros = ((3.5 * $n_intensidade) + (2.5 * $n_download) + (2.5 * $n_upload)+ (1.5 * $n_latencia)) / 10;
 
