@@ -7,7 +7,8 @@
 			return 10;
 		}
 		else{
-			return ((0.14285714285)* $intensidade) + 10;
+			$j=$intensidade/7;
+			return $j+10;
 		}
 	}
 
