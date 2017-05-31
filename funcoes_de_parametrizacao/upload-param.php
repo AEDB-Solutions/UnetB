@@ -30,22 +30,21 @@ function upload_param($upload_speed)
 		$escala = 0.793700526*$pot;
 		return $escala;
 	}
-
-//arrumar amanha ainda , sono da porra 	
+ 	
 	elseif($upload_speed >2 && $upload_speed < 5)
 	{
-		$pot = pow(0.492610837, $upload_speed);
-		$escala = 103.419264975*$pot;
+		//$pot = pow(0.492610837, $upload_speed);
+		//$escala = 103.419264975*$pot;
+		$escala = 1.666666667 + (0.666666667*$upload_speed);		
 		return $escala;
 	}
 
-	else{// 3 - 30 
-		$pot = pow( 5.15151515, $upload_speed);		
-		$escala = 150.211011127*$pot;
-			
+	else{// 5 - 10
+				
+		$escala = $upload_speed;		
 		return $escala;
 	}
-	echo $escala;
+	
 }
 
 ?>
