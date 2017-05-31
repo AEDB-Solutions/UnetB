@@ -27,38 +27,44 @@
 									
 									<tr>
 										<th>Parâmetro</th>
-										<th>Medida</th> 
+										<th class="dados-qualidade">Medida</th>
+										<th class="dados-qualidade">Unidade</th>
 										
 									</tr>
 									
 									<trs>
 										<td>Download</td>
-										<td class="dados-qualidade">-</td>
-										
+										<td class="dados-qualidade" id="dado-download">-</td>
+										<td class="dados-qualidade">Mbps</td>
 									</tr>
 									
 									<tr>
 										<td>Upload</td>
-										<td class="dados-qualidade">-</td>
-									</tr>
-
-									<tr>
-										<td>Ping</td>
-										<td class="dados-qualidade">-</td>
+										<td class="dados-qualidade" id="dado-upload">-</td>
+										<td class="dados-qualidade">Mbps</td>
 									</tr>
 
 									<tr>
 										<td>Intencidade</td>
-										<td class="dados-qualidade">-</td>
+										<td class="dados-qualidade" id="dado-intensity">-</td>
+										<td class="dados-qualidade">dB</td>
+									</tr>
+
+									<tr>
+										<td>Ping</td>
+										<td class="dados-qualidade" id="dado-latency">-</td>
+										<td class="dados-qualidade">ms</td>
 									</tr>
 
 									<tr>
 										<td>Perda de Pacotes</td>
-										<td class="dados-qualidade">-</td>
+										<td class="dados-qualidade" id="dado-packetloss">-</td>
+										<td class="dados-qualidade">%</td>
 									</tr>
 
 									<tr>
 										<td>Jitter</td>
+										<td class="dados-qualidade" id="dado-jitter">-</td>
 										<td class="dados-qualidade">-</td>
 									</tr>
 								

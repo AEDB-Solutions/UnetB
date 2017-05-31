@@ -29,5 +29,14 @@
 	
 	sleep(1);
 
-	echo "Chegou no final";
+	$parametros = array(
+		"download"   => "$download_speed",
+		"upload"     => "$upload_speed",
+		"intensity"  => "$intensity",
+		"latency"    => "$latency",
+		"packetloss" => "$packetloss",
+		"jitter"     => "$jitter",
+		
+	);
+	echo json_encode($parametros);
 ?>

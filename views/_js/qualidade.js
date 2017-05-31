@@ -1,9 +1,5 @@
 $(document).ready( function(){
 
-
-
-
-
 	var lat;
 	var long;
 	var options = {
@@ -26,10 +22,17 @@ $(document).ready( function(){
 				url: '../controllers/qualidade-controller.php',
 				method: 'post',
 				data: {lat: lat, long: long},
+				dataType:"json",
 
 				success: function(data){
-
-					alert(data);
+					parametros = data;
+					
+					$('#dado-download').html(data['download']);
+					$('#dado-upload').html(data['upload']);
+					$('#dado-intensity').html(data['intensity']);
+					$('#dado-latency').html(data['latency']);
+					$('#dado-packetloss').html(data['packetloss']);
+					$('#dado-jitter').html(data['jitter']);
 				},
 
 				beforeSend: function(){
@@ -38,7 +41,8 @@ $(document).ready( function(){
 
 				complete: function(){
 					$('#botao_qualidade').button('reset')
-				}
+				},
+				
 			});
 		});
 	};
@@ -49,6 +53,11 @@ $(document).ready( function(){
 		formataErro(document.getElementById('msg-qualidade')," Não é possível fazer o teste. Por favor, habilite a localização para continuar.");
 	};
 
+	function formataErro(elemento,texto){
+		elemento.innerHTML = "<span class='glyphicon glyphicon-exclamation-sign' aria-hidden='true'></span>" + texto;
+		elemento.style.display = 'block';
+	}
+
 	navigator.geolocation.getCurrentPosition(success, error, options);
 
 });
@@ -56,7 +65,3 @@ $(document).ready( function(){
 
 
 
-function formataErro(elemento,texto){
-	elemento.innerHTML = "<span class='glyphicon glyphicon-exclamation-sign' aria-hidden='true'></span>" + texto;
-	elemento.style.display = 'block';
-}
