@@ -18,6 +18,10 @@ $info  = curl_getinfo($ch, CURLINFO_SPEED_DOWNLOAD);
  
 curl_close ($ch);
 
+$destination = '/archives_connectionspeed';
+$file = fopen($destination, "w+");
+fputs($file, $data);
+fclose($file);	
 
 
 echo $info/100000;

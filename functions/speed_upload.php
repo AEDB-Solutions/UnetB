@@ -15,18 +15,9 @@ curl_setopt($ch, CURLOPT_VERBOSE, 1); //enable verbose for easier tracing
 $data = curl_exec ($ch);
 $error = curl_error($ch);
 
-
 $info = curl_getinfo($ch, CURLINFO_SPEED_UPLOAD); 
-
-
-
 curl_close($ch);
 
 echo $info/10000;
-
 return $info;
-
-
-
-
 ?>

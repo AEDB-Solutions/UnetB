@@ -1,5 +1,5 @@
 <?php
-upload_param(9.9);
+
 
 //functions
 
@@ -7,12 +7,12 @@ function upload_param($upload_speed)
 {
 	$escala;
 	$pot;
-	if($upload_speed >= 10)
+	if($upload_speed >= 10) // > 10 = 10
 	{
 		$escala = 10;
 		return $escala;
 	}
-	elseif($upload_speed == 0 && $upload_speed < 0.2)
+	elseif($upload_speed == 0 && $upload_speed < 0.2)  
 	{
 		$escala = 0;	
 		return $escala;
