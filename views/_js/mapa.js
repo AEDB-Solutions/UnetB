@@ -137,13 +137,35 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 }
 
 function getPoints() {
-	return [
-			{location: new google.maps.LatLng(-15.76070, -47.87050), weight: 5},
-			{location: new google.maps.LatLng(-15.76150, -47.87030), weight: 1},
-			{location: new google.maps.LatLng(-15.76230, -47.87010), weight: 1},
-			{location: new google.maps.LatLng(-15.76310, -47.86980), weight: 1},
-			{location: new google.maps.LatLng(-15.76390, -47.86930), weight: 1},
-			{location: new google.maps.LatLng(-15.76470, -47.86830), weight: 1},
-			{location: new google.maps.LatLng(-15.76550, -47.86690), weight: 1},
-		];
+		
+	var dados = [
+		{location: new google.maps.LatLng(-15.76070, -47.87050), weight: 5},
+		{location: new google.maps.LatLng(-15.76150, -47.87030), weight: 1},
+		{location: new google.maps.LatLng(-15.76230, -47.87010), weight: 1},
+		{location: new google.maps.LatLng(-15.76310, -47.86980), weight: 1},
+	];
+	return dados;
+}
+function teste(){
+	$.ajax({
+		url: '../funcoes_de_parametrizacao/calculadora.php',
+		method: 'post',
+		dataType:"json",
+
+		success: function(data){
+			
+			console.log(dados);
+			
+			
+		},
+
+		beforeSend: function(){
+					
+		},
+
+		complete: function(){
+			
+		},
+		
+	});
 }

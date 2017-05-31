@@ -37,11 +37,11 @@ $(document).ready( function(){
 				},
 
 				beforeSend: function(){
-					$('#botao_qualidade').button('loading')			
+					$('#botao_qualidade').button('loading');		
 				},
 
 				complete: function(){
-					$('#botao_qualidade').button('reset')
+					$('#botao_qualidade').button('reset');
 				},
 				
 			});

@@ -29,8 +29,10 @@
 		$n_upload      = upload_param($upload);
 
 		$media_parametros = ((3.5 * $n_intensidade) + (2.5 * $n_download) + (2.5 * $n_upload)+ (1.5 * $n_latencia)) / 10;
+		
+		$media_arredondada = number_format($media_parametros, 2, '.', '');
 
-		$array_localizacao = array('lat' => $lat, 'long' => $long, 'peso' => $media_parametros);
+		$array_localizacao = array('lat' => $lat, 'long' => $long, 'peso' => $media_arredondada);
 
 		array_push($total,$array_localizacao);
 	}
