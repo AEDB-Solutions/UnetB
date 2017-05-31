@@ -25,6 +25,7 @@ $(document).ready( function(){
 				dataType:"json",
 
 				success: function(data){
+					
 					parametros = data;
 					
 					$('#dado-download').html(data['download']);
