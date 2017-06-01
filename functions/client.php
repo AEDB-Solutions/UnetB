@@ -4,6 +4,26 @@
 set_time_limit(0);
 send_archives_multiples_times();
 
+function create_socket()
+{
+	socket_connect ( resource $socket , string $address [, int $port ] )
+
+}
+
+function download()
+{
+
+	
+
+
+	if($recv = socket_recv($socket, $buf, $len, 0) < 0)
+	{
+		echo "failed to recieve";
+		exit(0);
+	} 
+
+}
+
 
 function send_archives_multiples_times(){
 

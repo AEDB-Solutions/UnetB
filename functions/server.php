@@ -9,56 +9,50 @@ function create_socket(){
 	if(socket_bind($sh, '127.0.0.1', 4242)){
 		echo "Socket liga corretamente. <br/>";
 		}
-	return $sh;
-}
-//upload
-function recv_files()
-{
-
-	$socket = create_socket();
 	if( ($ret = socket_listen($socket , 1) ) < 0){
-	echo "failed to listen socket";s
-	exit(0);
-	}
+		echo "failed to listen socket";
+		exit(0);
+		}
 
-	if($recv = socket_recv($socket, $buf, $len, 0) < 0)
-	{
-	echo "failed to recieve";
-	exit(0);
-	} 
-
-else
-	{
-	$file = "arquivos foram recebidos";	
-	socket_sendto($socket, $file, $size, 0x8, '127.0.0.1', 4242);
-	echo "foi";
-	}
-
-}
-//download
-
-function send_files()
-{
-	$files = array('100Kb.txt', '200Kb.txt','400Kb.txt', '800Kb.txt', '1Mb.txt', '2Mb.txt', '10Mb.txt', '20Mb.txt');
-
-	$speed_vector = array();
-	$size_vector  = array();
-	$socket = create_socket();
+		if($socket_accept == -1)
+		{
+			echo "deu merda no accept";
+			exit(0);
+		}
 	
-	for($i = 0; $i < count($files) ; $i++){
-		 
-		$get_speed = array();
-		$get_size  = array();
+	//intensidade();	
+	//ping();
+	download();
+	//upload();		
+}
 
-		$get_size_end_speed = send_archive($files[$i], $socket);
+//download
+function download()
+{	
 		
-		$size  = $get_size_end_speed[0];
-		$speed = $get_size_end_speed[1];
+			$files = array('100Kb.txt', '200Kb.txt','400Kb.txt', '800Kb.txt', '1Mb.txt', '2Mb.txt', '10Mb.txt', '20Mb.txt');
+	
+			$speed_vector = array();
+			$size_vector  = array();
+			$socket = create_socket();
 		
-		$speed_vector[$i] = $speed;
-		$size_vector[$i]  = $size;
+			for($i = 0; $i < count($files) ; $i++)
+			{
+			 
+				$get_speed = array();
+				$get_size  = array();
+		
+				$get_size_end_speed = send_archive($files[$i], $socket);
+			
+				$size  = $get_size_end_speed[0];
+				$speed = $get_size_end_speed[1];
+			
+				$speed_vector[$i] = $speed;
+				$size_vector[$i]  = $size;
 
-	}
+			}
+		}
+	
 }
 
 function send_archive($file_to_send , $sh){
@@ -91,40 +85,5 @@ function send_file($file , $size , $sh){
 		exit(0);
 	}
 }
-
-
-//
-
-/*socket_set_nonblock($sock); 
-
-while($server_listening)
-{
-	$connection = @socket_accept($sh);
-	if($connection == false)
-	{
-		usleep(100);
-	}
-
-	elseif ($connection > 0)
-	{
-		$handle_client($sock, $connection);	
-	}
-
-	else
-	{
-		echo "error : ".socket_strerror($connection);
-		die;
-	}
-	
-}	
-
-
-function handle_client ($sh, $connection)
-{
-	global $server_listening;
-
-
-}*/
-
 
 ?>
