@@ -1,7 +1,7 @@
 var map, pointarray, heatmap, infoWindow;
 var dados;
-var teste = [];
-var seila = [];
+
+var heatmapData = [];
 var gradient = [
 	'rgba(255, 0  , 0  , 0.00)', //Resto do mapa
 
@@ -130,7 +130,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 function getPoints() {
 		
 	return [
-			{location: new google.maps.LatLng(-15.76070, -47.87050), weight: 1},
+			{location: new google.maps.LatLng(-15.76070, -47.87050), weight: 6},
 			{location: new google.maps.LatLng(-15.76150, -47.87030), weight: 1},
 			{location: new google.maps.LatLng(-15.76230, -47.87010), weight: 1},
 			{location: new google.maps.LatLng(-15.76310, -47.86980), weight: 1},
@@ -147,26 +147,23 @@ function testando(){
 			method: 'post',
 			dataType:"json",
 
-			success: function(data){				
-				console.log(data);
-				for (var key in data) {					
-
-					teste = [
-						{location: new google.maps.LatLng(data[key]['lat'], data[key]['long']), weight: data[key]['peso']},
-					];
+			success: function(data){
+				for (var key in data) {
+					dados =	{location: new google.maps.LatLng(data[key]['lat'], data[key]['long']), weight: data[key]['peso']};
+					heatmapData.push(dados);
 				}
 				
-				
 				heatmap = new google.maps.visualization.HeatmapLayer({
-
-					data: getPoints(),
+					data: heatmapData,
 					//radius: 50,
 					gradient: gradient,
 					//opacity: 0.4,		
 					map: map,
 					radius: getNewRadius(),
-
 				});
+				
+				
+				
 
 				google.maps.event.addListener(map, 'zoom_changed', function () {
 					heatmap.setOptions({radius:getNewRadius()});
