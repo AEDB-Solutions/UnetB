@@ -1,24 +1,95 @@
 ﻿FAQ
 
 O que é a UnetB?
-	A UnetB é um software que realiza a medição da qualidade da rede a qual você está conectado. A aplicação também permite o compartilhamento das medições dos usuários em um mapa.
+	
+	A UnetB é um software de medição de qualidade de conexão que permite que o usuário verifique parâmetros de sua conexão de banda larga, como as velocidades de upload e download, a latência, a variação da latência (ou jitter) e a perda de pacotes.. A aplicação também permite o compartilhamento das medições dos usuários em um mapa.
 
 Quanto custa usar a UnetB?
-	A  UnetB é uma aplicação gratuita.
 
-Ela é irrestrita?
-	Não, ela é restrita ao perímetro do campus Darcy Ribeiro da Universidade de Brasília (UnB).
+	A  UnetB é uma aplicação gratuita. 
 
 Posso usar a UnetB comercialmente?
+
 	Pode! No entanto, lembramos que seu uso é restrito à UnB- Darcy Ribeiro.
 
+Como funciona?
+
+	Os usuários podem realizar o teste ao acessar o campo "Teste de Velocidade" no canto superior da página.
+
+Quais fatores externos podem influenciar os resultados do teste?
+
+	Para garantir resultados mais precisos, é necessário que enquanto o teste estiver sendo executado, os usuários não devem usar o computador para outras funções, especialmente aplicações que usam o acesso à Internet, pois estas aplicações conflitam com o teste e podem gerar um resultado impreciso;
+
+Como devem ser interpretados os resultados?	  
+
+	A medição mais simples que os usuários receberão é a velocidade de download de sua conexão de banda larga. Este resultado pode ser facilmente comparado com a velocidade de download contratada.
+
+
 Quais dispositivos a UnetB usa para capturar os pacotes?
+
 	Somente redes wireless LAN.
 
 Em quais plataformas a UnetB funciona?
+
 	A UnetB funciona bem para todos os navegadores: Google Chrome, Mozilla Firefox, Opera e outros. Também funciona em qualquer sistema operacional que tenha um dos navegadores adequados.
 
 
+O que é a velocidade de download?
+
+	É a velocidade de recebimento de dados (como um arquivo, vídeo, etc) de outro computador ou servidor para um computador local através da Internet. Usuários domésticos tendem a realizar mais downloads do que uploads.
+
+O que é a velocidade de upload?
+
+	É a velocidade de envio de dados (como um arquivo, e-mail, foto, etc) de um computador em um local para um computador ou servidor em outro local, através da Internet. A velocidade de upload é geralmente muito menor do que a velocidade de download. A razão para isso é que as pessoas, ao acessar a Internet, geralmente fazem mais download do que upload.
+
+O que é perda de pacotes?
+
+	Um pacote é uma unidade formatada de dados e é utilizado para transmitir as informações na Internet em formato de pequenas unidades gerenciáveis. A perda de pacotes ocorre quando um dos pacotes não chega ao seu destino. Isso pode ocorrer por falha de hardware ou baixa qualidade da conexão. A perda de pacotes pode aumentar, à medida que a quantidade de tráfego na rede aumenta.
+
+O que é latência e como é medida?
+
+	É o tempo que leva para um pacote de informação deixar o computador original e chegar ao seu destino. Uma maneira de medir a latência de uma conexão é um teste de ping, em que é enviado um pacote a partir do computador original para ser retransmitido de volta pelo computador de destino. O tempo de ida e volta gasto pelo pacote, é então utilizado como medida da latência.
+
+O que é jitter?
+
+	Jitter é a variação no tempo de chegada dos pacotes, causada por congestionamento na rede. Em outras palavras, o jitter representa a variação na latência.
+
+
+Que informações são coletadas para a realização do teste de conexão?
+
+	O teste de conexão pode requerer ou não dados pessoais do usuário, dependendo da sua vontade de ter um cadastro no programa, tendo certos privilegios os usuários cadastrados. No entanto, o teste sempre utilizará as informações do seu computador para classificar e avaliar as informações dos dados:
+
+	1-O seu endereço de IP. 
+	2-O Sistema Operacional que está sendo usado no computador do usuário.
+	3-Como suas interfaces de rede estavam ocupadas no momento do teste.
+
+Quais são as informações que serão apresentadas pelo teste de conexão?
+
+	Os resultados apresentados ao usuário, após a conclusão do teste, são:
+
+	1-Localização da medição(apenas para usuários cadastrados);
+	2-Velocidade de download(qualquer usuário);
+	3-Velocidade de upload(qualquer usuário);
+	4-Latência(qualquer usuário);
+	5-Perda de pacotes(qualquer usuário);
+	6-Jitter(qualquer usuário);
+
+Os meus dados serão utilizados para outros fins?
+
+	Os dados são utilizados somente para classificar os resultados, apresentá-los para o usuário e posteriormente serem acrescentados ao mapa de calor. 
+
+O uso desse teste de conexão é seguro?
+
+	Sim, esse é um teste de medição de qualidade de conexão muito seguro. Realiza downloads e uploads aleatoriamente, e os dados transferidos não são armazenados no computador do usuário.
+
+Eu pago algum valor para fazer o teste de conexão?
+	
+	Não, a utilização do software de medição é gratuita.
+
+
+Por que o teste de conexão não funciona?
+
+O teste de conexão pode não funcionar caso sua localização esteja desabilitada. Deste modo o usuário deve habilitar sua localização quando for solicitado. 
 
 
 
