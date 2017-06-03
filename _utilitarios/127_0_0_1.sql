@@ -36,5 +36,6 @@ CREATE TABLE IF NOT EXISTS `unetb`.`networking_data` (
   `latency`        FLOAT,
   `packetloss`     FLOAT,
   `jitter`         FLOAT,
+  `access_point`  VARCHAR(17) COLLATE utf8_bin NOT NULL,
    PRIMARY KEY (`id`)
 ) ENGINE=MYISAM AUTO_INCREMENT=0 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
