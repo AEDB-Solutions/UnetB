@@ -1,4 +1,5 @@
 <?php
+
 	//função geradora de HASH para as senhas
 	function b_hash ($password){
 		if (defined("CRYPT_BLOWFISH") && CRYPT_BLOWFISH){ // o método utilizado é o BLOWFISH
@@ -14,4 +15,5 @@
 		
 		return crypt($password, $hashedPassword) == $hashedPassword;
 	}
+
 ?>
