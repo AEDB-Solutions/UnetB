@@ -1,4 +1,4 @@
-var map, pointarray, heatmap, infoWindow;
+var map, heatmap, infoWindow;
 var dados;
 
 var heatmapData = [];
@@ -139,7 +139,7 @@ function testando(){
 					dados =	{location: new google.maps.LatLng(data[key]['lat'], data[key]['long']), weight: data[key]['peso']};
 					heatmapData.push(dados);
 				}
-				
+
 				heatmap = new google.maps.visualization.HeatmapLayer({
 					data: heatmapData,
 					//radius: 50,
@@ -148,9 +148,6 @@ function testando(){
 					map: map,
 					radius: getNewRadius(),
 				});
-				
-				
-				
 
 				google.maps.event.addListener(map, 'zoom_changed', function () {
 					heatmap.setOptions({radius:getNewRadius()});

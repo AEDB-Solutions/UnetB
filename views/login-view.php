@@ -33,7 +33,7 @@
 			<div class="modal-footer">
 
 				<button type="button" class="btn btn-default" data-dismiss="modal">Sair</button>
-				<button id="botao_login" type="button" class="btn btn-primary">Entrar</button>
+				<button id="botao_login" type="button" class="btn btn-primary">Entrar <img src="_images/teste.svg" id="gif_login"></button>
 				
 			</div>
 		</div>

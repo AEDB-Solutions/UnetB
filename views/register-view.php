@@ -49,11 +49,9 @@
 									<span class='msg-erro msg-name'></span>
 								</div>
 
-								
-							
-								
 								<div class="modal-footer">
-									<button  value="" type="button" class="btn btn-primary btn-lg" id='botao_cadastro'>Gravar</button>
+									
+									<button  value="" type="button" class="btn btn-primary btn-lg" id='botao_cadastro'>Gravar <img src="_images/teste.svg" id="gif_registro"></button>
 								</div>
 
 								<div class='' id='msg-cadastro'></div>

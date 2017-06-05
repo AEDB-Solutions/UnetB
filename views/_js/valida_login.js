@@ -62,12 +62,14 @@ function validaLogin(evt){
 					}
 				},
 				beforeSend: function(){
-					$('#botao_login').button('loading')
+					$('#botao_login').prop("disabled",true);
+					$('#gif_login').show();
 					
 				},
 
 				complete: function(){
-					$('#botao_login').button('reset')
+					$('#botao_login').prop("disabled",false);
+					$('#gif_login').hide();
 				}
 			});
 		});

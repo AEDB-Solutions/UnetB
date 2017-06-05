@@ -62,6 +62,9 @@ body{
 .form-group{
 	margin-bottom: 8px;
 }
+#gif_registro, #gif_login{
+	display: none;
+}
 /******************CENTRALIZAR OBJETOS VERTICALMENTE NA TELA******************/
 .pai {
 	height: 100%;

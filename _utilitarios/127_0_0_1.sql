@@ -1,12 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 4.6.4
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Generation Time: 10-Abr-2017 às 20:20
--- Versão do servidor: 5.7.14
--- PHP Version: 5.6.25
-
 CREATE DATABASE IF NOT EXISTS `unetb` DEFAULT CHARACTER SET utf8;
 
 -- --------------------------------------------------------
@@ -21,10 +12,14 @@ CREATE TABLE IF NOT EXISTS `unetb`.`user` (
   `name` VARCHAR(255)  COLLATE utf8_bin NOT NULL,
   `email` VARCHAR(255) COLLATE utf8_bin NOT NULL,
   `password` TEXT      COLLATE utf8_bin NOT NULL,
-  `date` datetime default current_timestamp,
+  `date_register` datetime default current_timestamp,
    PRIMARY KEY (`user_id`),
    UNIQUE (email)
 ) ENGINE=MYISAM AUTO_INCREMENT=0 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Estrutura da tabela `networking_data`
+--
 
 CREATE TABLE IF NOT EXISTS `unetb`.`networking_data` (
   `id`             INT(11) NOT NULL AUTO_INCREMENT,
@@ -37,5 +32,6 @@ CREATE TABLE IF NOT EXISTS `unetb`.`networking_data` (
   `packetloss`     FLOAT,
   `jitter`         FLOAT,
   `access_point`  VARCHAR(17) COLLATE utf8_bin NOT NULL,
+  `date_quality` datetime default current_timestamp,
    PRIMARY KEY (`id`)
 ) ENGINE=MYISAM AUTO_INCREMENT=0 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
