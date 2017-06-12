@@ -14,7 +14,8 @@
 		<?php include "_includes/header.php";?>
 		
 		<div class="container">
-			<h1 style="margin-top: 50px;">Informações em construção</h1>
+			<h1 style="margin-top: 50px;">Contato</h1>
+			<a href="contact.php">Entre em Contato</a>
 		</div>
 
 		<script src="_js/jquery.min.js"></script> <!-- Carrega JS jquery-->

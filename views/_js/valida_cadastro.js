@@ -1,7 +1,7 @@
 /* Atribui ao evento click do formulário a função de validação de dados */
-var form = document.getElementById("botao_cadastro");
+var form = document.getElementById("botao_contato");
 if (form.addEventListener){
-	form.addEventListener("click", validaCadastro);
+	form.addEventListener("submit", validaCadastro);
 } else if (form.attachEvent){
 	form.attachEvent("onclick", validaCadastro);
 }
@@ -11,8 +11,6 @@ function validaCadastro(evt){
 
 	var name = document.getElementById('name');
 	var email = document.getElementById('email');
-	var password = document.getElementById('password');
-	var confpass = document.getElementById('confpass');
 	var filtro_email = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
 	var filtro_name = /^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ' ]+$/;
 	var contErro = 0;
@@ -27,30 +25,6 @@ function validaCadastro(evt){
 		contErro += 1;
 	}else{
 		caixa_email.style.display = 'none';
-	}
-
-	/* Validação do campo password*/
-	caixa_password = document.querySelector('.msg-password');
-	if(password.value == ""){
-		formataErro(caixa_password," Favor preencher a senha.");
-		contErro += 1;
-	}else if(password.value.length < 6){
-		formataErro(caixa_password," Senha deve ter no mínimo 6 caracteres.");
-		contErro += 1;
-	}else{
-		caixa_password.style.display = 'none';
-	}
-
-	/* Confirmar senha*/
-	caixa_confpass = document.querySelector('.msg-confpass');
-	if(confpass.value == ""){
-		formataErro(caixa_confpass," Favor preencher a confirmação de senha.");
-		contErro += 1;
-	}else if(confpass.value != password.value){
-		formataErro(caixa_confpass," As senhas são diferentes.");
-		contErro += 1;
-	}else{
-		caixa_confpass.style.display = 'none';
 	}
 
 	/* Validação do campo name */
@@ -77,41 +51,7 @@ function validaCadastro(evt){
 		evt.preventDefault();
 	}else{
 		$(document).ready( function(){
-
-			$.ajax({
-				url: '../controllers/register-controller.php',
-				method: 'post',
-				data: $('#form-cadastro').serialize(),
-				
-				success: function(data){
-
-					caixa_cadastro = document.getElementById('msg-cadastro');
-
-					if(data == ' Cadastro realizado com sucesso.'){
-						$('#email').val('');
-						$('#password').val('');
-						$('#confpass').val('');
-						$('#name').val('');
-						caixa_cadastro.className = 'msg-success';
-						formataSuccess(caixa_cadastro,data);
-					}
-					else{
-						caixa_cadastro.className = 'msg-erro';
-						caixa_cadastro.style.fontSize = "20px";
-						formataErro(caixa_cadastro,data);
-					}
-				},
-
-				beforeSend: function(){
-					$('#botao_cadastro').prop("disabled",true);
-					$('#gif_registro').show();
-				},
-				
-				complete: function(){
-					$('#botao_cadastro').prop("disabled",false);
-					$('#gif_registro').hide();
-				}
-			});
+			alert("Foi");
 		});
 	}
 }

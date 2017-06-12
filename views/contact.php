@@ -1,4 +1,4 @@
-<!DOCTYPE html>,,,,,,,,,,,,,,,,,,,,
+<!DOCTYPE html>
 <html lang="pt-br">
 
 	<head>
@@ -23,12 +23,12 @@
 								<h1 class="modal-title">Contato</h1>
 							</div>
 							
-							<form id='form-contato' method="POST" action="http://formspree.io/unetbcontato@gmail.com">
+							<form id='form-contato' method="POST" action="http://formspree.io/phelipeuni@gmail.com">
 							<!-- enctype='multipart/form-data -->
 
 								<div class="form-group">
 									<label for="name">Nome</label>
-									<input type="text" class="form-control" id="name" name="name" placeholder="Informe o Nome">
+									<input type="text" class="form-control" id="name" name="" placeholder="Informe o Nome">
 									<span class='msg-erro msg-name'></span>
 								</div>
 
@@ -40,14 +40,20 @@
 
 								<div class="form-group">
 									<label for="texto">Texto</label>
-									<input type="texto" class="form-control" id="texto" name="texto" placeholder="Digite o seu texto">
-									<span class='msg-erro msg-password'></span>
+									<textarea class="form-control" id="texto" name="message" placeholder="Digite sua Mensagem"></textarea>	
+									<span class='msg-erro msg-texto'></span>
 								</div>
 
 								<div class="modal-footer">
 									
-									<button  value="" type="button" class="btn btn-primary btn-lg" id='botao_cadastro'>Gravar <img src="_images/teste.svg" id="gif_registro"></button>
+									<button  value="" type="submit" class="btn btn-primary btn-lg" id='botao_contato'>Gravar <img src="_images/teste.svg" id="gif_registro"></button>
 								</div>
+								
+								
+								<input type="hidden" name="_next" value="http://localhost/UnetB/views/contact.php?foi" />
+								<input type="hidden" name="_subject" value="Assunto" />
+								<input type="hidden" name="_language" value="pt" />
+								
 
 								<div class='' id='msg-cadastro'></div>
 
@@ -58,8 +64,6 @@
 				</div> <!-- /conteiner-->
 			</div> <!-- filho -->
 		</div> <!-- pai -->
-
-		<script src="_js/valida_cadastro.js"></script> <!-- Carrega JS para validar cadastro-->
 		
 		<script src="_js/jquery.min.js"></script> <!-- Carrega JS jquery-->
 		<script src="_js/bootstrap.js"></script> <!-- Carrega JS do bootstrap-->	
