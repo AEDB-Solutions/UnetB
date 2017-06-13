@@ -24,38 +24,36 @@
 							</div>
 							
 							<form id='form-contato' method="POST" action="http://formspree.io/phelipeuni@gmail.com">
-							<!-- enctype='multipart/form-data -->
 
 								<div class="form-group">
 									<label for="name">Nome</label>
-									<input type="text" class="form-control" id="name" name="" placeholder="Informe o Nome">
-									<span class='msg-erro msg-name'></span>
+									<input type="text" class="form-control" id="name-contato" name="" placeholder="Informe o Nome">
+									<span class='msg-erro msg-name'></span> <!-- mensagem de erro -->
 								</div>
 
 								<div class="form-group">
 									<label for="email">E-mail</label>
-									<input type="email" class="form-control" id="email" name="email" placeholder="Informe o E-mail">
-									<span class='msg-erro msg-email'></span>
+									<input type="email" class="form-control" id="email-contato" name="email" placeholder="Informe o E-mail">
+									<span class='msg-erro msg-email'></span> <!-- mensagem de erro -->
 								</div>
 
 								<div class="form-group">
 									<label for="texto">Texto</label>
-									<textarea class="form-control" id="texto" name="message" placeholder="Digite sua Mensagem"></textarea>	
-									<span class='msg-erro msg-texto'></span>
+									<textarea class="form-control" id="texto-contato" name="message" placeholder="Digite sua Mensagem"></textarea>	
+									<span class='msg-erro msg-texto'></span> <!-- mensagem de erro -->
 								</div>
 
-								<div class="modal-footer">
-									
-									<button  value="" type="submit" class="btn btn-primary btn-lg" id='botao_contato'>Gravar <img src="_images/teste.svg" id="gif_registro"></button>
+								<div class="modal-footer">									
+									<button type="" class="btn btn-primary btn-lg" id='botao_contato'>Enviar <img src="_images/teste.svg" id="gif_registro"></button>
 								</div>
 								
 								
 								<input type="hidden" name="_next" value="http://localhost/UnetB/views/contact.php?foi" />
-								<input type="hidden" name="_subject" value="Assunto" />
+								<input type="hidden" name="_subject" value="" id="assunto"/>
 								<input type="hidden" name="_language" value="pt" />
 								
 
-								<div class='' id='msg-cadastro'></div>
+								<div class='' id='msg-contato'></div>
 
 							</form><!-- /formulário-->
 							
@@ -66,6 +64,7 @@
 		</div> <!-- pai -->
 		
 		<script src="_js/jquery.min.js"></script> <!-- Carrega JS jquery-->
-		<script src="_js/bootstrap.js"></script> <!-- Carrega JS do bootstrap-->	
+		<script src="_js/bootstrap.js"></script> <!-- Carrega JS do bootstrap-->
+		<script src="_js/valida_contato.js"></script> <!-- Carrega JS para validar login-->
 	</body>
 </html>
