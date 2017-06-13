@@ -22,7 +22,6 @@
 			
 			return $intensity/100;
 	}
-	// echo checkIntensity();
 
 	function getSignalLevel($unix_result) {
 		return substr($unix_result, strpos($unix_result, '-'), strlen($unix_result) -60);

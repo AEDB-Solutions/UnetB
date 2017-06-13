@@ -2,22 +2,23 @@ $(document).ready( function(){
 
 	var lat;
 	var long;
-	var options = {
-		enableHighAccuracy: true,
-		timeout: 5000,
-		maximumAge: 0
-	};
 
+	var options = {
+		enableHighAccuracy: true
+	};
+	
+	navigator.geolocation.getCurrentPosition(success, error, options);
+	
 	function success(pos) {
-	 	
-	 	lat  = pos.coords.latitude;
+	
+		lat  = pos.coords.latitude;
 		long = pos.coords.longitude;
 		console.log('Sua posição atual é:');
 		console.log('Latitude : ' + lat);
 		console.log('Longitude: ' + long);
 		console.log('Mais ou menos ' + pos.coords.accuracy + ' metros.');
 		$('#botao_qualidade').click(function(){
-
+	
 			$.ajax({
 				url: '../controllers/qualidade-controller.php',
 				method: 'post',
@@ -25,9 +26,8 @@ $(document).ready( function(){
 				dataType:"json",
 
 				success: function(data){
-					
+
 					parametros = data;
-					
 					$('#dado-download').html(data['download']);
 					$('#dado-upload').html(data['upload']);
 					$('#dado-intensity').html(data['intensity']);
@@ -37,11 +37,13 @@ $(document).ready( function(){
 				},
 
 				beforeSend: function(){
-					$('#botao_qualidade').button('loading');		
+					$('#botao_qualidade').prop("disabled",true);
+					$('#gif_qualidade').show();
 				},
 
 				complete: function(){
-					$('#botao_qualidade').button('reset');
+					$('#botao_qualidade').prop("disabled",false);
+					$('#gif_qualidade').hide();
 				},
 				
 			});
@@ -51,16 +53,13 @@ $(document).ready( function(){
 	function error(err) {
 		$('#botao_qualidade').button('loading')
 		console.warn('ERROR(' + err.code + '): ' + err.message);
-		formataErro(document.getElementById('msg-qualidade')," Ta escondendo a localização por que? Está escondendo da polícia?.");
+		
 	};
 
 	function formataErro(elemento,texto){
 		elemento.innerHTML = "<span class='glyphicon glyphicon-exclamation-sign' aria-hidden='true'></span>" + texto;
 		elemento.style.display = 'block';
 	}
-
-	navigator.geolocation.getCurrentPosition(success, error, options);
-
 });
 
 

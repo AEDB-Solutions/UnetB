@@ -72,7 +72,7 @@
 
 							</div>
 
-							<button  value="" type="button" class="btn btn-primary btn-lg btn-block" id="botao_qualidade">Testar</button>
+							<button  value="" type="button" class="btn btn-primary btn-lg btn-block" id="botao_qualidade">Testar <img src="_images/teste.svg" id="gif_qualidade"></button>
 							<br/>
 							<div class='' id='msg-qualidade'></div>
 

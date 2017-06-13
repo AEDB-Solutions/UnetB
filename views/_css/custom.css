@@ -62,7 +62,7 @@ body{
 .form-group{
 	margin-bottom: 8px;
 }
-#gif_registro, #gif_login{
+#gif_registro, #gif_login, #gif_qualidade{
 	display: none;
 }
 /******************CENTRALIZAR OBJETOS VERTICALMENTE NA TELA******************/
