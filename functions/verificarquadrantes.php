@@ -11,7 +11,7 @@
 	
 		$y        = $linha["long"];
 		$x         = $linha["lat"];
-
+		$id         = $linha["id"];
 	
  
 	$pointLocation = new pointLocation();
@@ -20,7 +20,7 @@
 	
 	// Las últimas coordenadas tienen que ser las mismas que las primeras, para "cerrar el círculo"
 	foreach($points as $key => $point) {
-    echo "point " . ($key+1) . " ($point): " . $pointLocation->pointInPolygon($point, $polygon) . "<br>";
+    echo "point $id ($point): " . $pointLocation->pointInPolygon($point, $polygon) . "<br>";
    		}
 	}
 ?>
