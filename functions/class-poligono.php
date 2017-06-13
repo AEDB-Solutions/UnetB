@@ -1,5 +1,4 @@
 <?php
-
     class pointLocation {
         var $pointOnVertex = true; // Checar se o ponto se encontra exatamente em um dos vértices?
  
@@ -29,15 +28,13 @@
             $vertex1 = $vertices[$i-1]; 
             $vertex2 = $vertices[$i];
             if ($vertex1['y'] == $vertex2['y'] and $vertex1['y'] == $point['y'] and $point['x'] > min($vertex1['x'], $vertex2['x']) and $point['x'] < max($vertex1['x'], $vertex2['x'])) 
-
-		{ // Checar se o ponto está em um segmento horizontal
+        { // Checar se o ponto está em um segmento horizontal
                 return "Borda";
             }
             if ($point['y'] > min($vertex1['y'], $vertex2['y']) and $point['y'] <= max($vertex1['y'], $vertex2['y']) and $point['x'] <= max($vertex1['x'], $vertex2['x']) and $vertex1['y'] != $vertex2['y']) { 
                 $xinters = ($point['y'] - $vertex1['y']) * ($vertex2['x'] - $vertex1['x']) / ($vertex2['y'] - $vertex1['y']) + $vertex1['x']; 
                 if ($xinters == $point['x']) 
-
-		{ //  Checar se o ponto está em um segmento (sem ser o horizontal)
+        { //  Checar se o ponto está em um segmento (sem ser o horizontal)
                     return "Borda";
                 }
                 if ($vertex1['x'] == $vertex2['x'] || $point['x'] <= $xinters) {
@@ -52,7 +49,7 @@
             return "Fora";
         }
     
-	}
+    }
  
     function pointOnVertex($point, $vertices) {
         foreach($vertices as $vertex) {
@@ -62,13 +59,11 @@
         }
  
     
-	}
+    }
  
     function pointStringToCoordinates($pointString) {
         $coordinates = explode(" ", $pointString);
         return array("x" => $coordinates[0], "y" => $coordinates[1]);
     }
-
 }
-
 ?>
