@@ -1,3 +1,9 @@
+<?php	
+	if (!isset($_SESSION)) session_start();
+	if(!isset($_SESSION['email'])){
+		header('location:login-view.php');
+	}
+?>
 <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
 	<div class="container-fluid">
 		<!-- DEIXA SITE RESPONSIVO -->
@@ -17,9 +23,9 @@
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="home-login-view.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
 				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> Usuário</a>
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> <?php echo $_SESSION['nome'];?></a>
 					<ul class="dropdown-menu">
-						<li><a href="?">Perfil</a></li>
+						<li><a href="profille-view.php">Perfil</a></li>
 						<li><a href="../functions/logout.php">Sair</a></li>
 					</ul>
 				</li>
@@ -27,7 +33,7 @@
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-align-justify"></span> Menu</a>
 					<ul class="dropdown-menu">
 						<li><a href="how-to-use-view.php">Como Usar</a></li>
-						<li><a href="#">Teste de Velocidade</a></li>
+						<li><a href="networking-data-view.php">Teste de Velocidade</a></li>
 						<li><a href="about-view.php">Sobre</a></li>	
 					</ul>
 				</li>

@@ -12,6 +12,9 @@ CREATE TABLE IF NOT EXISTS `unetb`.`user` (
   `name` VARCHAR(255)  COLLATE utf8_bin NOT NULL,
   `email` VARCHAR(255) COLLATE utf8_bin NOT NULL,
   `password` TEXT      COLLATE utf8_bin NOT NULL,
+  `course` VARCHAR(255) COLLATE utf8_bin NOT NULL,
+  `matricula`  VARCHAR(11) COLLATE utf8_bin NOT NULL,
+  `cellphone` BIGINT(14) COLLATE utf8_bin NOT NULL, 
   `date_register` datetime default current_timestamp,
    PRIMARY KEY (`user_id`),
    UNIQUE (email)
