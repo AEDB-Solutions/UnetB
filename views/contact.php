@@ -23,7 +23,7 @@
 								<h1 class="modal-title">Contato</h1>
 							</div>
 							
-							<form id='form-contato' method="POST" action="http://formspree.io/phelipeuni@gmail.com">
+							<form id='form-contato' method="POST" action="http://formspree.io/unetbcontato@gmail.com">
 
 								<div class="form-group">
 									<label for="name">Nome</label>
