@@ -1,35 +1,58 @@
-<?php
-		if (!isset($_SESSION)) session_start();
+<?php 
+	
+	if (!isset($_SESSION)) session_start();
 	if(!isset($_SESSION['email'])){
 		header('location:login-view.php');
 	}
 
 	require_once "../classes/class-UnetbDB.php";
+	require_once "../functions/hash.php";
+	require_once "classes/class-Settings.php";
 
-	function getUserData($email){
-	$mySQL = new MySQL;
-	$result = $mySQL->executeQuery("SELECT * FROM user WHERE email = '$email'");
-	$mySQL->disconnect();
-	$data = mysqli_fetch_assoc($result);
-	return $data;
+	$name = $_POST['name'];
+	$email    = $_POST['email'];
+	$lastpass    = $_POST['lastpassword'];
+	$newpass = $_POST['newpassword'];
+	$course    = $_POST['course'];
+	$matricula     = $_POST['matricula'];
+	$cellphone    = $_POST['cellphone'];
+
+	function checkEmail($valor,$coluna){
+		global $mySQL;
+		$executaQuery = $mySQL->executeQuery("SELECT {$coluna} FROM user WHERE {$coluna} = '{$valor}'");
+
+		if(mysqli_num_rows($executaQuery) == 1){	
+			return true;
+		}
+		return false;
 	}
 
-	function showData(){
-		$data = getUserData($_SESSION['email']);
-		if($data['name']){
-			echo "<b>Nome: </b>", $data['name'], "</br>";
+	function checkPassword($email, $lastpassword){
+		$mySQL = new MySQL;
+		$resultadoQuery = $mySQL->executeQuery("SELECT * FROM user WHERE email = '{$email}'");
+		$mySQL->disconnect();
+		$data = mysqli_fetch_assoc($resultadoQuery);
+		verify($password, $hashedPassword)
+		if(verify($lastpassword, $data['password'])){
+			return true;
+		}else{ 
+			return false;
 		}
-		if($data['email']){
-			echo "<b>E-mail: </b>", $data['email'], "</br>";
-		}
-		if($data['cellphone']){
-			echo "<b>Celular: </b>", $data['cellphone'], "</br>";
-		}else echo "<b>Celular não cadastrado.</b>", "</br>";
-		if($data['course']){
-			echo "<b>Curso: </b>", $data['course'], "</br>";
-		}else echo "<b>Curso não cadastrado.</b>", "</br>";
-		if($data['matricula']){
-			echo "<b>Matrícula: </b>", $data['matricula'], "</br>";
-		}else echo "<b>Matrícula não cadastrada.</b>", "</br>";
 	}
+
+	function insertInfo(){
+		global $name, $email, $password, $course, $newpass, $matricula, $cellphone;
+		$User = new User($name, $email, b_hash($password), $matricula, $course, $cellphone);
+		return $User->save();
+	}
+
+
+	if(checkEmail($email, 'email'))
+		echo "E-mail já existe.";
+	else if(checkPassword($email, $lastpass)){
+		echo "Senha Incorreta.";
+	}else if(insertInfo()){
+		echo "Atualização bem sucedida.";
+	}else 
+		echo "Erro ao conectar com o bando de dados.";
 ?>

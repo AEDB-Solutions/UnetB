@@ -22,7 +22,6 @@
 		 <!-- Carrega JS do Google Maps-->
 		<script async defer	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5lst-DG_gwygdX_MR08cEYYUO5p5np5E&libraries=visualization,geometry&callback=initMap"></script>
 		<script src="_js/mapa.js"></script> <!-- Carrega JS do Google Maps-->
-		<script src="_js/mapa.js"></script> <!-- Carrega JS do Google Maps-->
 		<script src="_js/jquery.min.js"></script> <!-- Carrega JS jquery-->
 		<scripT src="_js/bootstrap.js"></script> <!-- Carrega JS do bootstrap-->
 		<script typ></script>

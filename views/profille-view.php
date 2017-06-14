@@ -1,5 +1,5 @@
 <?php
-	require_once "../controllers/profille-controller.php";
+	require_once "../controllers/profille-info.php";
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -22,7 +22,12 @@
 									<?php 
 										showData();
 									 ?>
-								<button  value="" type="button" class="btn btn-primary btn-lg" id='edit'>Editar <img src="_images/teste.svg" id="gif_registro"></button>
+						<!-- 		<button id="btnEdit" type="button" class="btn btn-primary btn-lg">
+						Editar
+					</button> -->
+							<form action="profille-settings-view.php">
+    									<input type="submit"/>
+							</form>
 							</div>
 						</div>							
 					</div> <!-- /row-->
