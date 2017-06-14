@@ -98,7 +98,7 @@ function initMap() {
 
 	map = new google.maps.Map(document.getElementById('map'), {
 		center: {lat: -15.763, lng: -47.869},
-		zoom: 14,
+		zoom: 20,
 		mapTypeControl: false,
 		streetViewControl: false
 	});
@@ -156,6 +156,37 @@ function initMap() {
 		label: "ID",
 	});
 
+        
+		//criando o retangulo limite
+	var strictBounds = new google.maps.LatLngBounds(
+  new google.maps.LatLng(-15.771534, -47.873768), //SO
+     new google.maps.LatLng(-15.756158, -47.866140) //NE
+   );
+
+
+
+	 google.maps.event.addListener(map, 'dragend', function() {
+     if (strictBounds.contains(map.getCenter())) return;
+
+     // movendo o mapa para dentro da área estabelecida quando fora dela
+
+     var c = strictBounds.getCenter(),
+         x = c.lng(),
+         y = c.lat(),
+         maxX = strictBounds.getNorthEast().lng(),
+         maxY = strictBounds.getNorthEast().lat(),
+         minX = strictBounds.getSouthWest().lng(),
+         minY = strictBounds.getSouthWest().lat();
+
+     if (x < minX) x = minX;
+     if (x > maxX) x = maxX;
+     if (y < minY) y = minY;
+     if (y > maxY) y = maxY;
+
+     map.setCenter(new google.maps.LatLng(y, x));
+   });
+
+ 
 
 
 
