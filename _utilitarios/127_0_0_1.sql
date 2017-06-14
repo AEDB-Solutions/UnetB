@@ -1,7 +1,5 @@
 CREATE DATABASE IF NOT EXISTS `unetb` DEFAULT CHARACTER SET utf8;
 
--- --------------------------------------------------------
-
 --
 -- Estrutura da tabela `user`
 --

@@ -11,13 +11,13 @@
 	$pj             = pingJitter("www.unb.br");
 	
 	$lat            = $_POST['lat'];
-	$long           = $_POST['long'];	
+	$long           = $_POST['long'];
 	$latency        = $pj["latency"];
-	$jitter_tt      = $pj["jitter"];	
+	$jitter_tt      = $pj["jitter"];
 	$download_speed = download();
 	$upload_speed   = upload();
 	$intensity      = checkIntensity();	
-	$packetloss     = checkPacketLoss('164.41.4.26', 4);	
+	$packetloss     = checkPacketLoss('164.41.4.26', 4);
 	$access_point   = get_access_point();
 
 	$query = "INSERT INTO `networking_data` (`lat`, `long`, `download_speed`, `upload_speed`, `intensity`, `latency`, `packetloss`, `jitter`, `access_point`) VALUES ($lat, $long, $download_speed, $upload_speed, $intensity, $latency, $packetloss, $jitter_tt, '$access_point' );";

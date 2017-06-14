@@ -71,7 +71,7 @@ MercatorProjection.prototype.fromPointToLatLng = function (point){
 
 
 function getNewRadius(){
-	var desiredRadiusPerPointInMeters = 500;
+	var desiredRadiusPerPointInMeters = 200;
 	var numTiles = 1 << map.getZoom();
 	var center = map.getCenter();
 	var moved = google.maps.geometry.spherical.computeOffset(center, 1000, 90); /*1000 meters to the right*/
@@ -86,16 +86,67 @@ function getNewRadius(){
 	return totalPixelSize;
 }
 
+
+
 function initMap() {
+	
+	var pontosLng = [-15.745200,-15.745400,-15.745600,-15.745800,-15.746000,-15.746200,-15.746400,-15.746600,-15.746800,-15.747000,-15.747200,-15.747400,-15.747600,-15.747800,-15.748000,-15.748200,-15.748400,-15.748600,-15.748800,-15.749000,-15.749200,-15.749400,-15.749600,-15.749800,-15.750000,-15.750200,-15.750400,-15.750600,-15.750800,-15.751000,-15.751200,-15.751400,-15.751600,-15.751800,-15.752000,-15.752200,-15.752400,-15.752600,-15.752800,-15.753000,-15.753200,-15.753400,-15.753600,-15.753800,-15.754000,-15.754200,-15.754400,-15.754600,-15.754800,-15.755000,-15.755200,-15.755400,-15.755600,-15.755800,-15.756000,-15.756200,-15.756400,-15.756600,-15.756800,-15.757000,-15.757200,-15.757400,-15.757600,-15.757800,-15.758000,-15.758200,-15.758400,-15.758600,-15.758800,-15.759000,-15.759200,-15.759400,-15.759600,-15.759800,-15.760000,-15.760200,-15.760400,-15.760600,-15.760800,-15.761000,-15.761200,-15.761400,-15.761600,-15.761800,-15.762000,-15.762200,-15.762400,-15.762600,-15.762800,-15.763000,-15.763200,-15.763400,-15.763600,-15.763800,-15.764000,-15.764200,-15.764400,-15.764600,-15.764800,-15.765000,-15.765200,-15.765400,-15.765600,-15.765800,-15.766000,-15.766200,-15.766400,-15.766600,-15.766800,-15.767000,-15.767200,-15.767400,-15.767600,-15.767800,-15.768000,-15.768200,-15.768400,-15.768600,-15.768800,-15.769000,-15.769200,-15.769400,-15.769600,-15.769800,-15.770000,-15.770200,-15.770400,-15.770600,-15.770800,-15.771000,-15.771200,-15.771400,-15.771600,-15.771800,-15.772000,-15.772200,-15.772400,-15.772600,-15.772800,-15.773000,-15.773200,-15.773400,-15.773600,-15.773800,-15.774000,-15.774200,-15.774400,-15.774600,-15.774800,-15.775000,-15.775200,-15.775400,-15.775600,-15.775800];
+
 	map = new google.maps.Map(document.getElementById('map'), {
-		
 		center: {lat: -15.763, lng: -47.869},
-		zoom: 16,
+		zoom: 14,
 		mapTypeControl: false,
 		streetViewControl: false
-	
 	});
+
+	function addMarker(location, map) {
+
+		var marker = new google.maps.Marker({
+			position: {lat: location, lng: -47.87700},
+			map: map
+		});
+	}
 	
+	for (var i = 0; i < pontosLng.length; i++) {
+		addMarker(pontosLng[i], map);
+	}
+	
+	
+
+
+
+
+
+
+
+
+
+
+	//Superior esquerdo
+	var marker = new google.maps.Marker({
+		position: {lat: -15.74500, lng: -47.87700},	
+		map: map,
+		label: "SE",
+	});
+	//Superior direito
+	var marker = new google.maps.Marker({
+		position: {lat: -15.74500, lng: -47.85500},
+		map: map,
+		label: "SD",
+	});	
+	//inferior esquerdo
+	var marker = new google.maps.Marker({
+		position: {lat: -15.77600, lng: -47.87700},
+		map: map,
+		label: "IE",
+	});
+	//inferior direito
+	var marker = new google.maps.Marker({
+		position: {lat: -15.77600, lng: -47.85500},
+		map: map,
+		label: "ID",
+	});
+
 	// infoWindow = new google.maps.InfoWindow({map: map});
 
 	// if (navigator.geolocation) {
@@ -142,7 +193,6 @@ function testando(){
 
 				heatmap = new google.maps.visualization.HeatmapLayer({
 					data: heatmapData,
-					//radius: 50,
 					gradient: gradient,
 					//opacity: 0.4,		
 					map: map,
