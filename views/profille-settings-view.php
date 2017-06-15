@@ -23,7 +23,7 @@
 							
 							<div class="modal-header">
 								<h1 class="modal-title">Editar Informações</h1>
-								<i>Digite apenas nos campos que deseja alterar ou incluir algo.</i>
+								<i>Para salvar as novas informações você deve informar sua senha atual.</i>
 							</div>
 							
 							<form action="" method="post" id='form-settings' enctype='multipart/form-data'>
@@ -77,7 +77,7 @@
 
 								<div class="modal-footer">
 									
-									<button  value="" type="button" class="btn btn-primary btn-lg" id="edit-button" > Editar <img src="_images/teste.svg" id="gif_registro"></button>
+									<button  value="" type="button" class="btn btn-primary btn-lg" id="edit-button" > Salvar <img src="_images/teste.svg" id="gif_registro"></button>
 								</div>
 
 								<div class='' id='msg-settings'></div>
