@@ -23,7 +23,7 @@
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="home-login-view.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
 				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> <?php echo $_SESSION['nome'];?></a>
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> <?=$_SESSION['nome'];?></a>
 					<ul class="dropdown-menu">
 						<li><a href="profille-view.php">Perfil</a></li>
 						<li><a href="../functions/logout.php">Sair</a></li>

@@ -2,7 +2,6 @@
 <html lang="pt-br">
 
 	<head>
-
 		<!-- INCLUE O HEAD NA PÁGINA -->
 		<?php include "_includes/head.php";?>
 
@@ -65,16 +64,15 @@
 
 								<div class="form-group">
 									<label for= 'matricula'> Matrícula</label>
-									<input type="text" name="matricula" class = "form-control" id = "matricula" placeholder="Digite sua matrícula." value="<?= $user_dt['matricula']?>">
+									<input type="text" name="matricula" class = "form-control" id = "matricula" placeholder="Digite sua matrícula." value="<?= $user_dt['matricula']?>" maxlength="10" OnKeyPress="formatar('##/#######', this)">
 									<span class='msg-erro msg-matricula'></span>
 								</div>
 
 								<div class="form-group">
-									<label for= 'cellphone'> Celular: </label>
-									<input type="text" name="cellphone" class = "form-control" id = "cellphone" placeholder="Digite seu número de celular." value="<?= $user_dt['cellphone']?>">
+									<label for= 'cellphone'> Celular </label>
+									<input type="text" name="cellphone" class = "form-control cellphone" id = "cellphone" placeholder="Digite seu número de celular com DDD." value="<?= $user_dt['cellphone']?>" maxlength="14" OnKeyPress="formatar('## # ####-####', this)">
 									<span class='msg-erro msg-cellphone'></span>
 								</div>
-
 								<div class="modal-footer">
 									
 									<button  value="" type="button" class="btn btn-primary btn-lg" id="edit-button" > Salvar <img src="_images/teste.svg" id="gif_registro"></button>

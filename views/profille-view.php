@@ -22,12 +22,12 @@
 									<?php 
 										showData();
 									 ?>
-						<!-- 		<button id="btnEdit" type="button" class="btn btn-primary btn-lg">
+								<button id="btnEdit" type="button" class="btn btn-primary btn-lg" onclick = "goSetting()">
 						Editar
-					</button> -->
-							<form action="profille-settings-view.php">
+					</button>
+							<!-- <form action="profille-settings-view.php">
     									<input type="submit"/>
-							</form>
+							</form> -->
 							</div>
 						</div>							
 					</div> <!-- /row-->
@@ -38,5 +38,8 @@
 		<?php include "_includes/header-logado.php" ?>
 		<script src="_js/jquery.min.js"></script> <!-- Carrega JS jquery-->
 		<scripT src="_js/bootstrap.js"></script> <!-- Carrega JS do bootstrap-->
+		<script type="text/javascript"> 
+		function goSetting(){								location.href="profille-settings-view.php";}
+		</script>
 	</body>
 </html>

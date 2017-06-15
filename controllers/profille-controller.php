@@ -16,7 +16,7 @@
 	$course    = $_POST['course'];
 	$matricula     = $_POST['matricula'];
 	$cellphone    = $_POST['cellphone'];
-	$password = definePassword($lastpass, $newpass);
+	$password = definePassword($lastpass, $newpass);	 
 	$mySQL = new MySQL;
 
 

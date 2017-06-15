@@ -67,10 +67,6 @@ function validateSettings(evt){
 		caixa_confnewpass.style.display = 'none';
 	}
 
-
-
-
-
 	caixa_settings = document.getElementById('msg-settings');
 	caixa_settings.style.display = 'none';
 
@@ -131,4 +127,14 @@ function formataErro(elemento,texto){
 function formataSuccess(elemento,texto){	
 	elemento.innerHTML = "<span class='glyphicon glyphicon glyphicon-ok' aria-hidden='true'></span>" + texto;
 	elemento.style.display = 'block';
+}
+
+function formatar(mascara, documento){
+  	var i = documento.value.length;
+ 	var saida = mascara.substring(0,1);
+ 	var texto = mascara.substring(i)
+  	if (texto.substring(0,1) != saida){
+      	documento.value += texto.substring(0,1);
+ }
+  
 }
