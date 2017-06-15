@@ -38,6 +38,12 @@
 								</div>
 
 								<div class="form-group">
+									<label for="assunto">Assunto</label>
+									<input type="assunto" class="form-control" id="assunto-contato" name="Assunto" placeholder="Assunto">
+									<span class='msg-erro msg-assunto'></span> <!-- mensagem de erro -->
+								</div>
+
+								<div class="form-group">
 									<label for="texto">Mensagem</label>
 									<textarea class="form-control" id="texto-contato" name="Mensagem" placeholder="Digite sua Mensagem"></textarea>	
 									<span class='msg-erro msg-texto'></span> <!-- mensagem de erro -->
