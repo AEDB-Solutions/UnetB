@@ -27,13 +27,13 @@
 
 								<div class="form-group">
 									<label for="name">Nome</label>
-									<input type="text" class="form-control" id="name-contato" name="Nome" placeholder="Informe o Nome">
+									<input type="text" class="form-control" id="name-contato" name="Nome" placeholder="Nome">
 									<span class='msg-erro msg-name'></span> <!-- mensagem de erro -->
 								</div>
 
 								<div class="form-group">
 									<label for="email">E-mail</label>
-									<input type="email" class="form-control" id="email-contato" name="E-mail" placeholder="Informe o E-mail">
+									<input type="email" class="form-control" id="email-contato" name="E-mail" placeholder="E-mail">
 									<span class='msg-erro msg-email'></span> <!-- mensagem de erro -->
 								</div>
 
@@ -45,7 +45,7 @@
 
 								<div class="form-group">
 									<label for="texto">Mensagem</label>
-									<textarea class="form-control" id="texto-contato" name="Mensagem" placeholder="Digite sua Mensagem"></textarea>	
+									<textarea class="form-control" id="texto-contato" name="Mensagem" placeholder="Mensagem"></textarea>	
 									<span class='msg-erro msg-texto'></span> <!-- mensagem de erro -->
 								</div>
 
