@@ -7,16 +7,16 @@
 	require_once "../classes/class-UnetbDB.php";
 	require_once "../functions/hash.php";
 
-	function getUserData($email){
+	function getUserData($id){
 	$mySQL = new MySQL;
-	$result = $mySQL->executeQuery("SELECT * FROM user WHERE email = '$email'");
+	$result = $mySQL->executeQuery("SELECT * FROM user WHERE user_id = '$id'");
 	$mySQL->disconnect();
 	$data = mysqli_fetch_assoc($result);
 	return $data;
 	}
 
 	function showData(){
-		$data = getUserData($_SESSION['email']);
+		$data = getUserData($_SESSION['id']);
 		if($data['name']){
 			echo "<b>Nome: </b>", $data['name'], "</br>";
 		}
@@ -33,4 +33,5 @@
 			echo "<b>Matrícula: </b>", $data['matricula'], "</br>";
 		}else echo "<b>Matrícula não cadastrada.</b>", "</br>";
 	}
+
 ?>

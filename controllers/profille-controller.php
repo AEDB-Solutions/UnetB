@@ -1,13 +1,8 @@
 <?php 
 	
-	if (!isset($_SESSION)) session_start();
-	if(!isset($_SESSION['email'])){
-		header('location:login-view.php');
-	}
-
 	require_once "../classes/class-UnetbDB.php";
 	require_once "../functions/hash.php";
-	require_once "classes/class-Settings.php";
+	require_once "../classes/class-Settings.php";
 
 	$name = $_POST['name'];
 	$email    = $_POST['email'];
@@ -18,7 +13,7 @@
 	$cellphone    = $_POST['cellphone'];
 
 	function checkEmail($valor,$coluna){
-		global $mySQL;
+		$mySQL = new MySQL;	
 		$executaQuery = $mySQL->executeQuery("SELECT {$coluna} FROM user WHERE {$coluna} = '{$valor}'");
 
 		if(mysqli_num_rows($executaQuery) == 1){	
@@ -32,10 +27,9 @@
 		$resultadoQuery = $mySQL->executeQuery("SELECT * FROM user WHERE email = '{$email}'");
 		$mySQL->disconnect();
 		$data = mysqli_fetch_assoc($resultadoQuery);
-		verify($password, $hashedPassword)
 		if(verify($lastpassword, $data['password'])){
 			return true;
-		}else{ 
+		}else{
 			return false;
 		}
 	}
@@ -43,7 +37,7 @@
 	function insertInfo(){
 		global $name, $email, $password, $course, $newpass, $matricula, $cellphone;
 		$User = new User($name, $email, b_hash($password), $matricula, $course, $cellphone);
-		return $User->save();
+		return $User->save($email);
 	}
 
 
@@ -52,7 +46,7 @@
 	else if(checkPassword($email, $lastpass)){
 		echo "Senha Incorreta.";
 	}else if(insertInfo()){
-		echo "Atualização bem sucedida.";
+		echo " Atualização bem sucedida.";
 	}else 
 		echo "Erro ao conectar com o bando de dados.";
 ?>

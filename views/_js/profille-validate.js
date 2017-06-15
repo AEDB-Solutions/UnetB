@@ -88,7 +88,7 @@ function validateSettings(evt){
 
 					caixa_settings = document.getElementById('msg-settings');
 
-					if(data == 'Atualização bem sucedida.'){
+					if(data == ' Atualização bem sucedida.'){
 						$('#email').val('');
 						$('#name').val('');
 						$('#lastpassword').val('');
@@ -97,13 +97,13 @@ function validateSettings(evt){
 						$('#course').val('');
 						$('#matricula').val('');
 						$('#cellphone').val('');
-						caixa_cadastro.className = 'msg-success';
-						formataSuccess(caixa_cadastro,data);
+						caixa_settings.className = 'msg-success';
+						formataSuccess(caixa_settings,data);
 					}
 					else{
-						caixa_cadastro.className = 'msg-erro';
-						caixa_cadastro.style.fontSize = "20px";
-						formataErro(caixa_cadastro,data);
+						caixa_settings.className = 'msg-erro';
+						caixa_settings.style.fontSize = "20px";
+						formataErro(caixa_settings,data);
 					}
 				},
 

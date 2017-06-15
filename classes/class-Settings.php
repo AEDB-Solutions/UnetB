@@ -67,10 +67,10 @@
 			$this->cellphone = $cellphone;
 		}
 
-		public function save(){
+		public function save($email){
 
-			global $mySQL;
-			return $mySQL->executeQuery("INSERT INTO user (name, email, password, course, matricula, cellphone) VALUES ('{$this->name}','{$this->email}','{$this->password}', '{$this->course}', '{$this->matricula}', '{$this->cellphone}')");
+			$mySQL = new MySQL;
+			return $mySQL->executeQuery("UPDATE user (name, email, password, course, matricula, cellphone) VALUES ('{$this->name}','{$this->email}','{$this->password}', '{$this->course}', '{$this->matricula}', '{$this->cellphone}') WHERE email = '{$email}'");
 		}
 	}
 ?>
