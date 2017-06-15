@@ -20,7 +20,7 @@
 						<div class= "well col-md-4 col-sm-6 col-xs-12 col-md-offset-4 col-sm-offset-3 modal-body">
 							
 							<div class="modal-header">
-								<h1 class="modal-title">Contato</h1>
+								<h1 class="modal-title">Fale Conosco</h1>
 							</div>
 							
 							<form id='form-contato' method="POST" action="http://formspree.io/unetbcontato@gmail.com">
