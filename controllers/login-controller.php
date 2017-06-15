@@ -25,6 +25,7 @@
 
 		$_SESSION['email'] = $resultado['email'];
 		$_SESSION['nome']  = $resultado['name'];
+		$_SESSION['id'] = $resultado['user_id'];
 
 		echo 'logado';
 

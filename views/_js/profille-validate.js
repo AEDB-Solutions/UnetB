@@ -44,8 +44,8 @@ function validateSettings(evt){
 	}
 
 	caixa_lastpassw = document.querySelector('.msg-lastpassw');
-	if(newpass.value != "" && lastpass.value ==""){
-		formataErro(caixa_lastpassw, "Digite sua senha atual para cadastrar uma nova senha.");
+	if(lastpass.value == ""){
+		formataErro(caixa_lastpassw, "Digite sua senha atual para salvar as alterações.");
 		contErro += 1;
 	}else{
 		caixa_lastpassw.style.display = 'none';
@@ -53,7 +53,7 @@ function validateSettings(evt){
 
 	caixa_newpass = document.querySelector('.msg-newpassw');
 	if(0 < newpass.value.length && newpass.value.length < 6){
-		formataErro(caixa_newpass, "A senha deve conter no mínimo 6 carácteres.");
+		formataErro(caixa_newpass, "A nova senha deve conter no mínimo 6 carácteres.");
 		contErro += 1;
 	}else{
 		caixa_newpass.style.display = 'none';
@@ -88,7 +88,7 @@ function validateSettings(evt){
 
 					caixa_settings = document.getElementById('msg-settings');
 
-					if(data == 'Atualização bem sucedida.'){
+					if(data == ' Atualização feita com sucesso.'){
 						$('#email').val('');
 						$('#name').val('');
 						$('#lastpassword').val('');
@@ -97,13 +97,13 @@ function validateSettings(evt){
 						$('#course').val('');
 						$('#matricula').val('');
 						$('#cellphone').val('');
-						caixa_cadastro.className = 'msg-success';
-						formataSuccess(caixa_cadastro,data);
+						caixa_settings.className = 'msg-success';
+						formataSuccess(caixa_settings,data);
 					}
 					else{
-						caixa_cadastro.className = 'msg-erro';
-						caixa_cadastro.style.fontSize = "20px";
-						formataErro(caixa_cadastro,data);
+						caixa_settings.className = 'msg-erro';
+						caixa_settings.style.fontSize = "20px";
+						formataErro(caixa_settings,data);
 					}
 				},
 

@@ -12,6 +12,8 @@
 
 		<!-- INCLUE O HEADER NA PÁGINA -->
 		<?php include "_includes/header-logado.php";?>
+		<?php include "../controllers/profille-info.php";?>
+		<?php $user_dt = getUserData($_SESSION['id']) ?>
 
 		<div class="pai">
 			<div class="filho">
@@ -21,7 +23,7 @@
 							
 							<div class="modal-header">
 								<h1 class="modal-title">Editar Informações</h1>
-								<i>Digite apenas nos campos que deseja alterar ou incluir algo.</i>
+								<i>Para salvar as novas informações você deve informar sua senha atual.</i>
 							</div>
 							
 							<form action="" method="post" id='form-settings' enctype='multipart/form-data'>
@@ -29,12 +31,12 @@
 					
 								<div class="form-group">
 									<label for="email">E-mail</label>
-									<input type="email" class="form-control" id='email' name="email" placeholder="Informe o E-mail">
+									<input type="email" class="form-control" id='email' name="email" placeholder="Informe o E-mail" value = "<?=$user_dt['email']?>">
 									<span class='msg-erro msg-email'></span>
 								</div>
 								<div class="form-group">
 									<label for= 'name'> Nome </label>
-									<input type="text" name="name" class = "form-control" id = "name" placeholder="Digite seu nome">
+									<input type="text" name="name" class = "form-control" id = "name" placeholder="Digite seu nome" value="<?= $user_dt['name']?>">
 									<span class='msg-erro msg-name'></span>
 								</div>
 								<div class="form-group">
@@ -57,25 +59,25 @@
 
 								<div class="form-group">
 									<label for= 'course'> Curso</label>
-									<input type="text" name="course" class = "form-control" id = "course" placeholder="Digite o seu curso.">
+									<input type="text" name="course" class = "form-control" id = "course" placeholder="Digite o seu curso." value="<?= $user_dt['course']?>">
 									<span class='msg-erro msg-course'></span>
 								</div>
 
 								<div class="form-group">
 									<label for= 'matricula'> Matrícula</label>
-									<input type="text" name="matricula" class = "form-control" id = "matricula" placeholder="Digite sua matrícula.">
+									<input type="text" name="matricula" class = "form-control" id = "matricula" placeholder="Digite sua matrícula." value="<?= $user_dt['matricula']?>">
 									<span class='msg-erro msg-matricula'></span>
 								</div>
 
 								<div class="form-group">
 									<label for= 'cellphone'> Celular: </label>
-									<input type="text" name="cellphone" class = "form-control" id = "cellphone" placeholder="Digite seu número de celular.">
+									<input type="text" name="cellphone" class = "form-control" id = "cellphone" placeholder="Digite seu número de celular." value="<?= $user_dt['cellphone']?>">
 									<span class='msg-erro msg-cellphone'></span>
 								</div>
 
 								<div class="modal-footer">
 									
-									<button  value="" type="button" class="btn btn-primary btn-lg" id="edit-button" > Editar <img src="_images/teste.svg" id="gif_registro"></button>
+									<button  value="" type="button" class="btn btn-primary btn-lg" id="edit-button" > Salvar <img src="_images/teste.svg" id="gif_registro"></button>
 								</div>
 
 								<div class='' id='msg-settings'></div>
@@ -88,7 +90,7 @@
 			</div> <!-- filho -->
 		</div> <!-- pai -->
 
-		<script src="_js/profille-validate.js"></script> <!-- Carrega JS para validar informações-->
+		 <script src="_js/profille-validate.js"></script> <!-- Carrega JS para validar informações -->
 		<script src="_js/jquery.min.js"></script> <!-- Carrega JS jquery-->
 		<script src="_js/bootstrap.js"></script> <!-- Carrega JS do bootstrap-->	
 	</body>

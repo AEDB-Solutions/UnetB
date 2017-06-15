@@ -1,6 +1,6 @@
 <?php
 
-	class User{
+	class UserData{
 
 		private $name;
 		private $email;
@@ -51,7 +51,7 @@
 		}
 
 		public function get_course (){
-			return $this -> pcourse;
+			return $this -> course;
 		}
 
 		public function get_cellphone (){
@@ -67,10 +67,9 @@
 			$this->cellphone = $cellphone;
 		}
 
-		public function save(){
-
-			global $mySQL;
-			return $mySQL->executeQuery("INSERT INTO user (name, email, password, course, matricula, cellphone) VALUES ('{$this->name}','{$this->email}','{$this->password}', '{$this->course}', '{$this->matricula}', '{$this->cellphone}')");
+		public function update_data($u_id){
+			$mySQL = new MySQL;
+			return $mySQL->executeQuery("UPDATE user SET name = '{$this->name}', email='{$this->email}', password='{$this->password}', course = '{$this->course}', matricula = '{$this->matricula}', cellphone = '{$this->cellphone}' WHERE user_id = {$u_id}");
 		}
 	}
 ?>
