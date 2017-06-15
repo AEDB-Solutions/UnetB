@@ -60,7 +60,9 @@ function validateSettings(evt){
 	}
 
 	caixa_matricula = document.querySelector('.msg-matricula');
-	if(!filtro_matricula.test(matricula.value)){
+	if(matricula.value == ""){
+		caixa_matricula.style.display = 'none';}
+	else if(!filtro_matricula.test(matricula.value)){
 		formataErro(caixa_matricula, "Digite somente os números");
 		contErro += 1;
 	}else if(0 < matricula.value,length && matricula.value.length < 10){
@@ -71,7 +73,9 @@ function validateSettings(evt){
 	}
 
 	caixa_celular = document.querySelector('.msg-cellphone');
-	if(!filtro_celular.test(cellphone.value)){
+	if(cellphone.value == ""){
+		caixa_celular.style.display = 'none';
+	}else if(!filtro_celular.test(cellphone.value)){
 		formataErro(caixa_celular, "Digite somente os números.");
 		contErro += 1;
 	}else{ caixa_celular.style.display= 'none'};
