@@ -38,7 +38,7 @@
 								</div>
 
 								<div class="form-group">
-									<label for="texto">Texto</label>
+									<label for="texto">Mensagem</label>
 									<textarea class="form-control" id="texto-contato" name="Mensagem" placeholder="Digite sua Mensagem"></textarea>	
 									<span class='msg-erro msg-texto'></span> <!-- mensagem de erro -->
 								</div>
