@@ -17,6 +17,8 @@ function validateSettings(evt){
 	var matricula = document.getElementById('matricula');
 	var filtro_email = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
 	var filtro_name = /^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ' ]+$/;
+	var filtro_matricula = /^[0-9]{2}\/[0-9]{7}$/;
+	var filtro_celular = /^[0-9]{2} [0-9] [0-9]{4}\-[0-9]{4}$/; 
 	var contErro = 0;
 
 	caixa_email = document.querySelector('.msg-email');
@@ -31,8 +33,6 @@ function validateSettings(evt){
 
 	caixa_nome = document.querySelector('.msg-name');
 	if(name.value == ""){
-		caixa_nome.style.display= 'none';
-	}else if(0 < name.value.length && name.value.length < 3){
 		formataErro(caixa_nome," O nome deve conter no mínimo 3 letras.");
 		contErro += 1;
 	}else if(!filtro_name.test(name.value)){
@@ -58,6 +58,23 @@ function validateSettings(evt){
 	}else{
 		caixa_newpass.style.display = 'none';
 	}
+
+	caixa_matricula = document.querySelector('.msg-matricula');
+	if(!filtro_matricula.test(matricula.value)){
+		formataErro(caixa_matricula, "Digite somente os números");
+		contErro += 1;
+	}else if(0 < matricula.value,length && matricula.value.length < 10){
+		formataErro(caixa_matricula, "Há algo de errado com o número de matrícula, digite somente os números");
+		contErro += 1;
+	}else{
+		caixa_matricula.style.display= 'none';
+	}
+
+	caixa_celular = document.querySelector('.msg-cellphone');
+	if(!filtro_celular.test(cellphone.value)){
+		formataErro(caixa_celular, "Digite somente os números.");
+		contErro += 1;
+	}else{ caixa_celular.style.display= 'none'};
 
 	caixa_confnewpass = document.querySelector('.msg-confnewpassw');
 	if(newpass.value != confnewpass.value){
@@ -138,3 +155,4 @@ function formatar(mascara, documento){
  }
   
 }
+

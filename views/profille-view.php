@@ -19,9 +19,11 @@
 						<div class= "well col-md-4 col-sm-6 col-xs-12 col-md-offset-4 col-sm-offset-3 modal-body">
 							<div class="modal-header">
 								<h1 class="modal-title">Informações do Usuário</h1>
-									<?php 
-										showData();
-									 ?>
+									<b>	Nome: </b> <?=$data['name'];?> </br></br>
+									<b>	Email: </b>  <?=$data['email'];?> </br></br>
+									<b>	Celular: </b> <?=$data['cellphone'];?> </br></br>
+									<b> Curso: </b> <?=$data['course'];?> </br></br>
+									<b> Matrícula: </b> <?=$data['matricula'];?> </br></br>
 								<button id="btnEdit" type="button" class="btn btn-primary btn-lg" onclick = "goSetting()">
 						Editar
 					</button>

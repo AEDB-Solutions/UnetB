@@ -58,7 +58,8 @@
 
 								<div class="form-group">
 									<label for= 'course'> Curso</label>
-									<input type="text" name="course" class = "form-control" id = "course" placeholder="Digite o seu curso." value="<?= $user_dt['course']?>">
+									<select name="course" class = "form-control" id = "course">
+										<?php showcourse();?></select>
 									<span class='msg-erro msg-course'></span>
 								</div>
 
@@ -70,9 +71,10 @@
 
 								<div class="form-group">
 									<label for= 'cellphone'> Celular </label>
-									<input type="text" name="cellphone" class = "form-control cellphone" id = "cellphone" placeholder="Digite seu número de celular com DDD." value="<?= $user_dt['cellphone']?>" maxlength="14" OnKeyPress="formatar('## # ####-####', this)">
+									<input type="text" name="cellphone" class = "form-control cellphone" id = "cellphone" placeholder="Celular: 99 9 9999-9999" value="<?= $user_dt['cellphone']?>" maxlength="14" OnKeyPress="formatar('## # ####-####', this)">
 									<span class='msg-erro msg-cellphone'></span>
 								</div>
+
 								<div class="modal-footer">
 									
 									<button  value="" type="button" class="btn btn-primary btn-lg" id="edit-button" > Salvar <img src="_images/teste.svg" id="gif_registro"></button>
