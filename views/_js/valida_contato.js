@@ -56,7 +56,7 @@ function validaLogin(evt){
 		formataErro(caixa_texto," Favor preencher o texto.");
 		contErro += 1;
 	}else if(texto.value.length < 6){
-		formataErro(caixa_texto," Senha deve ter no mínimo 6 caracteres.");
+		formataErro(caixa_texto," Mensagem deve conter no minimo 6 caracteres.");
 		contErro += 1;
 	}else{
 		caixa_texto.style.display = 'none';
@@ -72,7 +72,7 @@ function validaLogin(evt){
 	}else{
 		document.getElementById('assunto').setAttribute("value",name.value);
 		$(document).ready( function(){
-			alert("foi");
+			alert("Sucesso");
 		});
 	}
 }

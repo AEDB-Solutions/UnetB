@@ -71,6 +71,6 @@
 		
 		<script src="_js/jquery.min.js"></script> <!-- Carrega JS jquery-->
 		<script src="_js/bootstrap.js"></script> <!-- Carrega JS do bootstrap-->
-		<script src="_js/valida_contato.js"></script> <!-- Carrega JS para validar login-->
+		<script src="_js/valida_contato.js"></script> <!-- Carrega JS para validar Mensagem-->
 	</body>
 </html>
