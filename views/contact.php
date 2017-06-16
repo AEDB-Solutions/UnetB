@@ -54,9 +54,9 @@
 								</div>
 								
 								
-								<input type="hidden" name="_next" value="http://localhost/UnetB/views/contact.php?Sucesso!" />
+								<input type="hidden" name="_next" value="http://localhost/UnetB/views/contact.php?Fale Conosco" />
 								<input type="hidden" name="_subject" value="" id="assunto"/>
-								<input type="hidden" name="_language" value="pt-br" />
+								<input type="hidden" name="_language" value="pt" />
 								
 
 								<div class='' id='msg-contato'></div>
