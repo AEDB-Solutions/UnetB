@@ -16,8 +16,6 @@
 	}
 	$data = getUserData($_SESSION['id']);
 
-	var_dump($data);
-
 	function showCourse(){
 		global $data;
 
