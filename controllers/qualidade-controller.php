@@ -19,6 +19,7 @@
 	$intensity      = checkIntensity();	
 	$packetloss     = checkPacketLoss('164.41.4.26', 4);
 	$access_point   = get_access_point();
+	$level			= intensityLevel();
 
 	$query = "INSERT INTO `networking_data` (`lat`, `long`, `download_speed`, `upload_speed`, `intensity`, `latency`, `packetloss`, `jitter`, `access_point`) VALUES ($lat, $long, $download_speed, $upload_speed, $intensity, $latency, $packetloss, $jitter_tt, '$access_point' );";
 
@@ -33,6 +34,7 @@
 		"latency"    => "$latency",
 		"packetloss" => "$packetloss",
 		"jitter"     => "$jitter_tt",
+		"nivel"		 =>	"$level",
 
 	);
 	echo json_encode($parametros);

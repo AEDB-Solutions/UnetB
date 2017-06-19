@@ -27,4 +27,21 @@
 		return substr($unix_result, strpos($unix_result, '-'), strlen($unix_result) -60);
 	}
 	
+	function intensityLevel()	{
+		$intensidade = checkIntensity();
+		if($intensidade < -50)
+			$level = 1;
+		else if($intensidade > -50 && $intensidade < -40)
+			$level = 2;
+		else if($intensidade > -40 && $intensidade < -30)
+			$level = 3;
+		else if($intensidade > -30 && $intensidade < -20)
+			$level = 4;
+		else if($intensidade > -20 && $intensidade < -10)
+			$level = 5;
+		else if($intensidade > -10)
+			$level = 6;
+			return	$level;
+	}
+	
 ?>

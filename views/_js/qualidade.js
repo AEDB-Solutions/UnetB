@@ -34,6 +34,7 @@ $(document).ready( function(){
 					$('#dado-latency').html(data['latency']);
 					$('#dado-packetloss').html(data['packetloss']);
 					$('#dado-jitter').html(data['jitter']);
+					$('#dado-nivel').html(data['nivel']);
 				},
 
 				beforeSend: function(){
