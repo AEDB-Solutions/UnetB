@@ -62,8 +62,18 @@ function validaLogin(evt){
 		caixa_texto.style.display = 'none';
 	}
 
+	/* Validação do campo assunto*/
+	caixa_texto = document.querySelector('.msg-assunto');
+	if(texto.value == ""){
+		formataErro(caixa_assunto," Favor preencher o assunto.");
+		contErro += 1;
+	}else if(texto.value.length < 3){
+		formataErro(caixa_texto," Assunto deve conter no minimo 3 caracteres.");
+		contErro += 1;
+	}else{
+		caixa_assunto.style.display = 'none';
+	}
 
-	
 	caixa_login = document.getElementById('msg-contato');
 	caixa_login.style.display = 'none';
 	
