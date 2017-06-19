@@ -16,11 +16,18 @@
 	}
 	$data = getUserData($_SESSION['id']);
 
+	var_dump($data);
+
 	function showCourse(){
-		$setup = array();
-		$course = array("","Administração","Agronomia","Arquitetura e Urbanismo","Arquivologia","Artes Cênicas","Artes Plásticas","Biblioteconomia","Ciência da Computação","Ciência Política","Ciências Ambientais","Ciências Biológicas","Ciências Contábeis","Ciências Econômicas","Ciências Farmacêuticas","Ciências Sociais","Comunicação Organizacional","Comunicação Social","Design","Direito","Educação Física","Enfermagem e Obstetrícia","Engenharia Ambiental","Engenharia Civil","Engenharia de Computação","Engenharia de Redes de Comunicação","Engenharia de Produção","Engenharia Elétrica","Engenharia Florestal","Engenharia Mecânica","Engenharia Mecatrônica","Estatística,Filosofia","Física,Geofísica","Geografia","Geologia","Gestão de Políticas Públicas",
+		global $data;
+
+		$course = array("", "Administração","Agronomia","Arquitetura e Urbanismo","Arquivologia","Artes Cênicas","Artes Plásticas","Biblioteconomia","Ciência da Computação","Ciência Política","Ciências Ambientais","Ciências Biológicas","Ciências Contábeis","Ciências Econômicas","Ciências Farmacêuticas","Ciências Sociais","Comunicação Organizacional","Comunicação Social","Design","Direito","Educação Física","Enfermagem e Obstetrícia","Engenharia Ambiental","Engenharia Civil","Engenharia de Computação","Engenharia de Redes de Comunicação","Engenharia de Produção","Engenharia Elétrica","Engenharia Florestal","Engenharia Mecânica","Engenharia Mecatrônica","Estatística,Filosofia","Física,Geofísica","Geografia","Geologia","Gestão de Políticas Públicas",
 			"Gestão de Agronegócio","Gestão em Saúde Coletiva","História", "Letras", "Matemática"," Medicina", "Medicina Veterinária","Museologia","Música", "Nutrição", "Odontologia", "Pedagogia", "Psicologia", "Química", "Química Tecnológica", "Relações Internacionais", "Serviço Social", "Turismo","Visuais");
-		for($i=0; $i<count($course); $i++){
-			echo "<option value=\"$course[$i]\">".$course[$i]."</option>\n";
+		for($i = 0; $i<count($course); $i++){
+			if($data['course'] != $course[$i])
+				echo "<option value=\"$course[$i]\">".$course[$i]."</option>\n";
+			else{
+				echo "<option value=\"$course[$i]\" selected>".$course[$i]."</option>\n";
+			}
 		}}
 ?>
