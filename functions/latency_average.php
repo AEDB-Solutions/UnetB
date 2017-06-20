@@ -35,7 +35,7 @@
 		}
 
 		$jitter_total = sqrt((array_sum($jitter) / sizeof($jitter)));//tirando raiz da soma de variancias dividida pelo numero de termos somados -- vulgo calculando desvio padrao = jitter
-		$result = array ("latency" => $media, "jitter" => round($jitter_total));
+		$result = array ("latency" => round($media), "jitter" => round($jitter_total));
 		return $result;
 	}
 ?>

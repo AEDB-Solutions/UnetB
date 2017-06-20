@@ -97,7 +97,6 @@ function validaCadastro(evt){
 					}
 					else{
 						caixa_cadastro.className = 'msg-erro';
-						caixa_cadastro.style.fontSize = "20px";
 						formataErro(caixa_cadastro,data);
 					}
 				},

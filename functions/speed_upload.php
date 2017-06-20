@@ -1,7 +1,7 @@
 <?php
 	function upload(){
 
-		$file = file_get_contents('../functions/archives_connectionspeed/'.'20Mb.txt');
+		$file = file_get_contents('../../functions/archives_connectionspeed/'.'20Mb.txt');
 		$size = strlen($file);
 		$source = 'http://example.com/settings/upload-img';
 		//"http://www.website.com/index.php"
