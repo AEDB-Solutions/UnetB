@@ -24,14 +24,14 @@ CREATE TABLE IF NOT EXISTS `unetb`.`user` (
 
 CREATE TABLE IF NOT EXISTS `unetb`.`networking_data` (
   `id`             INT(11) NOT NULL AUTO_INCREMENT,
-  `lat`            FLOAT,
-  `long`           FLOAT,
-  `download_speed` FLOAT,
-  `upload_speed`   FLOAT,
-  `intensity`      FLOAT,
-  `latency`        FLOAT,
-  `packetloss`     FLOAT,
-  `jitter`         FLOAT,
+  `lat`            DOUBLE  NOT NULL,
+  `long`           DOUBLE  NOT NULL,
+  `download_speed` DOUBLE  NOT NULL,
+  `upload_speed`   DOUBLE  NOT NULL,
+  `intensity`      DOUBLE  NOT NULL,
+  `latency`        DOUBLE  NOT NULL,
+  `packetloss`     DOUBLE  NOT NULL,
+  `jitter`         DOUBLE  NOT NULL,
   `access_point`  VARCHAR(17) COLLATE utf8_bin NOT NULL,
   `date_quality` datetime default current_timestamp,
    PRIMARY KEY (`id`)

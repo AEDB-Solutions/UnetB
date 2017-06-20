@@ -31,9 +31,8 @@
 			</div> <!-- Conteudo do modal -->
 
 			<div class="modal-footer">
-
-				<button type="button" class="btn btn-default" data-dismiss="modal">Sair</button>
-				<button id="botao_login" type="button" class="btn btn-primary">Entrar <img src="_images/teste.svg" id="gif_login"></button>
+				<a type="button" class="btn btn-default" href="register-view.php">Não tenho conta</a>
+				<button type="button" class="btn btn-primary" id="botao_login">Entrar <img src="_images/teste.svg" id="gif_login"></button>
 				
 			</div>
 		</div>

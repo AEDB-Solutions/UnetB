@@ -32,7 +32,7 @@
 										
 									</tr>
 									
-									<trs>
+									<tr>
 										<td>Download</td>
 										<td class="dados-qualidade" id="dado-download">-</td>
 										<td class="dados-qualidade">Mbps</td>

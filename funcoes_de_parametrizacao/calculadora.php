@@ -32,7 +32,6 @@
 		
 		$media_arredondada = number_format($media_parametros, 2, '.', '');
 
-		//$string = "{location: new google.maps.LatLng($lat, $long), weight: $media_arredondada}";
 		$array_localizacao = array('lat' => $lat, 'long' => $long, 'peso' => $media_arredondada);
 
 		array_push($total,$array_localizacao);
