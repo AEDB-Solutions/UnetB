@@ -82,7 +82,6 @@ function validaLogin(evt){
 	}else{
 		document.getElementById('assunto').setAttribute("value",name.value);
 		$(document).ready( function(){
-			alert("Sucesso");
 		});
 	}
 }
