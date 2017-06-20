@@ -6,11 +6,6 @@ if (form.addEventListener){
 	form.attachEvent("onclick", validaLogin);
 }
 
-
-
-
-
-
 /* Função para validar os dados antes da submissão dos dados */
 function validaLogin(evt){
 
@@ -49,7 +44,7 @@ function validaLogin(evt){
 	}else{
 		caixa_name.style.display = 'none';
 	}
-	
+
 	/* Validação do campo texto*/
 	caixa_texto = document.querySelector('.msg-texto');
 	if(texto.value == ""){
@@ -67,9 +62,6 @@ function validaLogin(evt){
 	if(texto.value == ""){
 		formataErro(caixa_assunto," Favor preencher o assunto.");
 		contErro += 1;
-	}else if(texto.value.length < 3){
-		formataErro(caixa_texto," Assunto deve conter no minimo 3 caracteres.");
-		contErro += 1;
 	}else{
 		caixa_assunto.style.display = 'none';
 	}
@@ -79,10 +71,6 @@ function validaLogin(evt){
 	
 	if(contErro > 0){
 		evt.preventDefault();
-	}else{
-		document.getElementById('assunto').setAttribute("value",name.value);
-		$(document).ready( function(){
-		});
 	}
 }
 
