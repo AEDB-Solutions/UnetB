@@ -1,6 +1,6 @@
 <?php
 
-	require_once "../../functions/intensidade.php";      //arquivo calcula intensidade
+	require_once "../../functions/intensity.php";      //arquivo calcula intensidade
 	$intensity = checkIntensity();
 
 	$parametros = array(

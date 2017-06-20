@@ -13,22 +13,21 @@
 				// echo "Sinal $i: $slevel<br>";
 				usleep(50000);
 			}
-			
+
 			$intensity = 0;
 			// echo var_dump($dados);
 			for($j=1; $j<=100; $j++){
 				$intensity = $intensity + $dados[$j];
 			}
-			
+
 			return $intensity/100;
 	}
 
 	function getSignalLevel($unix_result) {
 		return substr($unix_result, strpos($unix_result, '-'), strlen($unix_result) -60);
 	}
-	
-	function intensityLevel()	{
-		$intensidade = checkIntensity();
+
+	function intensityLevel(){
 		if($intensidade < -50)
 			$level = 1;
 		else if($intensidade > -50 && $intensidade < -40)
@@ -43,5 +42,4 @@
 			$level = 6;
 			return	$level;
 	}
-	
 ?>
