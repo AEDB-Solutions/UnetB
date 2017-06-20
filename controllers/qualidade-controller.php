@@ -8,10 +8,9 @@
 	require_once "../functions/packetloss.php";       //arquivo calcula perda de pacotes
 	require_once "../functions/get_access_point.php"; //arquivo que pega o endereço MAC do access point
 
-	$pj             = pingJitter("www.unb.br");
-	
 	$lat            = $_POST['lat'];
 	$long           = $_POST['long'];
+	$pj             = pingJitter("www.unb.br");
 	$latency        = $pj["latency"];
 	$jitter_tt      = $pj["jitter"];
 	$download_speed = download();
@@ -22,7 +21,6 @@
 	$level			= intensityLevel();
 
 	$query = "INSERT INTO `networking_data` (`lat`, `long`, `download_speed`, `upload_speed`, `intensity`, `latency`, `packetloss`, `jitter`, `access_point`) VALUES ($lat, $long, $download_speed, $upload_speed, $intensity, $latency, $packetloss, $jitter_tt, '$access_point' );";
-
 	$mySQL = new MySQL;
 	$executaQuery = $mySQL->executeQuery($query);
 	$mySQL->disconnect();

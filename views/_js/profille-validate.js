@@ -100,7 +100,7 @@ function validateSettings(evt){
 				url: '../controllers/profille-controller.php',
 				method: 'post',
 				data: $('#form-settings').serialize(),
-				
+
 				success: function(data){
 
 					caixa_settings = document.getElementById('msg-settings');
@@ -136,7 +136,7 @@ function validateSettings(evt){
 			});
 		});
 	}
-}	
+}
 
 /* Função para formatar as mansagens de erro*/
 function formataErro(elemento,texto){
@@ -151,12 +151,10 @@ function formataSuccess(elemento,texto){
 }
 
 function formatar(mascara, documento){
-  	var i = documento.value.length;
- 	var saida = mascara.substring(0,1);
- 	var texto = mascara.substring(i)
-  	if (texto.substring(0,1) != saida){
-      	documento.value += texto.substring(0,1);
- }
-  
+	var i = documento.value.length;
+	var saida = mascara.substring(0,1);
+	var texto = mascara.substring(i)
+	if (texto.substring(0,1) != saida){
+		documento.value += texto.substring(0,1);
+	}
 }
-

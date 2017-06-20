@@ -22,5 +22,6 @@
 			"Gestão de Agronegócio","Gestão em Saúde Coletiva","História", "Letras", "Matemática"," Medicina", "Medicina Veterinária","Museologia","Música", "Nutrição", "Odontologia", "Pedagogia", "Psicologia", "Química", "Química Tecnológica", "Relações Internacionais", "Serviço Social", "Turismo","Visuais");
 		for($i=0; $i<count($course); $i++){
 			echo "<option value=\"$course[$i]\">".$course[$i]."</option>\n";
-		}}
+		}
+	}
 ?>
