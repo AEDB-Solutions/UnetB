@@ -57,7 +57,6 @@ function validaLogin(evt){
 					else{
 						caixa_login = document.getElementById('msg-login');
 						caixa_login.className = 'msg-erro';
-						caixa_login.style.fontSize = "20px";
 						formataErro(caixa_login,' Usuário ou senha inválido');
 					}
 				},

@@ -12,7 +12,6 @@ body{
 	border: none;
 	margin-bottom: 0px;
 	background-color: rgba(34, 43, 80, 0.9);
-
 }
 #btnLogin{
 	border-radius: 0px;
@@ -38,7 +37,6 @@ body{
 	display: none;
 }
 .msg-success{
-	font-size: 20px;
 	color: #3c763d;
 	background-color: #dff0d8;
 	padding: 2px;
@@ -76,15 +74,6 @@ body{
 	vertical-align: middle;
 }
 /******************FORMATAÇÃO DA PÁGINA DE TESTE DE QUALIDADE DE REDE******************/
-#msg-qualidade{
-		color: #a94442;
-	background-color: #f2dede;
-	padding: 2px;
-	border: 1px solid #ebccd1;
-	border-radius: 5px;
-	display: none;
-}
-
 .dados-qualidade{
 	text-align: center;
 }

@@ -24,30 +24,24 @@
 							<div>
 
 								<table  class="table table-striped table-bordered table-condensed">
-									
+
 									<tr>
 										<th>Parâmetro</th>
 										<th class="dados-qualidade">Medida</th>
 										<th class="dados-qualidade">Unidade</th>
 										
 									</tr>
-									
+
 									<tr>
 										<td>Download</td>
 										<td class="dados-qualidade" id="dado-download">-</td>
 										<td class="dados-qualidade">Mbps</td>
 									</tr>
-									
+
 									<tr>
 										<td>Upload</td>
 										<td class="dados-qualidade" id="dado-upload">-</td>
 										<td class="dados-qualidade">Mbps</td>
-									</tr>
-
-									<tr>
-										<td>Intensidade</td>
-										<td class="dados-qualidade" id="dado-intensity">-</td>
-										<td class="dados-qualidade">dBm</td>
 									</tr>
 
 									<tr>
@@ -57,23 +51,33 @@
 									</tr>
 
 									<tr>
+										<td>Jitter</td>
+										<td class="dados-qualidade" id="dado-jitter">-</td>
+										<td class="dados-qualidade">ms</td>
+									</tr>
+
+									<tr>
+										<td>Intensidade</td>
+										<td class="dados-qualidade" id="dado-intensity">-</td>
+										<td class="dados-qualidade">dBm</td>
+									</tr>
+
+									<tr>
 										<td>Perda de Pacotes</td>
 										<td class="dados-qualidade" id="dado-packetloss">-</td>
 										<td class="dados-qualidade">%</td>
 									</tr>
 
-									<tr>
-										<td>Jitter</td>
-										<td class="dados-qualidade" id="dado-jitter">-</td>
-										<td class="dados-qualidade">ms</td>
-									</tr>
-								
 								</table>
 
 							</div>
 
 							<button  value="" type="button" class="btn btn-primary btn-lg btn-block" id="botao_qualidade">Testar <img src="_images/teste.svg" id="gif_qualidade"></button>
-							<br/>
+
+							<div class="checkbox checkbox-inline">
+								<input type="checkbox" id="salvaPerfil"><p class="text-primary"> Salvar informações no meu perfil.</p>
+							</div>
+
 							<div class='' id='msg-qualidade'></div>
 
 						</div>
@@ -81,7 +85,7 @@
 				</div> 
 			</div>
 		</div>
-		
+
 		<script src="_js/jquery.min.js"></script> <!-- Carrega JS jquery-->
 		<script src="_js/bootstrap.js"></script> <!-- Carrega JS do bootstrap-->
 		<script src="_js/qualidade.js"></script>

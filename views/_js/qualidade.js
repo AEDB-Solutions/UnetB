@@ -1,8 +1,14 @@
+var salvaPerfil;
 $(document).ready( function(){
 	$('#botao_qualidade').click(function(){
-	
+		
 		navigator.geolocation.getCurrentPosition(success, error, {enableHighAccuracy: true});
-	
+
+		if (document.getElementById("salvaPerfil").checked)
+			salvaPerfil = true;
+		else
+			salvaPerfil = false;
+		
 		function success(pos){
 			
 			console.log('Sua posição atual é:');
@@ -14,6 +20,24 @@ $(document).ready( function(){
 				url: '../controllers/qualidade/download.php',
 				method: 'post',
 				dataType:"json",
+				timeout: 30000,	
+				beforeSend: function(){
+					$('#botao_qualidade').prop("disabled",true);
+					$('#gif_qualidade').show();
+				},
+				error: function(jqXHR, exception){
+					if(exception == 'timeout'){
+						caixa_qualidade = document.getElementById('msg-qualidade');
+						caixa_qualidade.className = 'msg-erro';
+						formataErro(caixa_qualidade,' Tempo máximo de teste ultrapassado. Tente novamente.');
+					}else{
+						caixa_qualidade = document.getElementById('msg-qualidade');
+						caixa_qualidade.className = 'msg-erro';
+						formataErro(caixa_qualidade,' Ocorreu um erro interno. Tente novamente');
+					}
+					$('#botao_qualidade').prop("disabled",false);
+					$('#gif_qualidade').hide();
+				},
 				success: function(download){
 					$('#dado-download').html(download['download']);
 
@@ -21,6 +45,20 @@ $(document).ready( function(){
 						url: '../controllers/qualidade/upload.php',
 						method: 'post',
 						dataType:"json",
+						timeout: 30000,
+						error: function(jqXHR, exception){
+							if(exception == 'timeout'){
+								caixa_qualidade = document.getElementById('msg-qualidade');
+								caixa_qualidade.className = 'msg-erro';
+								formataErro(caixa_qualidade,' Tempo máximo de teste ultrapassado. Tente novamente.');
+							}else{
+								caixa_qualidade = document.getElementById('msg-qualidade');
+								caixa_qualidade.className = 'msg-erro';
+								formataErro(caixa_qualidade,' Ocorreu um erro interno. Tente novamente');
+							}
+							$('#botao_qualidade').prop("disabled",false);
+							$('#gif_qualidade').hide();
+						},
 						success: function(upload){
 							$('#dado-upload').html(upload['upload']);
 
@@ -28,6 +66,20 @@ $(document).ready( function(){
 								url: '../controllers/qualidade/latency.php',
 								method: 'post',
 								dataType:"json",
+								timeout: 20000,
+								error: function(jqXHR, exception){
+									if(exception == 'timeout'){
+										caixa_qualidade = document.getElementById('msg-qualidade');
+										caixa_qualidade.className = 'msg-erro';
+										formataErro(caixa_qualidade,' Tempo máximo de teste ultrapassado. Tente novamente.');
+									}else{
+										caixa_qualidade = document.getElementById('msg-qualidade');
+										caixa_qualidade.className = 'msg-erro';
+										formataErro(caixa_qualidade,' Ocorreu um erro interno. Tente novamente');
+									}
+									$('#botao_qualidade').prop("disabled",false);
+									$('#gif_qualidade').hide();
+								},
 								success: function(ping){
 									$('#dado-latency').html(ping['latency']);
 									$('#dado-jitter').html(ping['jitter']);
@@ -36,6 +88,20 @@ $(document).ready( function(){
 										url: '../controllers/qualidade/intensity.php',
 										method: 'post',
 										dataType:"json",
+										timeout: 20000,
+										error: function(jqXHR, exception){
+											if(exception == 'timeout'){
+												caixa_qualidade = document.getElementById('msg-qualidade');
+												caixa_qualidade.className = 'msg-erro';
+												formataErro(caixa_qualidade,' Tempo máximo de teste ultrapassado. Tente novamente.');
+											}else{
+												caixa_qualidade = document.getElementById('msg-qualidade');
+												caixa_qualidade.className = 'msg-erro';
+												formataErro(caixa_qualidade,' Ocorreu um erro interno. Tente novamente');
+											}
+											$('#botao_qualidade').prop("disabled",false);
+											$('#gif_qualidade').hide();
+										},
 										success: function(intensity){
 											$('#dado-intensity').html(intensity['intensity']);
 
@@ -43,6 +109,20 @@ $(document).ready( function(){
 												url: '../controllers/qualidade/packetloss.php',
 												method: 'post',
 												dataType:"json",
+												timeout: 20000,
+												error: function(jqXHR, exception){
+													if(exception == 'timeout'){
+														caixa_qualidade = document.getElementById('msg-qualidade');
+														caixa_qualidade.className = 'msg-erro';
+														formataErro(caixa_qualidade,' Tempo máximo de teste ultrapassado. Tente novamente.');
+													}else{
+														caixa_qualidade = document.getElementById('msg-qualidade');
+														caixa_qualidade.className = 'msg-erro';
+														formataErro(caixa_qualidade,' Ocorreu um erro interno. Tente novamente');
+													}
+													$('#botao_qualidade').prop("disabled",false);
+													$('#gif_qualidade').hide();
+												},
 												success: function(packetloss){
 													$('#dado-packetloss').html(packetloss['packetloss']);
 													
@@ -59,7 +139,9 @@ $(document).ready( function(){
 																packetloss: packetloss['packetloss'],
 															},
 														success: function(data){															
-															console.log(data);
+															caixa_qualidade = document.getElementById('msg-qualidade');
+															caixa_qualidade.className = 'msg-success';
+															formataSuccess(caixa_qualidade,' Teste realizado com sucesso');
 														},											
 													});	// FIM ENVIANDO DADOS PARA O BANCO DE DADOS
 												},
@@ -76,12 +158,6 @@ $(document).ready( function(){
 						},
 					}); // FIM UPLOAD ***************************************
 				},
-
-				beforeSend: function(){
-					$('#botao_qualidade').prop("disabled",true);
-					$('#gif_qualidade').show();
-				},
-
 			}); // FIM DOWNLOAD ***************************************
 		};
 
@@ -91,8 +167,15 @@ $(document).ready( function(){
 			formataErro(document.getElementById('msg-qualidade')," O teste não pode ser realizado pois a localização não está habilitada.")			
 		};
 
+		/* Função para formatar as mansagens de erro*/
 		function formataErro(elemento,texto){
 			elemento.innerHTML = "<span class='glyphicon glyphicon-exclamation-sign' aria-hidden='true'></span>" + texto;
+			elemento.style.display = 'block';
+		}
+
+		/* Função para formatar as mansagens de sucesso*/
+		function formataSuccess(elemento,texto){
+			elemento.innerHTML = "<span class='glyphicon glyphicon glyphicon-ok' aria-hidden='true'></span>" + texto;
 			elemento.style.display = 'block';
 		}
 	});
