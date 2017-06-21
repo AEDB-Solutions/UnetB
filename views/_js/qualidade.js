@@ -1,7 +1,7 @@
 var salvaPerfil;
 $(document).ready( function(){
 	$('#botao_qualidade').click(function(){
-		
+
 		navigator.geolocation.getCurrentPosition(success, error, {enableHighAccuracy: true});
 
 		if (document.getElementById("salvaPerfil").checked)
@@ -20,7 +20,7 @@ $(document).ready( function(){
 				url: '../controllers/qualidade/download.php',
 				method: 'post',
 				dataType:"json",
-				timeout: 30000,	
+				timeout: 60000,	
 				beforeSend: function(){
 					$('#botao_qualidade').prop("disabled",true);
 					$('#gif_qualidade').show();
@@ -125,10 +125,12 @@ $(document).ready( function(){
 												},
 												success: function(packetloss){
 													$('#dado-packetloss').html(packetloss['packetloss']);
-													
+
 													$.ajax({ // Enviando dados para o banco de dados
 														url: '../controllers/qualidade-controller.php',
 														method: 'post',
+														dataType:"json",
+														timeout: 20000,
 														data:{	lat       : pos.coords.latitude,
 																long      : pos.coords.longitude,
 																download  : download['download'],
@@ -138,17 +140,23 @@ $(document).ready( function(){
 																intensity : intensity['intensity'],
 																packetloss: packetloss['packetloss'],
 															},
-														success: function(data){															
-															caixa_qualidade = document.getElementById('msg-qualidade');
-															caixa_qualidade.className = 'msg-success';
-															formataSuccess(caixa_qualidade,' Teste realizado com sucesso');
-														},											
-													});	// FIM ENVIANDO DADOS PARA O BANCO DE DADOS
-												},
-
-												complete: function(){
-													$('#botao_qualidade').prop("disabled",false);
-													$('#gif_qualidade').hide();
+														success: function(data){
+															
+															if (data['resultado'] == "gravado"){
+																caixa_qualidade = document.getElementById('msg-qualidade');
+																caixa_qualidade.className = 'msg-success';
+																formataSuccess(caixa_qualidade,' Teste realizado com sucesso e gravado no banco');
+															}else if (data['resultado'] == "fora do limite"){
+																caixa_qualidade = document.getElementById('msg-qualidade');
+																caixa_qualidade.className = 'msg-warning';
+																formataWarning(caixa_qualidade,' Teste realizado com sucesso mas fora dos limites para gravar no banco de dados');
+															}															
+														},
+														complete: function(){
+															$('#botao_qualidade').prop("disabled",false);
+															$('#gif_qualidade').hide();
+														},
+													});	// FIM ENVIANDO DADOS PARA O BANCO DE DADOS **********************
 												},
 											}); // FIM PERDA DE PACOTES ***************************************
 										},
@@ -176,6 +184,12 @@ $(document).ready( function(){
 		/* Função para formatar as mansagens de sucesso*/
 		function formataSuccess(elemento,texto){
 			elemento.innerHTML = "<span class='glyphicon glyphicon glyphicon-ok' aria-hidden='true'></span>" + texto;
+			elemento.style.display = 'block';
+		}
+
+		/* Função para formatar as mansagens de aviso*/
+		function formataWarning(elemento,texto){
+			elemento.innerHTML = "<span class='glyphicon glyphicon-warning-sign' aria-hidden='true'></span>" + texto;
 			elemento.style.display = 'block';
 		}
 	});

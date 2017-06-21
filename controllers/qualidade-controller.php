@@ -3,7 +3,7 @@
 	require_once "../classes/class-UnetbDB.php";      //arquivo para a classe que conecta ao banco de dados
 	require_once "../functions/get_access_point.php"; //arquivo que pega o endereço MAC do access point
 
-	$lat            = $_POST['lat'];
+	$lat            = -15.9999;//$_POST['lat'];
 	$long           = $_POST['long'];
 	$download_speed = $_POST['download'];
 	$upload_speed   = $_POST['upload'];
@@ -54,8 +54,8 @@
 		$mySQL = new MySQL;
 		$executaQuery = $mySQL->executeQuery($query);
 		$mySQL->disconnect();
-		echo "FOI";
+		echo json_encode(array("resultado" => "gravado"));
 	}else{
-		echo "NÃO FOI";	
+		echo json_encode(array("resultado" => "fora do limite"));
 	}
 ?>

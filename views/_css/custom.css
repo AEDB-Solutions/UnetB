@@ -43,6 +43,13 @@ body{
 	border: 1px solid #d6e9c6;
 	border-radius: 5px;
 }
+.msg-warning{
+	color: #8a6d3b;
+	background-color: #fcf8e3;
+	padding: 2px;
+	border: 1px solid #faebcc;
+	border-radius: 5px;
+}
 .well{
 	margin-bottom: 0px;
 	margin-top: 50px;
