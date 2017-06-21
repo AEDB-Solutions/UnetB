@@ -38,8 +38,10 @@
 			$level = 4;
 		else if($intensidade > -20 && $intensidade < -10)
 			$level = 5;
-		else if($intensidade > -10)
+		else if($intensidade > -10 && $intensidade < -5)
 			$level = 6;
+		else if($intensidade > -5)
+			$level = 7;
 			return	$level;
 	}
 ?>

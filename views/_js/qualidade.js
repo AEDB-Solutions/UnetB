@@ -96,6 +96,7 @@ $(document).ready( function(){
 										},
 										success: function(intensity){
 											$('#dado-intensity').html(intensity['intensity']);
+											$('#dado-level' ).html(intensity['nivel']);
 
 											$.ajax({ // Testando Perda de Pacotes **********************************
 												url: '../controllers/qualidade/packetloss.php',
@@ -143,6 +144,7 @@ $(document).ready( function(){
 														complete: function(){
 															$('#botao_qualidade').prop("disabled",false);
 															$('#gif_qualidade').hide();
+															
 														},
 													});	// FIM ENVIANDO DADOS PARA O BANCO DE DADOS **********************
 												},

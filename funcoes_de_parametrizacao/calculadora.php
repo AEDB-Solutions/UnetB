@@ -5,11 +5,16 @@
 	require_once "../funcoes_de_parametrizacao/download_param.php";
 	require_once "../funcoes_de_parametrizacao/upload_param.php";
 	require_once "../classes/class-UnetbDB.php";
+	require_once "../functions/get_ssid.php";
+
 
 	$mySQL = new MySQL;
 	$executaQuery = $mySQL->executeQuery("SELECT * FROM networking_data");
 	$mySQL->disconnect();
-	
+
+
+
+
 	$total = array();
 
 	while($linha = mysqli_fetch_array($executaQuery)){
@@ -35,8 +40,10 @@
 		$array_localizacao = array('lat' => $lat, 'long' => $long, 'peso' => $media_arredondada);
 
 		array_push($total,$array_localizacao);
-	}
+	 
 
 	echo json_encode($total);
+	
+}
 ?>
   
