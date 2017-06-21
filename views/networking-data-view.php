@@ -58,7 +58,7 @@
 
 									<tr>
 										<td>Intensidade</td>
-										<td class="dados-qualidade" id="dado-intensity">-</td>
+										<td class="dados-qualidade" id="dado-intensity"><img src="_images/barras1.png" id="intensidade_barra"></td>
 										<td class="dados-qualidade">dBm</td>
 									</tr>
 
