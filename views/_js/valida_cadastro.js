@@ -92,11 +92,9 @@ function validaCadastro(evt){
 						$('#password').val('');
 						$('#confpass').val('');
 						$('#name').val('');
-						caixa_cadastro.className = 'msg-success';
 						formataSuccess(caixa_cadastro,data);
 					}
 					else{
-						caixa_cadastro.className = 'msg-erro';
 						formataErro(caixa_cadastro,data);
 					}
 				},
@@ -116,12 +114,14 @@ function validaCadastro(evt){
 }
 /* Função para formatar as mansagens de erro*/
 function formataErro(elemento,texto){
+	elemento.className = 'msg-erro';
 	elemento.innerHTML = "<span class='glyphicon glyphicon-exclamation-sign' aria-hidden='true'></span>" + texto;
 	elemento.style.display = 'block';
 }
 
 /* Função para formatar as mansagens de sucesso*/
 function formataSuccess(elemento,texto){
+	elemento.className = 'msg-success';
 	elemento.innerHTML = "<span class='glyphicon glyphicon glyphicon-ok' aria-hidden='true'></span>" + texto;
 	elemento.style.display = 'block';
 }

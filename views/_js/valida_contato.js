@@ -58,7 +58,7 @@ function validaLogin(evt){
 	}
 
 	/* Validação do campo assunto*/
-	caixa_texto = document.querySelector('.msg-assunto');
+	caixa_assunto = document.querySelector('.msg-assunto');
 	if(texto.value == ""){
 		formataErro(caixa_assunto," Favor preencher o assunto.");
 		contErro += 1;
@@ -68,7 +68,7 @@ function validaLogin(evt){
 
 	caixa_login = document.getElementById('msg-contato');
 	caixa_login.style.display = 'none';
-	
+
 	if(contErro > 0){
 		evt.preventDefault();
 	}
@@ -76,12 +76,14 @@ function validaLogin(evt){
 
 /* Função para formatar as mansagens de erro*/
 function formataErro(elemento,texto){
+	elemento.className = 'msg-erro';
 	elemento.innerHTML = "<span class='glyphicon glyphicon-exclamation-sign' aria-hidden='true'></span>" + texto;
 	elemento.style.display = 'block';
 }
 
 /* Função para formatar as mansagens de sucesso*/
-function formataSuccess(elemento,texto){	
+function formataSuccess(elemento,texto){
+	elemento.className = 'msg-success';
 	elemento.innerHTML = "<span class='glyphicon glyphicon glyphicon-ok' aria-hidden='true'></span>" + texto;
 	elemento.style.display = 'block';
 }
