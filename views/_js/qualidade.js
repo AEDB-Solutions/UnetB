@@ -2,6 +2,10 @@ var salvaPerfil;
 $(document).ready( function(){
 	$('#botao_qualidade').click(function(){
 
+		$('#salvaPerfil').hide();
+		$('#botao_qualidade').prop("disabled",true);
+		$('#gif_qualidade').show();
+
 		navigator.geolocation.getCurrentPosition(success, error, {enableHighAccuracy: true});
 
 		if (document.getElementById("salvaPerfil").checked)
@@ -20,19 +24,13 @@ $(document).ready( function(){
 				url: '../controllers/qualidade/download.php',
 				method: 'post',
 				dataType:"json",
-				timeout: 60000,	
-				beforeSend: function(){
-					$('#botao_qualidade').prop("disabled",true);
-					$('#gif_qualidade').show();
-				},
+				timeout: 60000,
 				error: function(jqXHR, exception){
 					if(exception == 'timeout'){
 						caixa_qualidade = document.getElementById('msg-qualidade');
-						caixa_qualidade.className = 'msg-erro';
 						formataErro(caixa_qualidade,' Tempo máximo de teste ultrapassado. Tente novamente.');
 					}else{
 						caixa_qualidade = document.getElementById('msg-qualidade');
-						caixa_qualidade.className = 'msg-erro';
 						formataErro(caixa_qualidade,' Ocorreu um erro interno. Tente novamente');
 					}
 					$('#botao_qualidade').prop("disabled",false);
@@ -49,11 +47,9 @@ $(document).ready( function(){
 						error: function(jqXHR, exception){
 							if(exception == 'timeout'){
 								caixa_qualidade = document.getElementById('msg-qualidade');
-								caixa_qualidade.className = 'msg-erro';
 								formataErro(caixa_qualidade,' Tempo máximo de teste ultrapassado. Tente novamente.');
 							}else{
 								caixa_qualidade = document.getElementById('msg-qualidade');
-								caixa_qualidade.className = 'msg-erro';
 								formataErro(caixa_qualidade,' Ocorreu um erro interno. Tente novamente');
 							}
 							$('#botao_qualidade').prop("disabled",false);
@@ -70,11 +66,9 @@ $(document).ready( function(){
 								error: function(jqXHR, exception){
 									if(exception == 'timeout'){
 										caixa_qualidade = document.getElementById('msg-qualidade');
-										caixa_qualidade.className = 'msg-erro';
 										formataErro(caixa_qualidade,' Tempo máximo de teste ultrapassado. Tente novamente.');
 									}else{
 										caixa_qualidade = document.getElementById('msg-qualidade');
-										caixa_qualidade.className = 'msg-erro';
 										formataErro(caixa_qualidade,' Ocorreu um erro interno. Tente novamente');
 									}
 									$('#botao_qualidade').prop("disabled",false);
@@ -92,11 +86,9 @@ $(document).ready( function(){
 										error: function(jqXHR, exception){
 											if(exception == 'timeout'){
 												caixa_qualidade = document.getElementById('msg-qualidade');
-												caixa_qualidade.className = 'msg-erro';
 												formataErro(caixa_qualidade,' Tempo máximo de teste ultrapassado. Tente novamente.');
 											}else{
 												caixa_qualidade = document.getElementById('msg-qualidade');
-												caixa_qualidade.className = 'msg-erro';
 												formataErro(caixa_qualidade,' Ocorreu um erro interno. Tente novamente');
 											}
 											$('#botao_qualidade').prop("disabled",false);
@@ -113,11 +105,9 @@ $(document).ready( function(){
 												error: function(jqXHR, exception){
 													if(exception == 'timeout'){
 														caixa_qualidade = document.getElementById('msg-qualidade');
-														caixa_qualidade.className = 'msg-erro';
 														formataErro(caixa_qualidade,' Tempo máximo de teste ultrapassado. Tente novamente.');
 													}else{
 														caixa_qualidade = document.getElementById('msg-qualidade');
-														caixa_qualidade.className = 'msg-erro';
 														formataErro(caixa_qualidade,' Ocorreu um erro interno. Tente novamente');
 													}
 													$('#botao_qualidade').prop("disabled",false);
@@ -144,11 +134,9 @@ $(document).ready( function(){
 															
 															if (data['resultado'] == "gravado"){
 																caixa_qualidade = document.getElementById('msg-qualidade');
-																caixa_qualidade.className = 'msg-success';
 																formataSuccess(caixa_qualidade,' Teste realizado com sucesso e gravado no banco');
 															}else if (data['resultado'] == "fora do limite"){
 																caixa_qualidade = document.getElementById('msg-qualidade');
-																caixa_qualidade.className = 'msg-warning';
 																formataWarning(caixa_qualidade,' Teste realizado com sucesso mas fora dos limites para gravar no banco de dados');
 															}															
 														},
@@ -171,24 +159,27 @@ $(document).ready( function(){
 
 		function error(err){
 			$('#botao_qualidade').prop("disabled",true);
-			console.warn('ERROR(' + err.code + '): ' + err.message);
+			$('#gif_qualidade').hide();
 			formataErro(document.getElementById('msg-qualidade')," O teste não pode ser realizado pois a localização não está habilitada.")			
 		};
 
 		/* Função para formatar as mansagens de erro*/
 		function formataErro(elemento,texto){
+			elemento.className = 'msg-erro';
 			elemento.innerHTML = "<span class='glyphicon glyphicon-exclamation-sign' aria-hidden='true'></span>" + texto;
 			elemento.style.display = 'block';
 		}
 
 		/* Função para formatar as mansagens de sucesso*/
 		function formataSuccess(elemento,texto){
+			elemento.className = 'msg-success';
 			elemento.innerHTML = "<span class='glyphicon glyphicon glyphicon-ok' aria-hidden='true'></span>" + texto;
 			elemento.style.display = 'block';
 		}
 
 		/* Função para formatar as mansagens de aviso*/
 		function formataWarning(elemento,texto){
+			elemento.className = 'msg-warning';
 			elemento.innerHTML = "<span class='glyphicon glyphicon-warning-sign' aria-hidden='true'></span>" + texto;
 			elemento.style.display = 'block';
 		}

@@ -74,8 +74,8 @@
 
 							<button  value="" type="button" class="btn btn-primary btn-lg btn-block" id="botao_qualidade">Testar <img src="_images/teste.svg" id="gif_qualidade"></button>
 
-							<div class="checkbox checkbox-inline">
-								<input type="checkbox" id="salvaPerfil"><p class="text-primary"> Salvar informações no meu perfil.</p>
+							<div class="checkbox checkbox-inline" id="salvaPerfil">
+								<input type="checkbox"><p class="text-primary"> Salvar informações no meu perfil.</p>
 							</div>
 
 							<div class='' id='msg-qualidade'></div>

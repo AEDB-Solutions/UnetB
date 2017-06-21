@@ -28,25 +28,25 @@
 								<div class="form-group">
 									<label for="email">E-mail</label>
 									<input type="email" class="form-control" id="email" name="email" placeholder="Informe o E-mail">
-									<span class='msg-erro msg-email'></span>
+									<span class='msg-email'></span>
 								</div>
 
 								<div class="form-group">
 									<label for="password">Senha</label>
 									<input type="password" class="form-control" id="password" name="password" placeholder="Informe a Senha">
-									<span class='msg-erro msg-password'></span>
+									<span class='msg-password'></span>
 								</div>
 
 								<div class="form-group">
 									<label for="confpass">Confirmar Senha</label>
 									<input type="password" class="form-control" id="confpass" name="confpass" placeholder="Digite a senha novamente">
-									<span class='msg-erro msg-confpass'></span>
+									<span class='msg-confpass'></span>
 								</div>
 
 								<div class="form-group">
 									<label for="name">Nome</label>
 									<input type="text" class="form-control" id="name" name="name" placeholder="Informe o Nome">
-									<span class='msg-erro msg-name'></span>
+									<span class='msg-name'></span>
 								</div>
 
 								<div class="modal-footer">

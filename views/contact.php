@@ -26,27 +26,27 @@
 							<form id='form-contato' method="POST" action="http://formspree.io/unetbcontato@gmail.com">
 
 								<div class="form-group">
-									<label for="name">Nome</label>
+									<label for="name-contato">Nome</label>
 									<input type="text" class="form-control" id="name-contato" name="Nome" placeholder="Nome">
-									<span class='msg-erro msg-name'></span> <!-- mensagem de erro -->
+									<span class='msg-name'></span> <!-- mensagem de erro -->
 								</div>
 
 								<div class="form-group">
-									<label for="email">E-mail</label>
+									<label for="email-contato">E-mail</label>
 									<input type="email" class="form-control" id="email-contato" name="E-mail" placeholder="E-mail">
-									<span class='msg-erro msg-email'></span> <!-- mensagem de erro -->
+									<span class='msg-email'></span> <!-- mensagem de erro -->
 								</div>
 
 								<div class="form-group">
-									<label for="assunto">Assunto</label>
+									<label for="assunto-contato">Assunto</label>
 									<input type="assunto" class="form-control" id="assunto-contato" name="Assunto" placeholder="Assunto">
-									<span class='msg-erro msg-assunto'></span> <!-- mensagem de erro -->
+									<span class='msg-assunto'></span> <!-- mensagem de erro -->
 								</div>
 
 								<div class="form-group">
-									<label for="texto">Mensagem</label>
+									<label for="texto-contato">Mensagem</label>
 									<textarea class="form-control" id="texto-contato" name="Mensagem" placeholder="Mensagem"></textarea>	
-									<span class='msg-erro msg-texto'></span> <!-- mensagem de erro -->
+									<span class='msg-texto'></span> <!-- mensagem de erro -->
 								</div>
 
 								<div class="modal-footer">									

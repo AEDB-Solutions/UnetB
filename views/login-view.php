@@ -14,13 +14,13 @@
 					<div class="form-group">
 						<label for="email">E-mail</label>
 						<input type="email" class="form-control" id="email-login" name="email" placeholder="Informe o E-mail">
-						<span class='msg-erro msg-email-login'></span>
+						<span class='msg-email-login'></span>
 					</div>
 
 					<div class="form-group">
 						<label for="password">Senha</label>
 						<input type="password" class="form-control" id="password-login" name="password" placeholder="Informe a Senha">
-						<span class='msg-erro msg-password-login'></span>
+						<span class='msg-password-login'></span>
 					</div>
 
 					
