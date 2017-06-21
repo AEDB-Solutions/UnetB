@@ -20,7 +20,7 @@
 		curl_close($ch);
 
 		$info_upload = $info_up/10000;
-		
+
 		return round($info_upload, 2);
 	}
 ?>
