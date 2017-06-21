@@ -144,6 +144,7 @@ $(document).ready( function(){
 														complete: function(){
 															$('#botao_qualidade').prop("disabled",false);
 															$('#gif_qualidade').hide();
+															$('#intensidade_barra').show();
 														},
 													});	// FIM ENVIANDO DADOS PARA O BANCO DE DADOS **********************
 												},
