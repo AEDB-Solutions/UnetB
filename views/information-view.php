@@ -13,15 +13,21 @@
 		<!-- INCLUE O HEADER NA PÁGINA -->
 		<?php include "_includes/header.php";?>
 		
-		<div class="container">
+		<span class="container">
 			<h1 style="margin-top: 60px; margin-bottom: 30px;">Sobre e FAQ</h1>
-		</div>
+		</span>
+
+    <span>
+      <a href="#sobre">SOBRE</a>   <a href="#perg">PERGUNTAS FREQUENTES</a>       <a href="#med">NOSSAS MEDIDAS</a>       
+      <br>
+      <a href="#prob">PROBLEMAS?</a>
+    </span>
 
 <div class="container">
 <div class="panel-group" id="accordion">
 
       <div class="container">
-        <h3>SOBRE</h3>
+        <h3 id="sobre">SOBRE</h3>
       </div>
 
       <div class="panel panel-default">
@@ -36,7 +42,7 @@
     </div>
 
     <div class="container">
-      <h3 style="margin-top: 40px;">PERGUNTAS FRENQUENTES</h3>
+      <h3 style="margin-top: 40px;" id="perg">PERGUNTAS FRENQUENTES</h3>
     </div>
 
     <div class="panel panel-default">
@@ -134,11 +140,14 @@
         </h4>
       </div>
       <div id="collapse15" class="panel-collapse collapse">
-        <div class="panel-body">O teste de conexão pode requerer ou não dados pessoais do usuário, dependendo da sua vontade de ter um cadastro no programa, tendo certos privilegios os usuários cadastrados. No entanto, o teste sempre utilizará as informações do seu computador para classificar e avaliar as informações dos dados:
-
-  1-O seu endereço de IP. 
-  2-O Sistema Operacional que está sendo usado no computador do usuário.
-  3-Como suas interfaces de rede estavam ocupadas no momento do teste.</div>
+        <div class="panel-body">
+          <p>O teste de conexão pode requerer ou não dados pessoais do usuário, dependendo da sua vontade de ter um cadastro no programa, tendo certos privilegios os usuários cadastrados. No entanto, o teste sempre utilizará as informações do seu computador para classificar e avaliar as informações dos dados:</p>
+          <ol>
+            <li>O seu endereço de IP.</li>
+            <li>O Sistema Operacional que está sendo usado no computador do usuário.</li>
+            <li>Como suas interfaces de rede estavam ocupadas no momento do teste.</li>
+          </ol>
+        </div>
       </div>
     </div>
 
@@ -149,14 +158,17 @@
         </h4>
       </div>
       <div id="collapse16" class="panel-collapse collapse">
-        <div class="panel-body">Os resultados apresentados ao usuário, após a conclusão do teste, são:
-
-  1-Localização da medição(apenas para usuários cadastrados);
-  2-Velocidade de download(qualquer usuário);
-  3-Velocidade de upload(qualquer usuário);
-  4-Latência(qualquer usuário);
-  5-Perda de pacotes(qualquer usuário);
-  6-Jitter(qualquer usuário);</div>
+        <div class="panel-body">
+          <p>Os resultados apresentados ao usuário, após a conclusão do teste, são:</p>
+            <ol>
+              <li>Localização da medição(apenas para usuários cadastrados);</li>
+              <li>Velocidade de download(qualquer usuário);</li>
+              <li>Velocidade de upload(qualquer usuário);</li>
+              <li>Latência(qualquer usuário);</li>
+              <li>Perda de pacotes(qualquer usuário);</li>
+              <li>Jitter(qualquer usuário);</li>
+            </ol>
+        </div>
       </div>
     </div>
 
@@ -195,7 +207,7 @@
 
 
     <div class="container">
-      <h3 style="margin-top: 40px;">NOSSAS MEDIDAS QUANTITATIVAS</h3>
+      <h3 style="margin-top: 40px;" id="med">NOSSAS MEDIDAS</h3>
     </div>
 
     <div class="panel panel-default">
@@ -254,13 +266,13 @@
     </div>
 
     <div class="container">
-      <h3 style="margin-top: 40px;">PROBLEMAS?</h3>
+      <h3 style="margin-top: 40px;" id="prob">PROBLEMAS?</h3>
     </div>
 
     <div class="panel panel-default" style="margin-bottom: 60px;">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse19">Por que o teste de conexão não funciona?</a>
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse19">Por que o meu teste de conexão não funciona?</a>
         </h4>
       </div>
       <div id="collapse19" class="panel-collapse collapse" >
