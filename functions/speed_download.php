@@ -1,5 +1,5 @@
 <?php
-	function download(){
+	function download($ping){
 
 		$source = "http://speedtest.wdc01.softlayer.com/downloads/test10.zip";
 		$ch = curl_init();
@@ -10,7 +10,7 @@
 		
 		$data = curl_exec($ch);
 		$error = curl_error($ch);
-		$info = curl_getinfo($ch, CURLINFO_SPEED_DOWNLOAD)/100000;
+		$info = curl_getinfo($ch, CURLINFO_SPEED_DOWNLOAD)/100000;	
 		curl_close($ch);
 
 		return round($info,2);
