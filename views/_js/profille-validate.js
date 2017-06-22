@@ -114,12 +114,9 @@ function validateSettings(evt){
 						$('#course').val('');
 						$('#matricula').val('');
 						$('#cellphone').val('');
-						caixa_settings.className = 'msg-success';
 						formataSuccess(caixa_settings,data);
 					}
 					else{
-						caixa_settings.className = 'msg-erro';
-						caixa_settings.style.fontSize = "20px";
 						formataErro(caixa_settings,data);
 					}
 				},
@@ -140,12 +137,14 @@ function validateSettings(evt){
 
 /* Função para formatar as mansagens de erro*/
 function formataErro(elemento,texto){
+	$(elemento).addClass('msg-erro');
 	elemento.innerHTML = "<span class='glyphicon glyphicon-exclamation-sign' aria-hidden='true'></span>" + texto;
 	elemento.style.display = 'block';
 }
 
 /* Função para formatar as mansagens de sucesso*/
-function formataSuccess(elemento,texto){	
+function formataSuccess(elemento,texto){
+	$(elemento).addClass('msg-success');
 	elemento.innerHTML = "<span class='glyphicon glyphicon glyphicon-ok' aria-hidden='true'></span>" + texto;
 	elemento.style.display = 'block';
 }
