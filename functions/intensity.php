@@ -42,6 +42,6 @@
 			$level = 6;
 		else if($intensidade > -5)
 			$level = 7;
-			return	$level;
+		return	$level;
 	}
 ?>

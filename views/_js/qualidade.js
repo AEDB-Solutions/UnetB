@@ -132,19 +132,18 @@ $(document).ready( function(){
 																packetloss: packetloss['packetloss'],
 															},
 														success: function(data){
-															
-															if (data['resultado'] == "gravado"){
+															console.log(data);
+															if (data["resultado"] == "gravado"){
 																caixa_qualidade = document.getElementById('msg-qualidade');
 																formataSuccess(caixa_qualidade,' Teste realizado com sucesso e gravado no banco');
-															}else if (data['resultado'] == "fora do limite"){
+															}else if (data["resultado"] == "fora do limite"){
 																caixa_qualidade = document.getElementById('msg-qualidade');
 																formataWarning(caixa_qualidade,' Teste realizado com sucesso mas fora dos limites para gravar no banco de dados');
-															}															
+															}
 														},
 														complete: function(){
 															$('#botao_qualidade').prop("disabled",false);
 															$('#gif_qualidade').hide();
-															
 														},
 													});	// FIM ENVIANDO DADOS PARA O BANCO DE DADOS **********************
 												},
@@ -167,21 +166,21 @@ $(document).ready( function(){
 
 		/* Função para formatar as mansagens de erro*/
 		function formataErro(elemento,texto){
-			elemento.className = 'msg-erro';
+			$(elemento).addClass('msg-erro');
 			elemento.innerHTML = "<span class='glyphicon glyphicon-exclamation-sign' aria-hidden='true'></span>" + texto;
 			elemento.style.display = 'block';
 		}
 
 		/* Função para formatar as mansagens de sucesso*/
 		function formataSuccess(elemento,texto){
-			elemento.className = 'msg-success';
+			$(elemento).addClass('msg-success');
 			elemento.innerHTML = "<span class='glyphicon glyphicon glyphicon-ok' aria-hidden='true'></span>" + texto;
 			elemento.style.display = 'block';
 		}
 
 		/* Função para formatar as mansagens de aviso*/
 		function formataWarning(elemento,texto){
-			elemento.className = 'msg-warning';
+			$(elemento).addClass('msg-warning');
 			elemento.innerHTML = "<span class='glyphicon glyphicon-warning-sign' aria-hidden='true'></span>" + texto;
 			elemento.style.display = 'block';
 		}
