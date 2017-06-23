@@ -36,47 +36,42 @@ $result;
 		$time_start = microtime(true);
 		$info = curl_getinfo($ch, CURLINFO_SPEED_DOWNLOAD)/100000;	
 $time_end = microtime(true);
-
 $time = ($time_end - $time_start) * 100000;
-array_push($times, $time);
+//array_push($times, $time);
+array_push($times, $info); // tem que guardar as velocidades, não o tempo 
 
 		if($time > 1 && $time <= 2)
 		{		
 			$source = "http://ipv4.download.thinkbroadband.com:8080/10MB.zip";
-			$info = download_10MB($source);
+			$info = download_sizeMB($source);
 			array_push($times, $info);
 		}
 
 		if($time > 0.5 && $time <= 1)
 		{
 			$source = "http://ipv4.download.thinkbroadband.com:8080/20MB.zip";
-			$info = download_20MB($source);
+			$info = download_sizeMB($source);
 			array_push($times, $info);
 		}
 	
 		if($time > 0.25 && $time <= 0.5)
 		{
 			$source = "http://ipv4.download.thinkbroadband.com:8080/30MB.zip";
-			$info = download_100MB($source);
+			$info = download_sizeMB($source);
 			array_push($times, $info);
 		}
 		
 		if($time <= 0.25)
 		{
 			$source = "http://ipv4.download.thinkbroadband.com:8080/40MB.zip";
-			$info = download_200MB($source);
+			$info = download_sizeMB($source);
 			array_push($times, $info);
 		}
 		
-		
-
 		curl_close($ch);
 		$result = array_sum($times)/ count($times);	
+		$times = array(); //zerar array
 		return round($result,2);
 	}
-
-
-echo download();
-
 
 ?>

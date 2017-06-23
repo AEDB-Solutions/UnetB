@@ -228,7 +228,7 @@
         </h4>
       </div>
       <div id="collapse11" class="panel-collapse collapse">
-        <div class="panel-body">É a velocidade de envio de dados (como um arquivo, e-mail, foto, etc) de um computador em um local para um computador ou servidor em outro local, através da Internet. A velocidade de upload é geralmente muito menor do que a velocidade de download. A razão para isso é que as pessoas, ao acessar a Internet, geralmente fazem mais download do que upload.</div>
+        <div class="panel-body">É a velocidade de envio de dados (como um arquivo, e-mail, foto, etc) de um computador em um local para um computador ou servidor em outro local, através da Internet. A velocidade de upload é geralmente muito menor do que a velocidade de download. A razão para isso é que as pessoas, ao acessar a Internet, geralmente fazem mais download do que upload, por isso a banda disponibilizada para upload é menor.</div>
       </div>
     </div>
 
@@ -239,7 +239,8 @@
         </h4>
       </div>
       <div id="collapse12" class="panel-collapse collapse">
-        <div class="panel-body">Um pacote é uma unidade formatada de dados e é utilizado para transmitir as informações na Internet em formato de pequenas unidades gerenciáveis. A perda de pacotes ocorre quando um dos pacotes não chega ao seu destino. Isso pode ocorrer por falha de hardware ou baixa qualidade da conexão. A perda de pacotes pode aumentar, à medida que a quantidade de tráfego na rede aumenta.</div>
+        <div class="panel-body">  Um pacote é uma unidade formatada de dados e é utilizado para transmitir as informações na Internet em formato de pequenas unidades gerenciáveis. A perda de pacotes ocorre quando um dos pacotes não chega ao seu destino. Isso pode ocorrer por falha de hardware ou baixa qualidade da conexão ou por um bloqueio no destino. A perda de pacotes aumenta, à medida que a quantidade de tráfego na rede aumenta.
+</div>
       </div>
     </div>
 

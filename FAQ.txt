@@ -40,11 +40,11 @@ O que é a velocidade de download?
 
 O que é a velocidade de upload?
 
-	É a velocidade de envio de dados (como um arquivo, e-mail, foto, etc) de um computador em um local para um computador ou servidor em outro local, através da Internet. A velocidade de upload é geralmente muito menor do que a velocidade de download. A razão para isso é que as pessoas, ao acessar a Internet, geralmente fazem mais download do que upload.
+	É a velocidade de envio de dados (como um arquivo, e-mail, foto, etc) de um computador em um local para um computador ou servidor em outro local, através da Internet. A velocidade de upload é geralmente muito menor do que a velocidade de download. A razão para isso é que as pessoas, ao acessar a Internet, geralmente fazem mais download do que upload, por isso a banda disponibilizada para upload é menor.
 
 O que é perda de pacotes?
 
-	Um pacote é uma unidade formatada de dados e é utilizado para transmitir as informações na Internet em formato de pequenas unidades gerenciáveis. A perda de pacotes ocorre quando um dos pacotes não chega ao seu destino. Isso pode ocorrer por falha de hardware ou baixa qualidade da conexão. A perda de pacotes pode aumentar, à medida que a quantidade de tráfego na rede aumenta.
+	Um pacote é uma unidade formatada de dados e é utilizado para transmitir as informações na Internet em formato de pequenas unidades gerenciáveis. A perda de pacotes ocorre quando um dos pacotes não chega ao seu destino. Isso pode ocorrer por falha de hardware ou baixa qualidade da conexão ou por um bloqueio no destino. A perda de pacotes aumenta, à medida que a quantidade de tráfego na rede aumenta.
 
 O que é latência e como é medida?
 
@@ -52,7 +52,7 @@ O que é latência e como é medida?
 
 O que é jitter?
 
-	Jitter é a variação no tempo de chegada dos pacotes, causada por congestionamento na rede. Em outras palavras, o jitter representa a variação na latência.
+	Jitter é a variação no tempo de chegada dos pacotes, causada pelos tipos de atrasos que podem acontecer na rede. Em outras palavras, o jitter representa a variação na latência.
 
 
 Que informações são coletadas para a realização do teste de conexão?
