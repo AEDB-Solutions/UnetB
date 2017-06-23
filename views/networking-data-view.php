@@ -77,7 +77,7 @@
 							<div class="checkbox checkbox-inline" id="salvaPerfil">
 								<input type="checkbox"><p class="text-primary"> Salvar informações no meu perfil.</p>
 							</div>
-
+							<br/>
 							<div class='' id='msg-qualidade'></div>
 
 						</div>
