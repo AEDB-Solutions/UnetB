@@ -36,9 +36,9 @@ $result;
 		$time_start = microtime(true);
 		$info = curl_getinfo($ch, CURLINFO_SPEED_DOWNLOAD)/100000;	
 $time_end = microtime(true);
-
 $time = ($time_end - $time_start) * 100000;
-array_push($times, $time);
+//array_push($times, $time);
+array_push($times, $info); // tem que guardar as velocidades, não o tempo 
 
 		if($time > 1 && $time <= 2)
 		{		
@@ -68,10 +68,9 @@ array_push($times, $time);
 			array_push($times, $info);
 		}
 		
-		
-
 		curl_close($ch);
 		$result = array_sum($times)/ count($times);	
+		$times = array(); //zerar array
 		return round($result,2);
 	}
 
