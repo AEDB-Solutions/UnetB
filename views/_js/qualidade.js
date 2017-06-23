@@ -5,6 +5,7 @@ $(document).ready( function(){
 		$('#salvaPerfil').hide();
 		$('#botao_qualidade').prop("disabled",true);
 		$('#gif_qualidade').show();
+		$('#msg-qualidade').hide();
 
 		navigator.geolocation.getCurrentPosition(success, error, {enableHighAccuracy: true});
 
@@ -24,7 +25,7 @@ $(document).ready( function(){
 				url: '../controllers/qualidade/download.php',
 				method: 'post',
 				dataType:"json",
-				timeout: 60000,
+				//timeout: 60000,
 				error: function(jqXHR, exception){
 					if(exception == 'timeout'){
 						caixa_qualidade = document.getElementById('msg-qualidade');
@@ -43,7 +44,7 @@ $(document).ready( function(){
 						url: '../controllers/qualidade/upload.php',
 						method: 'post',
 						dataType:"json",
-						timeout: 30000,
+						timeout: 60000,
 						error: function(jqXHR, exception){
 							if(exception == 'timeout'){
 								caixa_qualidade = document.getElementById('msg-qualidade');
