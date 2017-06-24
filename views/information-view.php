@@ -20,35 +20,38 @@
 		?>
 
 		<span class="container">
-			<h1 style="margin-top: 60px; margin-bottom: 30px;">Sobre e FAQ</h1>
+			<h1 style="margin-top: 30px;"></h1>
 		</span>
 
-		<span>
-			<a href="#sobre">SOBRE</a>   <a href="#perg">PERGUNTAS FREQUENTES</a>       <a href="#med">NOSSAS MEDIDAS</a>       
-			<br>
-			<a href="#prob">PROBLEMAS?</a>
-		</span>
+		
+			
+		
 
 <div class="container">
-<div class="panel-group" id="accordion">
+	<div class="panel-group" id="accordion">
+		
+		<a href="#sobre">SOBRE</a>   
+		<a href="#perg">PERGUNTAS FREQUENTES</a>       
+		<a href="#med">NOSSAS MEDIDAS</a>       
+		<a href="#prob">PROBLEMAS?</a>
 
-			<div class="container">
-				<h3 id="sobre">SOBRE</h3>
-			</div>
+		<div class="container">
+			<h3 id="sobre">SOBRE</h3>
+		</div>
 
-			<div class="panel panel-default">
+		<div class="panel panel-default">
 			<div class="panel-heading">
 				<h4 class="panel-title">
 					<a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Quem somos e o que fazemos?</a>
 				</h4>
 			</div>
-			<div id="collapse1" class="panel-collapse collapse in">
+			<div id="collapse1" class="panel-collapse collapse">
 				<div class="panel-body">EM CONSTRUÇÃO</div>
 			</div>
 		</div>
 
 		<div class="container">
-			<h3 style="margin-top: 40px;" id="perg">PERGUNTAS FRENQUENTES</h3>
+			<h3 id="perg">PERGUNTAS FRENQUENTES</h3>
 		</div>
 
 		<div class="panel panel-default">
@@ -213,7 +216,7 @@
 
 
 		<div class="container">
-			<h3 style="margin-top: 40px;" id="med">NOSSAS MEDIDAS</h3>
+			<h3 id="med">NOSSAS MEDIDAS</h3>
 		</div>
 
 		<div class="panel panel-default">
@@ -273,10 +276,10 @@
 		</div>
 
 		<div class="container">
-			<h3 style="margin-top: 40px;" id="prob">PROBLEMAS?</h3>
+			<h3 id="prob">PROBLEMAS?</h3>
 		</div>
 
-		<div class="panel panel-default" style="margin-bottom: 60px;">
+		<div class="panel panel-default">
 			<div class="panel-heading">
 				<h4 class="panel-title">
 					<a data-toggle="collapse" data-parent="#accordion" href="#collapse19">Por que o meu teste de conexão não funciona?</a>
