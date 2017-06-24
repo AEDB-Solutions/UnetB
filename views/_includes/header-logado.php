@@ -1,9 +1,3 @@
-<?php
-	if (!isset($_SESSION)) session_start();
-	if(!isset($_SESSION['email'])){
-		header('location:login-view.php');
-	}
-?>
 <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
 	<div class="container-fluid">
 
@@ -31,7 +25,6 @@
 						<li><a href="../functions/logout.php">Sair</a></li>
 					</ul>
 				</li>
-
 			</ul>
 		</div>
 	</div>
