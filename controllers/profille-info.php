@@ -1,7 +1,7 @@
 <?php
 	if (!isset($_SESSION)) session_start();
 	if(!isset($_SESSION['email'])){
-		header('location:login-view.php');
+		header('location:home-view.php');
 	}
 
 	require_once "../classes/class-UnetbDB.php";

@@ -1,6 +1,3 @@
-<?php
-	require_once "../controllers/profille-info.php";
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -12,24 +9,36 @@
 	</head>
 
 	<body>
+
+		<!-- Inclue o HEADER na página -->
+		<?php 
+			if (!isset($_SESSION)) session_start();
+			if(!isset($_SESSION['id'])){
+				header('location:home-view.php');
+			}else
+				include "_includes/header-logado.php";
+
+			require_once "../controllers/profille-info.php";
+		?>
+
 		<div class="pai">
 			<div class="filho">
 				<div class="container">
 					<div class="row">
 						<div class= "well col-md-4 col-sm-6 col-xs-12 col-md-offset-4 col-sm-offset-3 modal-body">
 							<div class="modal-header">
-								<h1 class="modal-title">Informações do Usuário</h1>
+								<center><h1 class="modal-title">Seu Perfil</h1></center>
 									<b>	Nome: </b> <?=$data['name'];?> </br></br>
 									<b>	Email: </b>  <?=$data['email'];?> </br></br>
 									<b>	Celular: </b> <?=$data['cellphone'];?> </br></br>
 									<b> Curso: </b> <?=$data['course'];?> </br></br>
 									<b> Matrícula: </b> <?=$data['matricula'];?> </br></br>
 								<button id="btnEdit" type="button" class="btn btn-primary btn-lg" onclick = "goSetting()">
-						Editar
-					</button>
-							<!-- <form action="profille-settings-view.php">
-    									<input type="submit"/>
-							</form> -->
+									Editar
+								</button>
+								<!-- <form action="profille-settings-view.php">
+	    									<input type="submit"/>
+								</form> -->
 							</div>
 						</div>							
 					</div> <!-- /row-->
@@ -37,11 +46,13 @@
 			</div> <!-- filho -->
 		</div> <!-- pai -->
 
-		<?php include "_includes/header-logado.php" ?>
+		
 		<script src="_js/jquery.min.js"></script> <!-- Carrega JS jquery-->
 		<scripT src="_js/bootstrap.js"></script> <!-- Carrega JS do bootstrap-->
 		<script type="text/javascript"> 
-		function goSetting(){								location.href="profille-settings-view.php";}
+			function goSetting(){
+				location.href="profille-settings-view.php";
+			}
 		</script>
 	</body>
 </html>

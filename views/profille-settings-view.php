@@ -2,6 +2,7 @@
 <html lang="pt-br">
 
 	<head>
+
 		<!-- INCLUE O HEAD NA PÁGINA -->
 		<?php include "_includes/head.php";?>
 
@@ -9,10 +10,19 @@
 
 	<body>
 
-		<!-- INCLUE O HEADER NA PÁGINA -->
-		<?php include "_includes/header-logado.php";?>
-		<?php include "../controllers/profille-info.php";?>
-		<?php $user_dt = getUserData($_SESSION['id']) ?>
+		<!-- Inclue o HEADER na página -->
+		<?php 
+			if (!isset($_SESSION)) session_start();
+			if(!isset($_SESSION['id'])){
+				header('location:home-view.php');
+			}else
+				include "_includes/header-logado.php";
+			
+			require_once "../controllers/profille-info.php";
+			$user_dt = getUserData($_SESSION['id'])
+		?>
+
+	
 
 		<div class="pai">
 			<div class="filho">
@@ -31,48 +41,48 @@
 								<div class="form-group">
 									<label for="email">E-mail</label>
 									<input type="email" class="form-control" id='email' name="email" placeholder="Informe o E-mail" value = "<?=$user_dt['email']?>">
-									<span class='msg-erro msg-email'></span>
+									<span class='msg-email'></span>
 								</div>
 								<div class="form-group">
 									<label for= 'name'> Nome </label>
 									<input type="text" name="name" class = "form-control" id = "name" placeholder="Digite seu nome" value="<?= $user_dt['name']?>">
-									<span class='msg-erro msg-name'></span>
+									<span class='msg-name'></span>
 								</div>
 								<div class="form-group">
 									<label for= 'lastpassword'> Senha Atual</label>
 									<input type="password" name="lastpassword" class = "form-control" id = "lastpassword" placeholder="Digite sua senha atual">
-									<span class='msg-erro msg-lastpassw'></span>
+									<span class='msg-lastpassw'></span>
 								</div>
 
 								<div class="form-group">
 									<label for= 'newpassword'> Nova Senha</label>
 									<input type="password" name="newpassword" class = "form-control" id = "newpassword" placeholder="Digite uma nova senha.">
-									<span class='msg-erro msg-newpassw'></span>
+									<span class='msg-newpassw'></span>
 								</div>
 
 								<div class="form-group">
 									<label for= 'confnewpassword'> Confirmação da senha</label>
 									<input type="password" name="confnewpassword" class = "form-control" id = "confnewpassword" placeholder="Confirme a nova senha.">
-									<span class='msg-erro msg-confnewpassw'></span>
+									<span class='msg-confnewpassw'></span>
 								</div>
 
 								<div class="form-group">
 									<label for= 'course'> Curso</label>
 									<select name="course" class = "form-control" id = "course">
 										<?php showcourse();?></select>
-									<span class='msg-erro msg-course'></span>
+									<span class='msg-course'></span>
 								</div>
 
 								<div class="form-group">
 									<label for= 'matricula'> Matrícula</label>
 									<input type="text" name="matricula" class = "form-control" id = "matricula" placeholder="Digite sua matrícula." value="<?= $user_dt['matricula']?>" maxlength="10" OnKeyPress="formatar('##/#######', this)">
-									<span class='msg-erro msg-matricula'></span>
+									<span class='msg-matricula'></span>
 								</div>
 
 								<div class="form-group">
 									<label for= 'cellphone'> Celular </label>
 									<input type="text" name="cellphone" class = "form-control cellphone" id = "cellphone" placeholder="Celular: 99 9 9999-9999" value="<?= $user_dt['cellphone']?>" maxlength="14" OnKeyPress="formatar('## # ####-####', this)">
-									<span class='msg-erro msg-cellphone'></span>
+									<span class='msg-cellphone'></span>
 								</div>
 
 								<div class="modal-footer">
