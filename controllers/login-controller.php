@@ -18,8 +18,6 @@
 	$mySQL->disconnect();
 
 	$resultado = mysqli_fetch_assoc($resultadoQuery);// Salva os dados encontados na variável $resultado
-	
-	sleep(3);//retirar depois. Apenas para teste em sala
 
 	if (verify($password ,$resultado['password'])){
 

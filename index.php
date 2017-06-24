@@ -21,4 +21,4 @@ $_SESSION['DB_USER'] = 'root';
 // Senha do DB
 $_SESSION['DB_PASSWORD'] = '';
 
-header('location:views/home-logout-view.php');
+header('location:views/home-view.php');

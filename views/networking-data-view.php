@@ -11,7 +11,13 @@
 	<body>
 
 		<!-- INCLUE O HEADER NA PÁGINA -->
-		<?php include "_includes/header.php";?>
+		<?php 
+			if (!isset($_SESSION)) session_start();
+			if(!isset($_SESSION['id'])){
+				include "_includes/header.php";
+			}else
+				include "_includes/header-logado.php";
+		?>
 
 		<div class="pai">
 			<div class="filho">

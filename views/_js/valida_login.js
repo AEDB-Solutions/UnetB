@@ -52,7 +52,7 @@ function validaLogin(evt){
 				data: $('#form-login').serialize(),
 				success: function(data){
 					if(data == 'logado'){
-						window.location.replace("http://localhost/UnetB/views/home-login-view.php");
+						window.location.replace("http://localhost/UnetB/views/home-view.php");
 					}
 					else{
 						caixa_login = document.getElementById('msg-login');

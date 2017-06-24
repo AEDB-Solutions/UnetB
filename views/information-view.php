@@ -11,7 +11,13 @@
 	<body>
 
 		<!-- INCLUE O HEADER NA PÁGINA -->
-		<?php include "_includes/header.php";?>
+		<?php 
+      if (!isset($_SESSION)) session_start();
+      if(!isset($_SESSION['id'])){
+        include "_includes/header.php";
+      }else
+        include "_includes/header-logado.php";
+    ?>
 		
 		<span class="container">
 			<h1 style="margin-top: 60px; margin-bottom: 30px;">Sobre e FAQ</h1>
