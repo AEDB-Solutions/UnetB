@@ -15,11 +15,6 @@ $(document).ready( function(){
 			salvaPerfil = false;
 		
 		function success(pos){
-			
-			console.log('Sua posição atual é:');
-			console.log('	Latitude : ' + pos.coords.latitude);
-			console.log('	Longitude: ' + pos.coords.longitude);
-			console.log('	Precisão : ' + pos.coords.accuracy + ' metros.');
 
 			$.ajax({ // Testando Download ***************************************
 				url: '../controllers/qualidade/download.php',
