@@ -49,10 +49,11 @@ function validaLogin(evt){
 			$.ajax({
 				url: '../controllers/login-controller.php',
 				method: 'post',
+				dataType:"json",
 				data: $('#form-login').serialize(),
 				success: function(data){
-					if(data == 'logado'){
-						window.location.replace("http://localhost/UnetB/views/home-view.php");
+					if(data["resultado"] == "logado"){
+						window.location.replace("home-view.php");
 					}
 					else{
 						caixa_login = document.getElementById('msg-login');

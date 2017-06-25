@@ -25,8 +25,6 @@
 		$_SESSION['nome']  = $resultado['name'];
 		$_SESSION['id'] = $resultado['user_id'];
 
-		echo 'logado';
-
+		echo json_encode(array("resultado" => "logado"));
 	}else
-		echo 'invalido';
-?>
+		echo json_encode(array("resultado" => "invalido"));
