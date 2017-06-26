@@ -1,18 +1,24 @@
 var salvaPerfil;
 $(document).ready( function(){
+
+	if($('#session').val() != 0){
+		$('#salvaPerfil').show();
+	}
+
 	$('#botao_qualidade').click(function(){
 
-		$('#salvaPerfil').hide();
+		if (document.getElementById("salvaPerfil").checked){
+			salvaPerfil = $('#session').val();
+		}
+		else{
+			salvaPerfil = 'NULL';
+		}
+
 		$('#botao_qualidade').prop("disabled",true);
 		$('#gif_qualidade').show();
 		$('#msg-qualidade').hide();
 
-		navigator.geolocation.getCurrentPosition(success, error, {enableHighAccuracy: true});
-
-		if (document.getElementById("salvaPerfil").checked)
-			salvaPerfil = true;
-		else
-			salvaPerfil = false;
+		navigator.geolocation.getCurrentPosition(success, error, {enableHighAccuracy: true});		
 		
 		function success(pos){
 
@@ -118,7 +124,8 @@ $(document).ready( function(){
 														method: 'post',
 														dataType:"json",
 														timeout: 20000,
-														data:{	lat       : pos.coords.latitude,
+														data:{	id        : salvaPerfil,
+																lat       : pos.coords.latitude,
 																long      : pos.coords.longitude,
 																download  : download['download'],
 																upload    : upload['upload'],
@@ -135,8 +142,16 @@ $(document).ready( function(){
 																caixa_qualidade = document.getElementById('msg-qualidade');
 																formataWarning(caixa_qualidade,' Teste realizado com sucesso mas fora dos limites para gravar no banco de dados');
 															}
+															$('#botao_qualidade').prop("disabled",false);
+															$('#gif_qualidade').hide();
 														},
 														complete: function(){
+															$('#botao_qualidade').prop("disabled",false);
+															$('#gif_qualidade').hide();
+														},
+														erro: function(){
+															//caixa_qualidade = document.getElementById('msg-qualidade');
+															//formataErro(caixa_qualidade,' Ocorreu um erro interno e o teste não foi gravado no banco de dados');
 															$('#botao_qualidade').prop("disabled",false);
 															$('#gif_qualidade').hide();
 														},

@@ -99,3 +99,6 @@ body{
 .dados-qualidade{
 	text-align: center;
 }
+#salvaPerfil{
+	display: none;
+}

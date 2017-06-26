@@ -60,7 +60,7 @@
 								</div>
 								
 								
-								<input type="hidden" name="_next" value="http://localhost/UnetB/views/contact.php?Fale Conosco" />
+								<input type="hidden" name="_next" value="http://localhost/UnetB/views/contact.php" />
 								<input type="hidden" name="_subject" value="" id="assunto"/>
 								<input type="hidden" name="_language" value="pt" />
 								

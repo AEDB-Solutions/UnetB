@@ -1,7 +1,7 @@
 <?php
 	require_once "../classes/class-UnetbDB.php";      //arquivo para a classe que conecta ao banco de dados
 	require_once "../functions/get_access_point.php"; //arquivo que pega o endereço MAC do access point
-	
+	$id_user        = $_POST['id'];
 	$lat            = $_POST['lat'];
 	$long           = $_POST['long'];
 	$download_speed = $_POST['download'];
@@ -44,7 +44,7 @@
 		}
 	}
 	if(!(is_bool($lat_q) === true || is_bool($long_q) === true)){
-		$query = "INSERT INTO `networking_data` (`lat`, `lng`, `download_speed`, `upload_speed`, `intensity`, `latency`, `packetloss`, `jitter`, `access_point`) VALUES ($lat_q, $long_q, $download_speed, $upload_speed, $intensity, $latency, $packetloss, $jitter_tt, '$access_point' );";
+		$query = "INSERT INTO `networking_data` (`id_user`,`lat`, `lng`, `download_speed`, `upload_speed`, `intensity`, `latency`, `packetloss`, `jitter`, `access_point`) VALUES ($id_user, $lat_q, $long_q, $download_speed, $upload_speed, $intensity, $latency, $packetloss, $jitter_tt, '$access_point' );";
 		$mySQL = new MySQL;
 		$executaQuery = $mySQL->executeQuery($query);
 		$mySQL->disconnect();
