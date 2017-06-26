@@ -18,7 +18,7 @@ body{
 	font-size: 16px;
 }
 .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus{
-	background-color: rgba(51, 122, 183, 1);	
+	background-color: rgba(51, 122, 183, 1);
 }
 
 #btnLogin,#btnPerfil{

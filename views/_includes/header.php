@@ -32,3 +32,12 @@
 <?php
 	include_once "login-view.php";
 ?>
+
+		<input type="hidden" id="session" value="
+			<?php
+				if(!isset($_SESSION['id'])){
+					echo '0';
+				}else
+					echo $_SESSION['id'];
+			?>
+		">

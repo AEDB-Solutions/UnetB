@@ -29,3 +29,11 @@
 		</div>
 	</div>
 </nav>
+		<input type="hidden" id="session" value="
+			<?php
+				if(!isset($_SESSION['id'])){
+					echo '0';
+				}else
+					echo $_SESSION['id'];
+			?>
+		">

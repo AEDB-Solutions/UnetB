@@ -7,13 +7,13 @@ $(document).ready( function(){
 
 	$('#botao_qualidade').click(function(){
 
-		if (document.getElementById("salvaPerfil").checked){
+		if (document.getElementById("caixaSalvaPerfil").checked){
 			salvaPerfil = $('#session').val();
 		}
 		else{
-			salvaPerfil = 'NULL';
+			salvaPerfil = 0;
 		}
-
+		$('#salvaPerfil').prop("disabled",false);
 		$('#botao_qualidade').prop("disabled",true);
 		$('#gif_qualidade').show();
 		$('#msg-qualidade').hide();
@@ -149,9 +149,14 @@ $(document).ready( function(){
 															$('#botao_qualidade').prop("disabled",false);
 															$('#gif_qualidade').hide();
 														},
-														erro: function(){
-															//caixa_qualidade = document.getElementById('msg-qualidade');
-															//formataErro(caixa_qualidade,' Ocorreu um erro interno e o teste não foi gravado no banco de dados');
+														error: function(jqXHR, exception){
+															if(exception == 'timeout'){
+																caixa_qualidade = document.getElementById('msg-qualidade');
+																formataErro(caixa_qualidade,' Tempo máximo de teste ultrapassado. Tente novamente.');
+															}else{
+																caixa_qualidade = document.getElementById('msg-qualidade');
+																formataErro(caixa_qualidade,' Ocorreu um erro interno. Tente novamente');
+															}
 															$('#botao_qualidade').prop("disabled",false);
 															$('#gif_qualidade').hide();
 														},
