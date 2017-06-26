@@ -54,7 +54,8 @@
         </h4>
       </div>
       <div id="collapse1" class="panel-collapse collapse in">
-        <div class="panel-body">EM CONSTRUÇÃO</div>
+        <div class="panel-body"><p>Somos alunos do curso de Engenharia de Redes de Comunicação da Universidade de Brasília e este site é um protótipo da disciplina de Algoritmos e Estrutura de dados. Foi feito com o objetivo de medir a qualidade de redes wifi porém coletando dados apenas para conexões dentro do campus Darcy Ribeiro da Unb. Os testes foram feitos com base nos parâmetros abordados ao longo do nosso curso, são eles: jitter, velocidade de download e upload, ping, taxa de perda de pacote e latência.</p>
+        <p>Você que está lendo isso provavelmente não faz a menor ideia do que esses parâmetros significam, mas eles são de suma importância na analise da conexão. Nem sempre, por exemplo, uma velocidade alta de download e upload são suficientes para julgar uma conexão como boa, caso a latência ou a perda de pacotes estejam altas também. Mas como provavelmente você não está muito interessado nisso, faça nosso teste e se oriente pelas escalas.</p></div>
       </div>
     </div>
 
