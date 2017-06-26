@@ -78,8 +78,12 @@ body{
 .form-group{
 	margin-bottom: 8px;
 }
-#gif_registro, #gif_login, #gif_qualidade{
+#gif_registro, #gif_login, #gif_qualidade, #gif_info{
 	display: none;
+}
+#gif_info{
+	height: 13px;
+	width: 20px;
 }
 /******************CENTRALIZAR OBJETOS VERTICALMENTE NA TELA******************/
 .pai {

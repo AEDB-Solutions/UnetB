@@ -128,7 +128,6 @@ $(document).ready( function(){
 																packetloss: packetloss['packetloss'],
 															},
 														success: function(data){
-															console.log(data);
 															if (data["resultado"] == "gravado"){
 																caixa_qualidade = document.getElementById('msg-qualidade');
 																formataSuccess(caixa_qualidade,' Teste realizado com sucesso e gravado no banco');

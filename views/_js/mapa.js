@@ -10,7 +10,6 @@ var gradient = [
 	'rgba(255, 195, 0  , 0.79)',
 	'rgba(255, 225, 0  , 0.82)',
 
-
 	'rgba(255, 255, 0  , 0.70)', //Amarelo
 
 	'rgba(225, 255, 0  , 0.85)',
@@ -93,7 +92,6 @@ function initMap() {
 
 	var infoWindow = new google.maps.InfoWindow({map: map});
 
-
 	if (navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(
 			function(position) {
@@ -103,7 +101,7 @@ function initMap() {
 				};
 
 				map.setCenter(pos);
-			}, 
+			},
 			
 			function() {
 				locationError(true, infoWindow, map.getCenter());
@@ -132,21 +130,14 @@ function initMap() {
 	}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+var conteudo  = "<div class='panel panel-primary' id='infowindow'>";	
+	conteudo += 	"<button type='button' class='list-group-item list-group-item active' id='btn-info'><center>Click Para Analisar <img src='_images/teste.svg' id='gif_info'></center></button>";	
+	conteudo += 	"<table class='table table-striped table-bordered table-condensed'>";
+	conteudo +=			"<tr>	<td>Download</td>	<td id='infodownload'> - </td>	<td>Mbps</td>	</tr>";
+	conteudo += 		"<tr>	<td>Upload</td>		<td id='infoupload'>   - </td>	<td>Mbps</td>	</tr>";
+	conteudo += 		"<tr>	<td>Ping</td>		<td id='infoping'>     - </td>	<td>ms</td>		</tr>";
+	conteudo += 	"</table";
+	conteudo += "</div>";
 
 	if($('#session').val() != 0){
 		var infoWindows = [];
@@ -157,27 +148,37 @@ function initMap() {
 
 			if(!(lat > -15.7452 || lat < -15.7758)  && !(long < -47.8768 || long > -47.8552)) {
 
-				$.ajax({
-					url: '../controllers/infoWindow-controller.php',
-					method: 'post',
-					dataType:"json",
-					data: {lat: lat, long: long},
+				infowindow = new google.maps.InfoWindow({
+					content: conteudo,
+					map: map,
+					position: event.latLng,
+				}); infoWindows.push(infowindow);
 
-					success: function(data){
-						
-						infowindow = new google.maps.InfoWindow({
-							content: document.getElementById("infowindow"),
-							map: map,
-							position: event.latLng,
-						}); infoWindows.push(infowindow);
+				for (var i = 0; i < infoWindows.length -1; i++) {
+					infoWindows[i].setMap(null);
+				}
+				$('#btn-info').click(function(){
+					$('#gif_info').show();
+					$.ajax({
+						url: '../controllers/infoWindow-controller.php',
+						method: 'post',
+						dataType:"json",
+						data: {lat: lat, long: long},
 
-						for (var i = 0; i < infoWindows.length -1; i++) {
-							infoWindows[i].setMap(null);
-						}
-						$('#infowindow').show();
-
-						//document.getElementById('infowindow').style.display = 'block';
-					},
+						success: function(data){
+							if(data){
+								$('#infodownload').html(data['download_speed']);
+								$('#infoupload').html(data['upload_speed']);
+								$('#infoping').html(data['latency']);
+							}else{
+								$('#infodownload').html("Sem Dados");
+								$('#infoupload').html("Sem Dados");
+								$('#infoping').html("Sem Dados");
+							}
+							$('#gif_info').hide();
+							
+						},
+					});
 				});
 			}
 		});
@@ -213,7 +214,6 @@ function initMap() {
 
 		map.setCenter(new google.maps.LatLng(y, x));
 	});
-
 	heatmapPlot();
 }
 
@@ -235,6 +235,7 @@ function heatmapPlot(){
 			dataType:"json",
 
 			success: function(data){
+
 				for (var key in data) {
 					dados =	{location: new google.maps.LatLng(data[key]['lat'], data[key]['long']), weight: data[key]['peso']};
 					heatmapData.push(dados);
@@ -254,6 +255,6 @@ function heatmapPlot(){
 
 			},
 		});
-	});	
+	});
 }
 

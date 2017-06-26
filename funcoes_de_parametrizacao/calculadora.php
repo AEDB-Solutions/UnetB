@@ -23,14 +23,14 @@
 	for ($i=0; $i < count($tabela); $i++){
 
 		$templat  = $tabela[$i]["lat"];
-		$templong = $tabela[$i]["long"];
+		$templong = $tabela[$i]["lng"];
 
 		for ($j=$i; $j < count($tabela)-1; $j++){
 
-			$long = $tabela[$j+1]["long"];
+			$long = $tabela[$j+1]["lng"];
 			$lat  = $tabela[$j+1]["lat"];
 
-			$testado = $tabela[$i]["lat"].$tabela[$i]["long"];
+			$testado = $tabela[$i]["lat"].$tabela[$i]["lng"];
 
 			if($templat == $lat && $templong == $long){
 				unset($copia[$j+1]);
@@ -44,7 +44,7 @@
 		$upload      = $linha["upload_speed"];
 		$intensidade = $linha["intensity"];
 		$latencia    = $linha["latency"];
-		$long        = $linha["long"];
+		$long        = $linha["lng"];
 		$lat         = $linha["lat"];
 
 		$n_intensidade = intensity_param($intensidade);

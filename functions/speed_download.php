@@ -34,7 +34,7 @@
 
 		//array_push($times, $time);
 		array_push($times, $info); // tem que guardar as velocidades, não o tempo 
-		if($time > 1 && $time <= 2){		
+		if($time > 1 && $time <= 2){
 			$source = "http://ipv4.download.thinkbroadband.com:8080/10MB.zip";
 			$info = download_sizeMB($source);
 			array_push($times, $info);

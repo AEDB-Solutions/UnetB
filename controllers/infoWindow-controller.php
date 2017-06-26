@@ -1,6 +1,6 @@
 <?php
 
-	require_once "../classes/class-UnetbDB.php";      //arquivo para a classe que conecta ao banco de dados
+	require_once "../classes/class-UnetbDB.php"; //arquivo para a classe que conecta ao banco de dados
 
 	$lat = $_POST['lat'];
 	$long = $_POST['long'];
@@ -29,12 +29,11 @@
 		}
 	}
 
-	$query = "SELECT * FROM `networking_data` WHERE  lat = $lat_q AND lng = $long_q ORDER BY date_quality DESC";
+	$query = "SELECT `download_speed`,`upload_speed`,`latency` FROM `networking_data` WHERE  lat = $lat_q AND lng = $long_q ORDER BY date_quality DESC";
 	$mySQL = new MySQL;
 	$executaQuery = $mySQL->executeQuery($query);
 	$mySQL->disconnect();
 
 	$dados = mysqli_fetch_assoc($executaQuery);
-
 	echo json_encode($dados);
 ?>
