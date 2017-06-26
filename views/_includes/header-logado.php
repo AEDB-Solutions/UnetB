@@ -19,7 +19,7 @@
 				<li><a href="contact.php">Contato</a></li>
 				
 				<li class="dropdown btn-primary" >
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false""><?=$_SESSION['nome'];?></a>
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false""><?php if(isset($_SESSION['nome'])) echo $_SESSION['nome']; else echo "Usuário";?></a>
 					<ul class="dropdown-menu">
 						<li><a href="profille-view.php">Perfil</a></li>
 						<li><a href="../functions/logout.php">Sair</a></li>

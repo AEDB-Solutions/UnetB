@@ -24,8 +24,9 @@ CREATE TABLE IF NOT EXISTS `unetb`.`user` (
 
 CREATE TABLE IF NOT EXISTS `unetb`.`networking_data` (
   `id`             INT(11) NOT NULL AUTO_INCREMENT,
+  `id_user`        DOUBLE  NOT NULL,
   `lat`            DOUBLE  NOT NULL,
-  `long`           DOUBLE  NOT NULL,
+  `lng`            DOUBLE  NOT NULL,
   `download_speed` DOUBLE  NOT NULL,
   `upload_speed`   DOUBLE  NOT NULL,
   `intensity`      DOUBLE  NOT NULL,
