@@ -3,8 +3,12 @@ html, body {
 	width: 100%;
 }
 body{
-	background-color: #f5f5f5;
-	background: url("../_images/background2.png");
+	background-color: #f5f5f5;	
+	background: url(../_images/background.png) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 	background-attachment: fixed;
 }
 /******************CUSTOMIZAÇÃO DO HEADER******************/
@@ -102,6 +106,6 @@ body{
 #salvaPerfil{
 	display: none;
 }
-#senha{
+#senha,#view-edit{
 	display: none;
 }

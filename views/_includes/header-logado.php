@@ -23,6 +23,7 @@
 					<ul class="dropdown-menu">
 						<li><a href="profille-view.php">Perfil</a></li>
 						<li><a href="profille-settings-view.php">Editar Perfil</a></li>
+						<li><a href="profille-medicions-view.php">Suas Medições</a></li>
 						<li><a href="../functions/logout.php">Sair</a></li>
 						
 					</ul>

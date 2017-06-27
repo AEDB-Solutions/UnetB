@@ -4,6 +4,12 @@ if (form.addEventListener){
 } else if (form.attachEvent)
 	form.attachEvent("onclick", validateSettings);
 
+$('#view-edit').click(function(event){
+	document.getElementById('campos').style.display = 'block';
+	document.getElementById('senha').style.display = 'none';
+	document.getElementById('view-edit').style.display = 'none';
+	caixa_settings.style.display = 'none';
+});
 
 function validateSettings(evt){
 
@@ -41,14 +47,6 @@ function validateSettings(evt){
 		contErro += 1;
 	}else{
 		caixa_nome.style.display = 'none';
-	}
-
-	caixa_lastpassw = document.querySelector('#msg-lastpassw');
-	if(lastpass.value == ""){
-		formataErro(caixa_lastpassw, " Digite sua senha atual para salvar as alterações.");
-		contErro += 1;
-	}else{
-		caixa_lastpassw.style.display = 'none';
 	}
 
 	caixa_newpass = document.querySelector('#msg-newpassw');
@@ -94,36 +92,52 @@ function validateSettings(evt){
 	if(contErro > 0){
 		evt.preventDefault();
 	}else{
-		$(document).ready( function(){
 
-			$.ajax({
-				url: '../controllers/profille-controller.php',
-				method: 'post',
-				data: $('#form-settings').serialize(),
+		document.getElementById('campos').style.display = 'none';
+		document.getElementById('senha').style.display = 'block';
+		document.getElementById('view-edit').style.display = 'block';
 
-				success: function(data){
+		caixa_lastpassw = document.querySelector('#msg-lastpassw');
+		if(lastpass.value == ""){
+			formataErro(caixa_lastpassw, " Digite sua senha atual para salvar as alterações.");
+		}else if (lastpass.value.length < 6) {
+			formataErro(caixa_lastpassw, " A senha deve ter no mínimo 6 caracteres.");
+		}
+		else{
 
-					caixa_settings = document.getElementById('msg-settings');
+			caixa_lastpassw.style.display = 'none';
+			$(document).ready( function(){
+				
+				$.ajax({
+					url: '../controllers/profille-controller.php',
+					method: 'post',
+					data: $('#form-settings').serialize(),
 
-					if(data == ' Atualização feita com sucesso.'){
-						formataSuccess(caixa_settings,data);
+					success: function(data){
+
+						caixa_settings = document.getElementById('msg-settings');
+
+						if(data == ' Atualização feita com sucesso.'){
+							formataSuccess(caixa_settings,data);
+						}
+						else{
+							formataErro(caixa_settings,data);
+						}
+					},
+
+					beforeSend: function(){
+						$('#edit-button').prop("disabled",true);
+						$('#gif_registro').show();
+						$('#lastpassword').val('');
+					},
+
+					complete: function(){
+						$('#edit-button').prop("disabled",false);
+						$('#gif_registro').hide();
 					}
-					else{
-						formataErro(caixa_settings,data);
-					}
-				},
-
-				beforeSend: function(){
-					$('#edit-button').prop("disabled",true);
-					$('#gif_registro').show();
-				},
-
-				complete: function(){
-					$('#edit-button').prop("disabled",false);
-					$('#gif_registro').hide();
-				}
+				});
 			});
-		});
+		}
 	}
 }
 

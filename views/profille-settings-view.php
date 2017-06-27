@@ -35,8 +35,8 @@
 							</div>
 							
 							<form action="" method="post" id='form-settings' enctype='multipart/form-data'>
-
-					
+							
+							<div id="campos">
 								<div class="form-group">
 									<label for="email">E-mail</label>
 									<input type="email" class="form-control" id='email' name="email" placeholder="Informe o E-mail" value = "<?=$user_dt['email']?>">
@@ -47,12 +47,6 @@
 									<label for= 'name'> Nome </label>
 									<input type="text" name="name" class = "form-control" id = "name" placeholder="Digite seu nome" value="<?= $user_dt['name']?>">
 									<span class='' id="msg-name"></span>
-								</div>
-
-								<div class="form-group">
-									<label for= 'lastpassword'> Senha Atual</label>
-									<input type="password" name="lastpassword" class = "form-control" id = "lastpassword" placeholder="Digite sua senha atual">
-									<span class='' id="msg-lastpassw"></span>
 								</div>
 
 								<div class="form-group">
@@ -85,12 +79,21 @@
 									<span class='' id="msg-cellphone"></span>
 								</div>
 
-								<div class="modal-footer">									
-									<button  value="" type="button" class="btn btn-primary btn-lg" id="edit-button" > Salvar <img src="_images/teste.svg" id="gif_registro"></button>
+							</div>
+
+								<div class="form-group" id="senha">
+									<label for= 'lastpassword'> Senha Atual</label>
+									<input type="password" name="lastpassword" class = "form-control" id = "lastpassword" placeholder="Digite sua senha atual">
+									<span class='' id="msg-lastpassw"></span>
+								</div>
+
+								<div class="modal-footer">
+									<button type="button" class="btn btn-primary btn-lg" id="edit-button" > Salvar <img src="_images/teste.svg" id="gif_registro"></button>
+									<br><br>
+									<button type="button" class="btn btn-default btn-block" id="view-edit">Voltar Para Editar Perfil</button>
 								</div>
 
 								<div class='' id='msg-settings'></div>
-								<h6><i>*Para salvar as novas informações você deve informar sua senha atual.</i></h6>
 
 							</form><!-- /formulário-->
 							
@@ -100,8 +103,9 @@
 			</div> <!-- filho -->
 		</div> <!-- pai -->
 
-		 <script src="_js/profille-validate.js"></script> <!-- Carrega JS para validar informações -->
+		 
 		<script src="_js/jquery.min.js"></script> <!-- Carrega JS jquery-->
 		<script src="_js/bootstrap.js"></script> <!-- Carrega JS do bootstrap-->	
+		<script src="_js/profille-validate.js"></script> <!-- Carrega JS para validar informações -->
 	</body>
 </html>
