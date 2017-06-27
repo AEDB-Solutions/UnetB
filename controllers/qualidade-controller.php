@@ -3,7 +3,7 @@
 	require_once "../functions/get_access_point.php"; //arquivo que pega o endereço MAC do access point
 	$id_user        = $_POST['id'];
 	$lat            = $_POST['lat'];
-	$long           = -47.8764;//$_POST['long'];
+	$long           = $_POST['long'];
 	$download_speed = $_POST['download'];
 	$upload_speed   = $_POST['upload'];
 	$latency        = $_POST['latency'];
