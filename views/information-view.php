@@ -218,18 +218,6 @@
 			</div>
 		</div>
 
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<h4 class="panel-title">
-					<a data-toggle="collapse" data-parent="#accordion" href="#collapse20">Quanto custa usar a UnetB?</a>
-				</h4>
-			</div>
-			<div id="collapse20" class="panel-collapse collapse">
-				<div class="panel-body">A UnetB é uma aplicação gratuita.</div>
-			</div>
-		</div>
-
-
 		<div class="container">
 			<h3 style="margin-top: 40px;" id="med">NOSSAS MEDIDAS</h3>
 		</div>

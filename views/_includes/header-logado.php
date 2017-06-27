@@ -7,7 +7,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-left" href="home-view.php"><img alt="UnetB" src="_images/logo.png"></a>
+			<a class="navbar-left" href="home-view.php"><img alt="UnetB" src="_images/logo100x250.png"></a>
 		</div>
 		
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

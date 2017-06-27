@@ -63,7 +63,7 @@
 									</tr>
 
 									<tr>
-										<td>Intensidade</td>
+										<td>Intensidade do Sinal</td>
 										<td class="dados-qualidade" id="dado-intensity">-</td>
 										<td class="dados-qualidade">dBm</td>
 									</tr>
