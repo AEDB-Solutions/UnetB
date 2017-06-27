@@ -1,6 +1,6 @@
 <?php
 	if (!isset($_SESSION)) session_start();
-	if(!isset($_SESSION['email'])){
+	if(!isset($_SESSION['id'])){
 		header('location:home-view.php');
 	}
 
@@ -15,7 +15,6 @@
 		return $data;
 	}
 
-	$data = getUserData($_SESSION['id']);
 	function showCourse(){
 		global $data;
 		$course = array("", "Administração","Agronomia","Arquitetura e Urbanismo","Arquivologia","Artes Cênicas","Artes Plásticas","Biblioteconomia","Ciência da Computação","Ciência Política","Ciências Ambientais","Ciências Biológicas","Ciências Contábeis","Ciências Econômicas","Ciências Farmacêuticas","Ciências Sociais","Comunicação Organizacional","Comunicação Social","Design","Direito","Educação Física","Enfermagem e Obstetrícia","Engenharia Ambiental","Engenharia Civil","Engenharia de Computação","Engenharia de Redes de Comunicação","Engenharia de Produção","Engenharia Elétrica","Engenharia Florestal","Engenharia Mecânica","Engenharia Mecatrônica","Estatística,Filosofia","Física,Geofísica","Geografia","Geologia","Gestão de Políticas Públicas","Gestão de Agronegócio","Gestão em Saúde Coletiva","História", "Letras", "Matemática"," Medicina", "Medicina Veterinária","Museologia","Música", "Nutrição", "Odontologia", "Pedagogia", "Psicologia", "Química", "Química Tecnológica", "Relações Internacionais", "Serviço Social", "Turismo","Visuais");
@@ -28,4 +27,5 @@
 			}
 		}
 	}
+	$data = getUserData($_SESSION['id']);
 ?>

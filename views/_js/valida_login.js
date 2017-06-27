@@ -15,7 +15,7 @@ function validaLogin(evt){
 	var contErro = 0;
 
 	/* Validação do campo email */
-	caixa_email = document.querySelector('.msg-email-login');
+	caixa_email = document.querySelector('#msg-email-login');
 	if(email.value == ""){
 		formataErro(caixa_email," Favor preencher o E-mail.");
 		contErro += 1;
@@ -27,7 +27,7 @@ function validaLogin(evt){
 	}
 
 	/* Validação do campo password*/
-	caixa_password = document.querySelector('.msg-password-login');
+	caixa_password = document.querySelector('#msg-password-login');
 	if(password.value == ""){
 		formataErro(caixa_password," Favor preencher a senha.");
 		contErro += 1;
@@ -77,14 +77,8 @@ function validaLogin(evt){
 
 /* Função para formatar as mansagens de erro*/
 function formataErro(elemento,texto){
+	$(elemento).removeClass();
 	$(elemento).addClass('msg-erro');
 	elemento.innerHTML = "<span class='glyphicon glyphicon-exclamation-sign' aria-hidden='true'></span>" + texto;
-	elemento.style.display = 'block';
-}
-
-/* Função para formatar as mansagens de sucesso*/
-function formataSuccess(elemento,texto){
-	$(elemento).addClass('msg-success');
-	elemento.innerHTML = "<span class='glyphicon glyphicon glyphicon-ok' aria-hidden='true'></span>" + texto;
 	elemento.style.display = 'block';
 }

@@ -33,26 +33,18 @@
 									<b>	Celular: </b> <?=$data['cellphone'];?> </br></br>
 									<b> Curso: </b> <?=$data['course'];?> </br></br>
 									<b> Matrícula: </b> <?=$data['matricula'];?> </br></br>
-								<button id="btnEdit" type="button" class="btn btn-primary btn-lg" onclick = "goSetting()">
+								<a id="btnEdit" href="profille-settings-view.php" class="btn btn-primary btn-lg">
 									Editar
-								</button>
-								<!-- <form action="profille-settings-view.php">
-	    									<input type="submit"/>
-								</form> -->
+								</a>
 							</div>
 						</div>							
 					</div> <!-- /row-->
 				</div> <!-- /conteiner-->
 			</div> <!-- filho -->
 		</div> <!-- pai -->
-
 		
 		<script src="_js/jquery.min.js"></script> <!-- Carrega JS jquery-->
 		<scripT src="_js/bootstrap.js"></script> <!-- Carrega JS do bootstrap-->
-		<script type="text/javascript"> 
-			function goSetting(){
-				location.href="profille-settings-view.php";
-			}
-		</script>
+
 	</body>
 </html>

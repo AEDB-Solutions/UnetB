@@ -18,7 +18,7 @@ function validaCadastro(evt){
 	var contErro = 0;
 
 	/* Validação do campo email */
-	caixa_email = document.querySelector('.msg-email');
+	caixa_email = document.querySelector('#msg-email-cad');
 	if(email.value == ""){
 		formataErro(caixa_email," Favor preencher o E-mail.");
 		contErro += 1;
@@ -30,7 +30,7 @@ function validaCadastro(evt){
 	}
 
 	/* Validação do campo password*/
-	caixa_password = document.querySelector('.msg-password');
+	caixa_password = document.querySelector('#msg-password-cad');
 	if(password.value == ""){
 		formataErro(caixa_password," Favor preencher a senha.");
 		contErro += 1;
@@ -42,7 +42,7 @@ function validaCadastro(evt){
 	}
 
 	/* Confirmar senha*/
-	caixa_confpass = document.querySelector('.msg-confpass');
+	caixa_confpass = document.querySelector('#msg-confpass-cad');
 	if(confpass.value == ""){
 		formataErro(caixa_confpass," Favor preencher a confirmação de senha.");
 		contErro += 1;
@@ -54,7 +54,7 @@ function validaCadastro(evt){
 	}
 
 	/* Validação do campo name */
-	caixa_name = document.querySelector('.msg-name');
+	caixa_name = document.querySelector('#msg-name-cad');
 	if(name.value == ""){
 		formataErro(caixa_name," Favor preencher o nome.");
 		contErro += 1;
@@ -114,6 +114,7 @@ function validaCadastro(evt){
 }
 /* Função para formatar as mansagens de erro*/
 function formataErro(elemento,texto){
+	$(elemento).removeClass();
 	$(elemento).addClass('msg-erro');
 	elemento.innerHTML = "<span class='glyphicon glyphicon-exclamation-sign' aria-hidden='true'></span>" + texto;
 	elemento.style.display = 'block';
@@ -121,6 +122,7 @@ function formataErro(elemento,texto){
 
 /* Função para formatar as mansagens de sucesso*/
 function formataSuccess(elemento,texto){
+	$(elemento).removeClass();
 	$(elemento).addClass('msg-success');
 	elemento.innerHTML = "<span class='glyphicon glyphicon glyphicon-ok' aria-hidden='true'></span>" + texto;
 	elemento.style.display = 'block';

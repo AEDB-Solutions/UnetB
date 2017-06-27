@@ -21,7 +21,7 @@ function validateSettings(evt){
 	var filtro_celular = /^[0-9]{2} [0-9] [0-9]{4}\-[0-9]{4}$/; 
 	var contErro = 0;
 
-	caixa_email = document.querySelector('.msg-email');
+	caixa_email = document.querySelector('#msg-email');
 	if(email.value == ""){
 		caixa_email.style.display = 'none';
 	}else if(!filtro_email.test(email.value)){
@@ -31,7 +31,7 @@ function validateSettings(evt){
 		caixa_email.style.display = 'none';
 	}
 
-	caixa_nome = document.querySelector('.msg-name');
+	caixa_nome = document.querySelector('#msg-name');
 	if(name.value == ""){
 		formataErro(caixa_nome," O nome deve conter no mínimo 3 letras.");
 		contErro += 1;
@@ -43,46 +43,46 @@ function validateSettings(evt){
 		caixa_nome.style.display = 'none';
 	}
 
-	caixa_lastpassw = document.querySelector('.msg-lastpassw');
+	caixa_lastpassw = document.querySelector('#msg-lastpassw');
 	if(lastpass.value == ""){
-		formataErro(caixa_lastpassw, "Digite sua senha atual para salvar as alterações.");
+		formataErro(caixa_lastpassw, " Digite sua senha atual para salvar as alterações.");
 		contErro += 1;
 	}else{
 		caixa_lastpassw.style.display = 'none';
 	}
 
-	caixa_newpass = document.querySelector('.msg-newpassw');
+	caixa_newpass = document.querySelector('#msg-newpassw');
 	if(0 < newpass.value.length && newpass.value.length < 6){
-		formataErro(caixa_newpass, "A nova senha deve conter no mínimo 6 carácteres.");
+		formataErro(caixa_newpass, " A nova senha deve conter no mínimo 6 carácteres.");
 		contErro += 1;
 	}else{
 		caixa_newpass.style.display = 'none';
 	}
 
-	caixa_matricula = document.querySelector('.msg-matricula');
+	caixa_matricula = document.querySelector('#msg-matricula');
 	if(matricula.value == ""){
 		caixa_matricula.style.display = 'none';}
 	else if(!filtro_matricula.test(matricula.value)){
-		formataErro(caixa_matricula, "Digite somente os números");
+		formataErro(caixa_matricula, " Digite somente os números");
 		contErro += 1;
 	}else if(0 < matricula.value,length && matricula.value.length < 10){
-		formataErro(caixa_matricula, "Há algo de errado com o número de matrícula, digite somente os números");
+		formataErro(caixa_matricula, " Há algo de errado com o número de matrícula, digite somente os números");
 		contErro += 1;
 	}else{
 		caixa_matricula.style.display= 'none';
 	}
 
-	caixa_celular = document.querySelector('.msg-cellphone');
+	caixa_celular = document.querySelector('#msg-cellphone');
 	if(cellphone.value == ""){
 		caixa_celular.style.display = 'none';
 	}else if(!filtro_celular.test(cellphone.value)){
-		formataErro(caixa_celular, "Digite somente os números.");
+		formataErro(caixa_celular, " Digite somente os números.");
 		contErro += 1;
 	}else{ caixa_celular.style.display= 'none'};
 
-	caixa_confnewpass = document.querySelector('.msg-confnewpassw');
+	caixa_confnewpass = document.querySelector('#msg-confnewpassw');
 	if(newpass.value != confnewpass.value){
-		formataErro(caixa_confnewpass, "As senhas não coincidem.");
+		formataErro(caixa_confnewpass, " As senhas não coincidem.");
 		contErro += 1;
 	}else{
 		caixa_confnewpass.style.display = 'none';
@@ -106,14 +106,6 @@ function validateSettings(evt){
 					caixa_settings = document.getElementById('msg-settings');
 
 					if(data == ' Atualização feita com sucesso.'){
-						$('#email').val('');
-						$('#name').val('');
-						$('#lastpassword').val('');
-						$('#newpassword').val('');
-						$('#confnewpassword').val('');
-						$('#course').val('');
-						$('#matricula').val('');
-						$('#cellphone').val('');
 						formataSuccess(caixa_settings,data);
 					}
 					else{
@@ -137,6 +129,7 @@ function validateSettings(evt){
 
 /* Função para formatar as mansagens de erro*/
 function formataErro(elemento,texto){
+	$(elemento).removeClass();
 	$(elemento).addClass('msg-erro');
 	elemento.innerHTML = "<span class='glyphicon glyphicon-exclamation-sign' aria-hidden='true'></span>" + texto;
 	elemento.style.display = 'block';
@@ -144,6 +137,7 @@ function formataErro(elemento,texto){
 
 /* Função para formatar as mansagens de sucesso*/
 function formataSuccess(elemento,texto){
+	$(elemento).removeClass();
 	$(elemento).addClass('msg-success');
 	elemento.innerHTML = "<span class='glyphicon glyphicon glyphicon-ok' aria-hidden='true'></span>" + texto;
 	elemento.style.display = 'block';

@@ -8,18 +8,17 @@
 	require_once "../functions/hash.php";
 	require_once "../classes/class-Settings.php";
 
-	$id = $_SESSION['id'];
-	$name = $_POST['name'];
-	$email    = $_POST['email'];
-	$lastpass    = $_POST['lastpassword'];
-	$newpass = $_POST['newpassword'];
+	$id 	   = $_SESSION['id'];
+	$name      = $_POST['name'];
+	$email     = $_POST['email'];
+	$lastpass  = $_POST['lastpassword'];
+	$newpass   = $_POST['newpassword'];
 	$course    = $_POST['course'];
-	$matricula     = $_POST['matricula'];
-	$cellphone    = $_POST['cellphone'];
-	$password = definePassword($lastpass, $newpass);	 
+	$matricula = $_POST['matricula'];
+	$cellphone = $_POST['cellphone'];
+	$password  = definePassword($lastpass, $newpass);	 
+	
 	$mySQL = new MySQL;
-
-
 
 	function definePassword($last, $new){
 		if($new == NULL){
@@ -59,13 +58,12 @@
 		}
 	}
 
-
 	if(checkEmail($email, "email", $id)){
-		echo "E-mail já existe.";
+		echo " E-mail já existe.";
 	}else if (checkPassword($id, $lastpass)){
-		echo "Senha Incorreta.";
+		echo " Senha Incorreta.";
 	}else if(updateUser()){
 		echo " Atualização feita com sucesso.";
 	}else 
-		echo "Erro ao conectar com o bando de dados.";
+		echo " Erro ao conectar com o bando de dados.";
 ?>

@@ -18,7 +18,7 @@ function validaLogin(evt){
 	var contErro = 0;
 
 	/* Validação do campo email */
-	caixa_email = document.querySelector('.msg-email');
+	caixa_email = document.querySelector('#msg-email-contato');
 	if(email.value == ""){
 		formataErro(caixa_email," Favor preencher o E-mail.");
 		contErro += 1;
@@ -30,7 +30,7 @@ function validaLogin(evt){
 	}
 
 	/* Validação do campo name */
-	caixa_name = document.querySelector('.msg-name');
+	caixa_name = document.querySelector('#msg-name-contato');
 	if(name.value == ""){
 		formataErro(caixa_name," Favor preencher o nome.");
 		contErro += 1;
@@ -46,19 +46,16 @@ function validaLogin(evt){
 	}
 
 	/* Validação do campo texto*/
-	caixa_texto = document.querySelector('.msg-texto');
+	caixa_texto = document.querySelector('#msg-texto-contato');
 	if(texto.value == ""){
 		formataErro(caixa_texto," Favor preencher o texto.");
-		contErro += 1;
-	}else if(texto.value.length < 6){
-		formataErro(caixa_texto," Mensagem deve conter no minimo 6 caracteres.");
 		contErro += 1;
 	}else{
 		caixa_texto.style.display = 'none';
 	}
 
 	/* Validação do campo assunto*/
-	caixa_assunto = document.querySelector('.msg-assunto');
+	caixa_assunto = document.querySelector('#msg-assunto-contato');
 	if(texto.value == ""){
 		formataErro(caixa_assunto," Favor preencher o assunto.");
 		contErro += 1;
@@ -76,14 +73,8 @@ function validaLogin(evt){
 
 /* Função para formatar as mansagens de erro*/
 function formataErro(elemento,texto){
+	$(elemento).removeClass();
 	$(elemento).addClass('msg-erro');
 	elemento.innerHTML = "<span class='glyphicon glyphicon-exclamation-sign' aria-hidden='true'></span>" + texto;
-	elemento.style.display = 'block';
-}
-
-/* Função para formatar as mansagens de sucesso*/
-function formataSuccess(elemento,texto){
-	$(elemento).addClass('msg-success');
-	elemento.innerHTML = "<span class='glyphicon glyphicon glyphicon-ok' aria-hidden='true'></span>" + texto;
 	elemento.style.display = 'block';
 }
