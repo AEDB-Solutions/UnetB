@@ -22,7 +22,7 @@ function download_sizeMB($source)
 
 
 function download(){
-$source = "http://ipv4.download.thinkbroadband.com:8080/5MB.zip";
+$source = "http://ipv4.download.thinkbroadband.com:8080/1MB.zip";
 $times = array();
 $result;
 	$ch = curl_init();
