@@ -42,11 +42,13 @@
 									<input type="email" class="form-control" id='email' name="email" placeholder="Informe o E-mail" value = "<?=$user_dt['email']?>">
 									<span class='' id="msg-email"></span>
 								</div>
+
 								<div class="form-group">
 									<label for= 'name'> Nome </label>
 									<input type="text" name="name" class = "form-control" id = "name" placeholder="Digite seu nome" value="<?= $user_dt['name']?>">
 									<span class='' id="msg-name"></span>
 								</div>
+
 								<div class="form-group">
 									<label for= 'lastpassword'> Senha Atual</label>
 									<input type="password" name="lastpassword" class = "form-control" id = "lastpassword" placeholder="Digite sua senha atual">
