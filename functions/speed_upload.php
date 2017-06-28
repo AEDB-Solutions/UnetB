@@ -3,7 +3,8 @@
 
 		$file = file_get_contents('../../functions/archives_connectionspeed/'.'20Mb.txt');
 		$size = strlen($file);
-		$source = 'http://example.com/settings/upload-img';
+		$source = 'https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py';
+		//'http://example.com/settings/upload-img';
 		//"http://www.website.com/index.php"
 		//'http://1234.4321.67.11/upload.php'
 		$ch = curl_init();
@@ -16,11 +17,9 @@
 		$data = curl_exec ($ch);
 		$error = curl_error($ch);
 
-		$info_up = curl_getinfo($ch, CURLINFO_SPEED_UPLOAD); 
+		$info_upload = curl_getinfo($ch, CURLINFO_SPEED_UPLOAD); 
 		curl_close($ch);
 
-		$info_upload = $info_up/10000;
-
-		return round($info_upload, 2);
+		return round($info_upload/100000, 2);
 	}
 ?>
