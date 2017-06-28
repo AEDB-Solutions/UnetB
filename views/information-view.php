@@ -40,7 +40,7 @@
 	<div class="span12">
 		<div style="overflow:hidden;width:90%;">
 			<div style="margin-top: 30px; margin-left: auto; margin-right: auto;">  <h1>Sobre e Ajuda</h1>  </div>
-			<div class="links" style="display:inline-block; margin-left: 0 auto; margin-top: 5px; margin-bottom: 7px">  <a href="			#sobre">SOBRE</a>  </div>
+			<div class="links" style="display:inline-block; margin-left: 7px; margin-top: 5px; margin-bottom: 7px">  <a href="			#sobre">SOBRE</a>  </div>
 			<div class="links" style="display:inline-block; margin-left: 7px; margin-top: 5px; margin-bottom: 7px">  <a href="#perg">PERGUNTAS FREQUENTES</a>  </div>
 			<div class="links" style="display:inline-block; margin-left: 7px; margin-top: 5px; margin-bottom: 7px">  <a href="#med">NOSSAS MEDIDAS</a>  </div>
 			<div class="links" style="display:inline-block; margin-left: 7px; margin-top: 5px; margin-bottom: 7px">  <a href="#prob">PROBLEMAS?</a>  </div>
