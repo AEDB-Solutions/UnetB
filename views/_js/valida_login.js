@@ -49,15 +49,16 @@ function validaLogin(evt){
 			$.ajax({
 				url: '../controllers/login-controller.php',
 				method: 'post',
-				dataType:"json",
 				data: $('#form-login').serialize(),
 				success: function(data){
-					if(data["resultado"] == "logado"){
+					if(data == "1"){
 						window.location.replace("home-view.php");
 					}
-					else{
+					else if(data == "2"){
 						caixa_login = document.getElementById('msg-login');
 						formataErro(caixa_login,' Usuário ou senha inválido');
+					}else{
+						formataErro(caixa_login,' Erro ao conectar ao banco de dados.');
 					}
 				},
 				beforeSend: function(){
@@ -67,6 +68,11 @@ function validaLogin(evt){
 				},
 
 				complete: function(){
+					$('#botao_login').prop("disabled",false);
+					$('#gif_login').hide();
+				},
+				erro: function(){
+					formataErro(caixa_login,' Erro interno.');
 					$('#botao_login').prop("disabled",false);
 					$('#gif_login').hide();
 				}

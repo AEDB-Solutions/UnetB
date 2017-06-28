@@ -28,7 +28,7 @@
 		global $mySQL;
 		$executaQuery = $mySQL->executeQuery("SELECT {$coluna} FROM user WHERE {$coluna} = '{$valor}'");
 
-		if(mysqli_num_rows($executaQuery) == 1){	
+		if(mysqli_num_rows($executaQuery) == 1){
 			return true;
 		}
 		return false;
@@ -36,14 +36,16 @@
 
 //*************************************************************************************************
 
-	if(check_on_database($email, "email"))
-		echo " Email já existe.";
-
+	if(check_on_database($email, "email")){
+		echo  "1"; //Email já existe.
+	}
 	else{
-		if(registeruser())
-			echo " Cadastro realizado com sucesso.";
+		if(registeruser()){
+			echo  "2"; //Cadastro realizado com sucesso.
+		}
 			
-		else
-			echo " Erro ao conectar ao banco de dados.";
+		else{
+			echo "3"; //Erro ao conectar ao banco de dados.
+		}
 	}
 ?>

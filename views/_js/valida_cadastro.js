@@ -83,19 +83,20 @@ function validaCadastro(evt){
 				method: 'post',
 				data: $('#form-cadastro').serialize(),
 				
-				success: function(data){
-
+				success: function(retorno){
 					caixa_cadastro = document.getElementById('msg-cadastro');
 
-					if(data == ' Cadastro realizado com sucesso.'){
+					if(retorno == '2'){
 						$('#email').val('');
 						$('#password').val('');
 						$('#confpass').val('');
 						$('#name').val('');
-						formataSuccess(caixa_cadastro,data);
+						formataSuccess(caixa_cadastro,' Cadastro realizado com sucesso.');
 					}
-					else{
-						formataErro(caixa_cadastro,data);
+					else if(retorno == '1'){
+						formataErro(caixa_cadastro,' Email já cadastrado.');
+					}else{
+						formataErro(caixa_cadastro,' Erro ao conectar ao banco de dados.');
 					}
 				},
 
@@ -103,11 +104,15 @@ function validaCadastro(evt){
 					$('#botao_cadastro').prop("disabled",true);
 					$('#gif_registro').show();
 				},
-
 				complete: function(){
 					$('#botao_cadastro').prop("disabled",false);
 					$('#gif_registro').hide();
-				}
+				},
+				erro: function(){
+					$('#botao_cadastro').prop("disabled",false);
+					$('#gif_registro').hide();
+					formataErro(caixa_cadastro,' Erro interno.');
+				},
 			});
 		});
 	}
