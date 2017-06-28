@@ -26,7 +26,7 @@ $(document).ready( function(){
 		$('#dado-packetloss').html('-');
 
 
-		navigator.geolocation.getCurrentPosition(success, success, {enableHighAccuracy: true});		
+		navigator.geolocation.getCurrentPosition(success, error, {enableHighAccuracy: true});		
 		
 		function success(pos){
 
@@ -133,8 +133,8 @@ $(document).ready( function(){
 														dataType:"json",
 														timeout: 20000,
 														data:{	id        : salvaPerfil,
-																lat       : -15.7452,//pos.coords.latitude,
-																long      : -47.8768,//pos.coords.longitude,
+																lat       : pos.coords.latitude,
+																long      : pos.coords.longitude,
 																download  : download['download'],
 																upload    : upload['upload'],
 																latency   : ping['latency'],
