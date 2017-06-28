@@ -18,7 +18,15 @@ $(document).ready( function(){
 		$('#gif_qualidade').show();
 		$('#msg-qualidade').hide();
 
-		navigator.geolocation.getCurrentPosition(success, error, {enableHighAccuracy: true});		
+		$('#dado-download').html('-');
+		$('#dado-upload').html('-');
+		$('#dado-latency').html('-');
+		$('#dado-jitter').html('-');
+		$('#dado-intensity').html('-');
+		$('#dado-packetloss').html('-');
+
+
+		navigator.geolocation.getCurrentPosition(success, success, {enableHighAccuracy: true});		
 		
 		function success(pos){
 
@@ -125,8 +133,8 @@ $(document).ready( function(){
 														dataType:"json",
 														timeout: 20000,
 														data:{	id        : salvaPerfil,
-																lat       : pos.coords.latitude,
-																long      : pos.coords.longitude,
+																lat       : -15.7452,//pos.coords.latitude,
+																long      : -47.8768,//pos.coords.longitude,
 																download  : download['download'],
 																upload    : upload['upload'],
 																latency   : ping['latency'],
