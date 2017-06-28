@@ -35,22 +35,22 @@
 		//array_push($times, $time);
 		array_push($times, $info); // tem que guardar as velocidades, não o tempo 
 		if($time > 1 && $time <= 2){
+			$source = "http://ipv4.download.thinkbroadband.com:8080/2MB.zip";
+			$info = download_sizeMB($source);
+			array_push($times, $info);
+		}
+		else if($time > 0.5 && $time <= 1){
+			$source = "http://ipv4.download.thinkbroadband.com:8080/5MB.zip";
+			$info = download_sizeMB($source);
+			array_push($times, $info);
+		}
+		else if($time > 0.25 && $time <= 0.5){
 			$source = "http://ipv4.download.thinkbroadband.com:8080/10MB.zip";
 			$info = download_sizeMB($source);
 			array_push($times, $info);
 		}
-		if($time > 0.5 && $time <= 1){
+		else if($time <= 0.25){
 			$source = "http://ipv4.download.thinkbroadband.com:8080/20MB.zip";
-			$info = download_sizeMB($source);
-			array_push($times, $info);
-		}
-		if($time > 0.25 && $time <= 0.5){
-			$source = "http://ipv4.download.thinkbroadband.com:8080/30MB.zip";
-			$info = download_sizeMB($source);
-			array_push($times, $info);
-		}
-		if($time <= 0.25){
-			$source = "http://ipv4.download.thinkbroadband.com:8080/40MB.zip";
 			$info = download_sizeMB($source);
 			array_push($times, $info);
 		}
