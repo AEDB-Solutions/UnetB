@@ -284,14 +284,28 @@
 			<h3 style="margin-top: 40px;" id="prob">PROBLEMAS?</h3>
 		</div>
 
-		<div class="panel panel-default" style="margin-bottom: 60px;">
+		<div class="panel panel-default">
 			<div class="panel-heading">
 				<h4 class="panel-title">
 					<a data-toggle="collapse" data-parent="#accordion" href="#collapse19">Por que o meu teste de conexão não funciona?</a>
 				</h4>
 			</div>
 			<div id="collapse19" class="panel-collapse collapse" >
-				<div class="panel-body">O teste de conexão pode não funcionar caso sua localização esteja desabilitada. Deste modo o usuário deve habilitar sua localização quando for solicitado.</div>
+				<div class="panel-body">
+				O teste de conexão pode não funcionar caso sua localização esteja desabilitada. Deste modo, o usuário deve habilitar sua localização quando for solicitado.
+				</div>
+			</div>
+
+		</div>
+
+		<div class="panel panel-default" style="margin-bottom: 200px;">
+			<div class="panel-heading">
+				<h4 class="panel-title">
+					<a data-toggle="collapse" data-parent="#accordion" href="#collapse20">Enfrentou um problema diferente?</a>
+				</h4>
+			</div>
+			<div id="collapse20" class="panel-collapse collapse">
+				<div class="panel-body"> <p>Por favor, entre em <a href="contact.php">contato conosco</a>.</p> </div>
 			</div>
 		</div>
 </div>
