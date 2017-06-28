@@ -34,17 +34,20 @@
 				include "_includes/header-logado.php";    
 		?>
 		
-		<div class="row-fluid" style="margin-top: 60px; margin-left: 60px">
-		<div class="span12">
-				<div style="overflow:hidden;width:90%;">
-						<div style="display:inline-block">  <h1>Sobre e Ajuda</h1>  </div>
-						<div style="display:inline-block; margin-left: 30px">  <a href="#sobre">SOBRE</a>  </div>
-						<div style="display:inline-block; margin-left: 7px">  <a href="#perg">PERGUNTAS FREQUENTES</a>  </div>
-						<div style="display:inline-block; margin-left: 7px">  <a href="#med">NOSSAS MEDIDAS</a>  </div>
-						<div style="display:inline-block; margin-left: 7px">  <a href="#prob">PROBLEMAS?</a>  </div>
-				</div>
+			
+<div style="margin-right: 0 auto; margin-left: 0 auto;" class="container">
+	<div class="row-fluid" style="margin-top: 30px; margin-left: auto">
+	<div class="span12">
+		<div style="overflow:hidden;width:90%;">
+			<div style="margin-top: 30px; margin-left: auto; margin-right: auto;">  <h1>Sobre e Ajuda</h1>  </div>
+			<div class="links" style="display:inline-block; margin-left: 0 auto; margin-top: 5px; margin-bottom: 7px">  <a href="			#sobre">SOBRE</a>  </div>
+			<div class="links" style="display:inline-block; margin-left: 0 auto; margin-top: 5px; margin-bottom: 7px">  <a href="#perg">PERGUNTAS FREQUENTES</a>  </div>
+			<div class="links" style="display:inline-block; margin-left: 0 auto; margin-top: 5px; margin-bottom: 7px">  <a href="#med">NOSSAS MEDIDAS</a>  </div>
+			<div class="links" style="display:inline-block; margin-left: 0 auto; margin-top: 5px; margin-bottom: 7px">  <a href="#prob">PROBLEMAS?</a>  </div>
 		</div>
-		</div>
+	</div>
+	</div>
+</div>
 
 <div class="container">
 <div class="panel-group" id="accordion">
