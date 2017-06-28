@@ -35,11 +35,11 @@
 		?>
 		
 			
-<div style="margin-right: 0 auto; margin-left: 0 auto;" class="container">
-	<div class="row-fluid" style="margin-top: 30px; margin-left: auto">
+<div style="text-align: center" class="container">
+	<div class="row-fluid" style="margin-top: 40px;">
 	<div class="span12">
 		<div style="overflow:hidden;width:90%;">
-			<div style="margin-top: 30px; margin-left: auto; margin-right: auto;">  <h1>Sobre e Ajuda</h1>  </div>
+			<div style="margin-top: 30px; width: 100%">  <h1 style="vertical-align: middle; width: 100%">Sobre e Ajuda</h1>  </div>
 			<div class="links" style="display:inline-block; margin-left: 7px; margin-top: 5px; margin-bottom: 7px">  <a href="#sobre">SOBRE</a>  </div>
 			<div class="links" style="display:inline-block; margin-left: 7px; margin-top: 5px; margin-bottom: 7px">  <a href="#perg">PERGUNTAS FREQUENTES</a>  </div>
 			<div class="links" style="display:inline-block; margin-left: 7px; margin-top: 5px; margin-bottom: 7px">  <a href="#med">NOSSAS MEDIDAS</a>  </div>
@@ -300,12 +300,12 @@
 
 		<div class="panel panel-default" style="margin-bottom: 200px;">
 			<div class="panel-heading">
-				<h4 class="panel-title">
+				<h5 class="panel-title">
 					<a data-toggle="collapse" data-parent="#accordion" href="#collapse20">Enfrentou um problema diferente?</a>
-				</h4>
+				</h5>
 			</div>
 			<div id="collapse20" class="panel-collapse collapse">
-				<div class="panel-body"> <p>Por favor, entre em <a href="contact.php">contato conosco</a>.</p> </div>
+				<div class="panel-body">Por favor, entre em <a href="contact.php">contato conosco</a>.</div>
 			</div>
 		</div>
 </div>
