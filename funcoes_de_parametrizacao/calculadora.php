@@ -52,7 +52,7 @@
 		$n_download    = download_param($download);
 		$n_upload      = upload_param($upload);
 		
-		$media_parametros = ((1 * $n_intensidade) + (4.5 * $n_download) + (3 * $n_upload)+ (1.5 * $n_latencia)) / 10;
+		$media_parametros = ((0.5 * $n_intensidade) + (6 * $n_download) + (2 * $n_upload)+ (1.5 * $n_latencia)) / 10;
 
 		$array_localizacao = array('lat' => $lat, 'long' => $long, 'peso' => number_format($media_parametros, 2, '.', ''));
 		array_push($total,$array_localizacao);

@@ -85,7 +85,7 @@ function initMap() {
 
 	map = new google.maps.Map(document.getElementById('map'), {
 		center: {lat: -15.7638, lng: -47.8692},
-		zoom: 18,
+		zoom: 15,
 		mapTypeControl: false,
 		streetViewControl: false
 	});
@@ -105,6 +105,36 @@ function initMap() {
 	// 		});
 	// 	}
 	// }
+
+	
+	// var rectangle = new google.maps.Rectangle({
+	// 	//strokeColor: '#FF0000',
+	// 	strokeOpacity: 0,
+	// 	//strokeWeight: 2,
+	// 	fillColor: '#FF0000',
+	// 	fillOpacity: 0.5,
+	// 	map: map,
+	// 	bounds: {
+	// 		north: -15.7452,
+	// 		south: -15.7758,
+	// 		east: -47.8552,
+	// 		west: -47.8768
+	// 	}
+	// });
+	// var rectangle = new google.maps.Rectangle({
+	// 	//strokeColor: '#FF0000',
+	// 	strokeOpacity: 0,
+	// 	//strokeWeight: 2,
+	// 	fillColor: '#000000',
+	// 	fillOpacity: 0.5,
+	// 	map: map,
+	// 	bounds: {
+	// 		north: -15.7350,
+	// 		south: -15.7860,
+	// 		east:  -47.8450,
+	// 		west: -47.8870
+	// 	}
+	// });
 
 var conteudo  = "<div class='panel panel-primary' id='infowindow'>";	
 	conteudo += 	"<button type='button' class='list-group-item list-group-item active' id='btn-info'><center>Click Para Analisar <img src='_images/teste.svg' id='gif_info'></center></button>";	

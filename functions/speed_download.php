@@ -1,61 +1,30 @@
 <?php
 
-	function download_sizeMB($source){
+	function download_sizeMB($size,$byts){
 
 			$ch = curl_init();
-			curl_setopt($ch, CURLOPT_URL, $source);
+
+			curl_setopt($ch, CURLOPT_URL, "http://ipv4.download.thinkbroadband.com:8080/".$size.".zip");
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 			curl_setopt($ch, CURLOPT_SSLVERSION,3);
-			
-			$data = curl_exec($ch);
-			$error = curl_error($ch);
-			$info = curl_getinfo($ch, CURLINFO_SPEED_DOWNLOAD)/100000;
+
+			$time_before = microtime(true);
+			$data        = curl_exec($ch);
+			$time_after  = microtime(true);
+
 			curl_close($ch);
-			return $info;
+
+			$size = $byts*8/1048576; //Tamanho em MEGA BITS
+			$time = $time_after - $time_before;
+
+			return $size/$time;
 	}
 
 	function download(){
 
-		$source = "http://ipv4.download.thinkbroadband.com:8080/1MB.zip";
-		$times = array();
-		$result;
-		$ch = curl_init();
+		$byts = array(1048576,2097152,5242880,10485760,20971520);
+		$size = array( "1MB" , "2MB" , "5MB" , "10MB" , "20MB",);
 
-		curl_setopt($ch, CURLOPT_URL, $source);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-		curl_setopt($ch, CURLOPT_SSLVERSION,3);
-
-		$data = curl_exec($ch);
-		$error = curl_error($ch);
-		$time_start = microtime(true);
-		$info = curl_getinfo($ch, CURLINFO_SPEED_DOWNLOAD)/100000;	
-		$time_end = microtime(true);
-		$time = ($time_end - $time_start) * 100000;
-
-		//array_push($times, $time);
-		array_push($times, $info); // tem que guardar as velocidades, não o tempo 
-		if($time > 2 && $time <= 10){
-			$source = "http://ipv4.download.thinkbroadband.com:8080/2MB.zip";
-			$info = download_sizeMB($source);
-			array_push($times, $info);
-		}
-		else if($time > 0.1 && $time <= 2){
-			$source = "http://ipv4.download.thinkbroadband.com:8080/5MB.zip";
-			$info = download_sizeMB($source);
-			array_push($times, $info);
-		}
-		else if($time > 0.05 && $time <= 0.1	){
-			$source = "http://ipv4.download.thinkbroadband.com:8080/10MB.zip";
-			$info = download_sizeMB($source);
-			array_push($times, $info);
-		}
-		else if($time <= 0.05){
-			$source = "http://ipv4.download.thinkbroadband.com:8080/20MB.zip";
-			$info = download_sizeMB($source);
-			array_push($times, $info);
-		}
-		curl_close($ch);
-		$result = array_sum($times)/ count($times);
-		return round($result,2);
+		return round(download_sizeMB($size[0],$byts[0]),2);
 	}
 ?>

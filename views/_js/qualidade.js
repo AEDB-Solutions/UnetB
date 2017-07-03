@@ -26,7 +26,7 @@ $(document).ready( function(){
 		$('#dado-packetloss').html('-');
 
 
-		navigator.geolocation.getCurrentPosition(success, error, {enableHighAccuracy: true});		
+		navigator.geolocation.getCurrentPosition(success, errors, {enableHighAccuracy: true});		
 		
 		function success(pos){
 
@@ -181,7 +181,7 @@ $(document).ready( function(){
 			}); // FIM DOWNLOAD ***************************************
 		};
 
-		function error(err){
+		function errors(err){
 			$('#botao_qualidade').prop("disabled",true);
 			$('#gif_qualidade').hide();
 			formataErro(document.getElementById('msg-qualidade')," O teste não pode ser realizado pois a localização não está habilitada.")			
